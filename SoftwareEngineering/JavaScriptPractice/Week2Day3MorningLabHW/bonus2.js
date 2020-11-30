@@ -49,7 +49,7 @@ function convertArray(stringValue){
 }
 
 function createObject(stringValue){
-  var alphaString = alphabeticalOrder("Nithyakalyani");
+  var alphaString = alphabeticalOrder(stringValue);
   var valueArray = charOccurenceObject(alphaString);
   var charArray = convertArray(alphaString);
   var object = {};
