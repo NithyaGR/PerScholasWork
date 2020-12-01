@@ -60,5 +60,5 @@ function createObject(stringValue){
 
 }
 
- var object = createObject("PerScholas");
+ var object = createObject("Nithyakalyani");
  console.log(JSON.stringify(object));
