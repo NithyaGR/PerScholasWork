@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <input type="text" id="text" value="">
+    <br>
+    <button type="button" id="button" onclick="myFunction() ">Click Me </button>
+     <script type="text/javascript">
+      function myFunction(){
+        var name = document.getElementById("text").value;
+        name = name + " Kumar";
+        document.getElementById("text").value = name;
+      }
+    </script>
+  </body>
+</html>
