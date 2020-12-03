@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <img id = "img"src="Peacock.jpeg" alt="peacock" width="300" height="300">
+    <br><br>
+    <button type="button" id="button" onclick="changeImage(-1) ">Back</button>
+    <button type="button" id="button1" onclick="changeImage(1) ">Forward</button>
+
+    <script type="text/javascript">
+      var images=["Peacock.jpeg", "sheep.jpeg", "zebras.jpeg","dogs.jpg", "deer.jpeg" ];
+      var currentImageIndex =0;
+      var size = images.length;
+      function changeImage(value){
+
+        currentImageIndex = currentImageIndex+value;
+        if(currentImageIndex >=size){
+          currentImageIndex = 0;
+        }
+        else if (currentImageIndex<0){
+          currentImageIndex = (size-1);
+        }
+         document.getElementById("img").src = images[currentImageIndex];
+      }
+    </script>
+  </body>
+</html>

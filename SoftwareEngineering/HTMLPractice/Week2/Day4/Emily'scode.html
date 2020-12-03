@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<!--Create a page w/ a title & 3 headings (give them a unique ID)
+Using Javascript, include a button and program your headings to change onclick-->
+<html lang="en" dir="ltr">
+  <head>
+    <title>This is my title</title>
+  </head>
+  <body>
+    <h1 id= "output1"> Header 1 </h1>
+    <h2 id= "output2"> Header 2</h2>
+    <h2 id= "output3"> Header 3</h2>
+    <h2 id= "output4"> Header 4</h2>
+<button id="changeBlue" onclick="changeColor() "> Click To Change Color </button>
+<script type="text/javascript">
+
+
+function changeColor(){
+  document.getElementById("output1").style.color="blue";
+  document.getElementById("output2").style.display="block";
+  document.getElementById("output3").style.fontSize="50px";
+}
+</script>
+  </body>

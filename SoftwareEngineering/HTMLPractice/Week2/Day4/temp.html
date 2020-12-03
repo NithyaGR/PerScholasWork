@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <img id = "img"src="Peacock.jpeg" alt="peacock" width="300" height="300">
+
+    <button type="button" id="button" onclick="changeImage(-1) ">Back</button>
+    <button type="button" id="button1" onclick="changeImage(1) ">Forward</button>
+<script type="text/javascript">
+var index=0;
+function changeImage(value){
+  var images=["Peacock.jpeg", "sheep.jpeg", "zebras.jpeg","dogs.jpg", "deer.jpeg" ];
+  var size = images.length;
+  console.log(value);
+  console.log(size);
+  console.log(index);
+
+  if (value==1 && index<size){
+    index+1;// to print the image at the index no1
+    document.getElementById("img").src=images[index];
+    index++;
+  }
+  else if( value==1 && index>=size){
+    alert("This is the last image");
+    index=size-1;
+
+  }
+  if(value==-1 && index>0){
+    index= size-2 ; //tp print image at the previous index
+    document.getElementById("img").src=images[index];
+    index--;
+  }
+  else if(value==-1 && index==0){
+    document.getElementById("img").src=images[0];
+    alert("This is the first image");
+    index=0;
+  }
+}
+</script>
+</body>
+</html>
+<!-- if (index1==0){
+  document.getElementById("img").src=images[index1+1];
+  index1++;
+  console.log("AFter first forward click when index was zero first "+index1);
+}
+else
+if (index1==size-1){
+  document.getElementById("img").src=images[index1];
+  index1--;
+  console.log("After the first backward click when index was 4"+ index1);
+}
+else -->

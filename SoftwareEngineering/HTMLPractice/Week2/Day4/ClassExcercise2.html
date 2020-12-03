@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Java Script Events</title>
+  </head>
+  <body>
+    <h1 id="heading1"> What can Java Script Do?</h1>
+    <h2 id="heading2"> It can change the css styles</h2>
+    <h3 id ="heading3"> It can hide or display contents</h3>
+    <br>
+    <br><br>
+    <button type="button" id="button" onclick="changes() ">Click Me!</button>
+    <script type="text/javascript">
+      function changes(){
+        document.getElementById("heading1").style.display="none";
+        document.getElementById("heading2").style.display="block";
+        document.getElementById("heading2").style.fontSize="50px";
+      }
+
+    </script>
+  </body>
+</html>
