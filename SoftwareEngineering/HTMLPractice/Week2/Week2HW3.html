@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Week2 HW 3</title>
+    <link rel="stylesheet" href="../../css/Week2HW3.css">
+  </head>
+  <body>
+    <div class="bg">
+      <div class="grid-container">
+      <div class="grid-item"><div id="1" class="circle" onclick="changeColor() "></div></div>
+      <div class="grid-item"><div id="2" class="circle"></div></div>
+      <div class="grid-item"><div id="3" class="circle"></div></div>
+      <div class="grid-item"><div id="4" class="circle"></div></div>
+      <div class="grid-item"><div id="5" class="circle"></div></div>
+      <div class="grid-item"><div id="6" class="circle"></div></div>
+      <div class="grid-item"><div id="7" class="circle"></div></div>
+      <div class="grid-item"><div id="8" class="circle"></div></div>
+      <div class="grid-item"><div id="9" class="circle"></div></div>
+      </div>
+    </div>
+   </body>
+   <script type="text/javascript" >
+     <!-- src="../../JSForHTML/Week2HW3.js" -->
+         var colors = ["red", "orange", "yellow", "green", "blue", "purple"];
+         circles = document.getElementsByClassName("circle");
+         function changeColor(){
+              var colorIndex=0;
+
+               for(i=0;i<circles.length; i++){
+               <!-- document.getElementById("2").style.backgroundColor = colors[colorIndex]; -->
+               circles[i].style.backgroundColor = colors[colorIndex];
+               colorIndex++;
+               console.log(colors[colorIndex]);
+
+
+           }
+       }
+
+
+
+
+   </script>
+  </html>
