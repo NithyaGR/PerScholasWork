@@ -1,0 +1,41 @@
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>CLOCK</title>
+    <link rel="stylesheet" type="text/css" href="../css/clock.css">
+  </head>
+  <body>
+    <p> Timer </p>
+    <div id="setTimer">
+      <input id='a' type="text">
+      <button type="button" onclick="clockTimer()"> Start </button>
+    </div>
+    <div id="blueclock">
+      <output id='showtime' type="text" align = "center">
+    </div>
+    <script type="text/javascript">
+    function sleep(ms) {
+      return new Promise(resolve => setTimeout(resolve, ms));
+      }
+      async function  clockTimer()
+      {
+        var i = Number(document.getElementById('a').value);
+        var seccount = 0;
+        var mincount = 0;
+        while (i > 0)
+        {
+         while (seccount <= 59)
+          {
+            document.getElementById("showtime").value = String(mincount).padStart(2,'0') + ":" + String(seccount).padStart(2,'0');
+            seccount ++;
+            await sleep(250);
+          }
+        seccount = 0;
+        mincount++;
+        document.getElementById("showtime").value = String(mincount).padStart(2,'0') + ":" + String(seccount).padStart(2,'0');
+        i--;
+        }
+      }
+    </script>
+    </body>
+</html>

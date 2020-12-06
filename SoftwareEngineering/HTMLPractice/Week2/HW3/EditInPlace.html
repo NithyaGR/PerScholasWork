@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <p id="editable">This will be editable - after clicked</p>
+    <label id="label" for="">Trying to edit</label>
+    <input type="text" name="" value="" style="display:none">
+    <input type="text" name="" value="">
+    <button type="button" name="button" onclick="makeEditable() ">ClickMe</button>
+    <script type="text/javascript">
+    var value="";
+      function makeEditable(){
+        document.getElementById("editable").contentEditable="true";
+        document.getElementById("label").contentEditable="true";
+        value = document.getElementById("label").innerHTML;
+        console.log(value);
+        label.addEventListener("keydown", function keydown(evt) {
+
+          // 13 is the code for ENTER
+          if (evt.keyCode === 13) {
+            value = document.getElementById("label").innerHTML;
+            console.log(value);
+            //startTimer();
+
+            // its important to remove the keydown listener, otherwise in a subsequent edit
+            // we will end up with several keydown listeners running
+            label.removeEventListener("keydown", keydown);
+          }
+
+        });
+        document.getElementById("label").innerHTML = value +" Jai!";
+      }
+    </script>
+  </body>
+</html>

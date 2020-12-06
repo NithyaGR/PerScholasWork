@@ -1,0 +1,66 @@
+
+/* input{
+  font: 20px Verdana;
+} */
+/* #timeText {
+  display:none;
+} */
+ /* .timer{
+  margin-left: 50px;
+  margin-top: 50px;
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
+  background-color: #0781D4;
+  text-align: center;
+  line-height: 190px;
+  font: 50px Verdana;
+  line-height: 190px;
+  box-shadow: 0.1752m 0.175em 0 0 grey; */
+  /* This sets the text to display in the middle of the circle*/
+  /* display: inline-block;*/
+
+/* } */
+.container input {
+  /* box-sizing: border-box; */
+  font-size: inherit;
+  font-family: inherit;
+  background-color: #2A9AD2;
+  border:none;
+  padding:0;
+  margin:0;
+  /* width: 200px;
+  height: 30px; */
+}
+/*
+.editable-in-place input {
+	box-sizing: border-box;
+	font-size: inherit;
+	font-family: inherit;
+	background-color: #2A9AD2;
+	border:none;
+	padding:0;
+	margin:0;
+}
+ */
+.container .timer{
+  margin-left: 50px;
+  margin-top: 50px;
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
+  background-color: #0781D4;
+  text-align: center;
+  line-height: 190px;
+  font: 50px Verdana;
+  /* font-size: : 50px;
+  font-family: Verdana; */
+  line-height: 190px;
+  box-shadow: 0.1752m 0.175em 0 0 grey;
+  position:absolute;
+
+}
+
+.hide {
+  /* visibility:hidden; */
+}
