@@ -1,13 +1,11 @@
-
-
 .container {
   margin-left: 50px;
   margin-top: 50px;
   border:none;
   padding:0;
   margin:0;
+ /* background-color: #2A9AD2; */
 }
-
  .timer{
   margin-left: 50px;
   margin-top: 50px;
@@ -17,22 +15,20 @@
   background-color: #0781D4;
   text-align: center;
   line-height: 190px;
-  font: 50px Verdana;
+  font: 45px Verdana;
   line-height: 190px;
   box-shadow: 0.1752m 0.175em 0 0 grey;
   position:absolute;
-  /* box-shadow: 0.1752m 0.175em 0 0 grey;
-  position:absolute; */
 
 }
 .timer label {
 
   line-height: 190px;
-  font: 50px Verdana;
-  top: 200px;
+  font: 45px Verdana;
+  text-align: center;
 }
-.timeIsUp {
 
+.timeIsUp {
   margin-left: 50px;
   margin-top: 50px;
   width: 200px;
@@ -40,6 +36,7 @@
   border-radius: 100px;
   text-align: center;
   line-height: 190px;
-  font: 50px Verdana;
+  font: 45px Verdana;
+  line-height: 190px;
   background-color: red;
 }

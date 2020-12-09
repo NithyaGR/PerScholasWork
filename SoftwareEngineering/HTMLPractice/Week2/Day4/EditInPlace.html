@@ -3,16 +3,25 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <style media="screen">
+      #text1 {
+        visibility: hidden;
+      }
+    </style>
   </head>
   <body>
     <p id="editable">This will be editable - after clicked</p>
     <label id="label" for="">Trying to edit</label>
-    <input type="text" name="" value="" style="display:none">
-    <input type="text" name="" value="">
+    <input type="text" id="text1" value="" style="">
+    <!-- <input type="text" name="" value=""> -->
+    <input type="text" id="text" value="" contentEditable="false" onclick="makeEditable() ">
     <button type="button" name="button" onclick="makeEditable() ">ClickMe</button>
     <script type="text/javascript">
     var value="";
       function makeEditable(){
+        document.getElementById("text").contentEditable="true";
+        document.getElementById("text1").style.visibility="visible";
+
         document.getElementById("editable").contentEditable="true";
         document.getElementById("label").contentEditable="true";
         value = document.getElementById("label").innerHTML;

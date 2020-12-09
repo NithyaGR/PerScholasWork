@@ -1,0 +1,35 @@
+.editable-in-place {
+    margin:auto;
+    position:relative;
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+    font-size:36px;
+    font-family:Verdana;
+    background-color:#048ED2;
+}
+
+.editable-in-place input {
+    box-sizing: border-box;
+    font-size: inherit;
+    font-family: inherit;
+    background-color: #048ED2;
+    border:none;
+    padding:0;
+    margin:0;
+}
+
+.editable-in-place .inside{
+    position:absolute;
+    margin: 0;
+    padding: 0;
+    text-align:center;
+    width:200px;
+    left:0px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.hide {
+    visibility:hidden;
+}

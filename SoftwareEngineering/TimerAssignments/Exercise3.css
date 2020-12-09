@@ -1,0 +1,30 @@
+.container{
+  margin-left: 50px;
+  margin-top: 50px;
+}
+input{
+  font: 20px Verdana;
+}
+.timer{
+
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
+  background-color: #0781D4;
+  text-align: center;
+  line-height: 190px;
+  font: 50px Verdana;
+  line-height: 190px; /* This sets the text to display in the middle of the circle*/
+  /* display: inline-block; */
+
+}
+.timeIsUp {
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
+  text-align: center;
+  line-height: 190px;
+  font: 50px Verdana;
+  line-height: 190px;
+  background-color: red;
+}

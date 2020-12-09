@@ -1,0 +1,48 @@
+body, html{
+
+  /* Full height */
+  height: 100%;
+  margin: 0;
+}
+
+
+.bg {
+  background-image: url("../Images/background.jpg");
+   /* Full height */
+  height: 100%;
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.grid-container {
+  height: 100%;
+  width : 100%;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto auto auto;
+  border: solid;
+  padding: 10px;
+}
+.grid-item {
+  background-color: none;
+  height: 100%;
+  width : 100%;
+  /* border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  border: solid;*/
+  text-align: center;
+
+}
+.circle{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: red;
+  /* opacity: 0.5; */
+  margin: 0 auto;
+
+}
+.grid-item:hover{
+  opacity:0;
+}
