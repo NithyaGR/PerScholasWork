@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <style media="screen">
+      @keyframes myFrames{
+  0% {
+    /*when the animation begins*/
+    background-color:orange;
+    width:205px;
+    height:200px;
+
+  }
+  20% {
+    /*when the animation begins*/
+    background-color:yellow;
+    width:305px;
+    height:200px;
+
+  }
+  40% {
+    /*when the animation begins*/
+    background-color:green;
+    width:405px;
+    height:200px;
+
+  }
+  60% {
+    /*when the animation in the half-way*/
+    background-color:blue;
+    width:505px;
+    height:200px;
+  }
+  80%{
+    /*when the animation ends*/
+    background-color:purple;
+    width:605px;
+    height:200px;
+
+  }
+  100% {
+    /*when the animation begins*/
+    background-color:red;
+    width:705px;
+    height:200px;
+
+  }
+
+}
+
+.navbar {
+  display:flex;
+  animation-name: myFrames;
+  animation-duration: 10s;
+  timing-function:ease-in-out;
+  delay:0s;
+  direction:left;
+  fill-mode:forwards;
+}
+
+nav{
+  color:white;
+  text-decoration:none;
+  padding:3px;
+  display:block;
+  text-align:center;
+  font-size:50px;
+
+}
+
+.container{
+  border:purple;
+  width:205px;
+  height:200px;
+  display:flex;
+  background-color:red;
+  animation-name: myFrames;
+  animation-duration: 10s;
+  timing-function:ease-in-out;
+  delay:0s;
+  direction:left;
+  fill-mode:forwards;
+}
+    </style>
+    <title></title>
+  </head>
+  <body>
+    <div class=container>
+    <nav class=navbar> animation
+
+    </nav>
+    </div>
+  </body>
+</html>

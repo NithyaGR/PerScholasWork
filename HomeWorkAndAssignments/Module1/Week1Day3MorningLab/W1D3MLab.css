@@ -1,0 +1,49 @@
+div{
+
+  height: 100px;
+  width:100px;
+  margin:5px;
+}
+
+#red{
+  display:flex;
+  background:red;
+  transition:width 1s;
+}
+#blue{
+  background:blue;
+}
+#red:hover{
+  width: 250px;
+}
+#red:hover ~ #blue {
+  animation-name: forwarding;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+}
+
+#red:not(:hover) ~ #blue {
+  animation-name: resetting;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 1s;
+  animation-fill-mode: backwards;
+}
+
+@keyframes forwarding{
+  0% { width: 100px;}
+
+  100%{ width: 250px;
+  }
+}
+
+@keyframes resetting {
+  0% {
+    width: 250px;
+  }
+  100% {
+    width: 100px;
+  }
+}

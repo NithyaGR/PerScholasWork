@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Mathematical Operators</title>
+
+  </head>
+  <body>
+
+      <p>Enter 2 numbers and click the calculation you want to perform to see the result in the
+        3rd text box </p>
+        <br>
+      <input type="text" id="number1" value=""> &nbsp &nbsp &nbsp
+      <input type="text" id="number2" value=""> &nbsp &nbsp &nbsp
+      <input type="text" id="result" value=""> &nbsp &nbsp &nbsp
+      <br> <br>
+      <input type="text" id="numbers" value="Enter numbers to find average separate them by comma"> &nbsp &nbsp &nbsp
+
+      <br> <br> <br>
+
+      <button  type="button" name="addition" onclick="add() ">Add</button>
+      <button type="button" name="subtraction" onclick="subtract() ">Subtract</button>
+      <button type="button" name="multiplication" onclick="multiply() ">Multiply</button>
+      <button type="button" name="division" onclick="divide() ">Divide</button>
+      <button type="button" name="average" onclick="average() ">Average</button>
+      <button type="button" name="next" >Next</button>
+
+     <script type="text/javascript">
+      function add() {
+        var num1 = Number(document.getElementById("number1").value) ;
+        var num2 = Number(document.getElementById("number2").value );
+        var result = num1+num2;
+        document.getElementById("result").value = result;
+        window.alert("Addition done");
+       }
+       function subtract() {
+         var num1 = Number(document.getElementById("number1").value) ;
+         var num2 = Number(document.getElementById("number2").value);
+         var result = num1-num2;
+         document.getElementById("result").value = result;
+        }
+        function multiply() {
+          var num1 = Number(document.getElementById("number1").value) ;
+          var num2 = Number(document.getElementById("number2").value);
+          var result = num1*num2;
+          document.getElementById("result").value = result;
+         }
+         function divide() {
+           var num1 = Number(document.getElementById("number1").value) ;
+           var num2 = Number(document.getElementById("number2").value);
+           var result = num1/num2;
+           document.getElementById("result").value = result;
+          }
+          function average(){
+            var numString = document.getElementById("numbers").value;
+            var numArray = numString.split(",");
+            console.log(numArray);
+            var sum=0
+            for(i=0;i<numArray.length; i++){
+              sum+=Number(numArray[i]);
+            }
+            var average = sum/numArray.length;
+            document.getElementById("result").value = average;
+
+          }
+
+
+    </script>
+  </body>
+</html>
