@@ -1,0 +1,42 @@
+.parent{
+  display:grid;
+  margin-top: 20px;
+  margin-right: -200px;
+  grid-template-columns:100px 100px;
+}
+#text{
+  display: flex;
+  font-size: 2em;
+  align-content:center;
+  justify-content: center;
+  margin-top: 100px;
+  margin-right: -300px;
+}
+.box{
+  height:100px;
+  width:100px;
+  transition: all ease-in-out 1s;
+}
+.parent:hover #red {
+  transform: rotate(90deg);
+  transform-origin: 0% 0%;
+}
+#red{ background-color:red; }
+.parent:hover #yellow {
+  transform: rotate(-90deg);
+  transform-origin: 100% 0%;
+
+}
+#yellow{ background-color:yellow; }
+.parent:hover #blue {
+  transform: rotate(-90deg);
+  transform-origin: 0% 100%;
+
+}
+#blue{  background-color:blue;  }
+.parent:hover #green {
+  transform: rotate(-90deg);
+  transform-origin: 100% 0%;
+
+}
+#green{ background-color:green; }
