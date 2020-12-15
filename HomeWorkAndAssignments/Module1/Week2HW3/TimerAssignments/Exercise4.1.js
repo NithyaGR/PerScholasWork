@@ -11,11 +11,12 @@ var timeLimit; //the time we get from the text box - user's value.
 var temp; //To set the clearInterval
 var currentTime, elapsedTime, minutes, seconds;
 var minutesFormatted, secondsFormatted, formattedTime;
+var checkMinutes, checkSeconds;
 //This function will get the time interval interval entered from the text box and will
 // calculate the start time and the time elapsed
 function startTimer(){
   startTime = new Date().getTime();// instead we can do thisDate = new Date();thisDate.getTime();
-  console.log(timeLimit);
+  //console.log(timeLimit);
   temp = setInterval(updateTime, 1000); //Learn about this
   }
 
@@ -38,14 +39,14 @@ function updateTime(){
     //displaying the elapsed time
   formattedTime = minutesFormatted+":"+secondsFormatted;
    document.getElementById("label").innerHTML = formattedTime;
-   console.log("minutes value : "+minutes);
-   console.log("time Limit is "+timeLimit);
-   if (minutes >= timeLimit) {
+   //console.log("minutes value : "+minutes);
+   //console.log("time Limit is "+timeLimit);
+   if (minutes >= checkMinutes && seconds >=checkSeconds) {
      document.getElementById("clock").className = "timeIsUp";
      console.log("Time is Up");
    } else {
      document.getElementById("clock").className = "timer";
-     console.log("It's Ticking");
+     //console.log("It's Ticking");
    }
 }
 
@@ -61,7 +62,13 @@ function enterTime(){
     // 13 is the code for ENTER
     if (evt.keyCode === 13) {
       timeLimit = document.getElementById("label").innerHTML;
-      console.log(timeLimit);
+      //timeLimit = Number(timeLimit);//convert string into number.
+      var timeLimitArray = timeLimit.split(":");//splitting the 1:04 into 1 and 4
+      checkMinutes = parseInt(timeLimitArray[0]); //taking the minutes
+      checkSeconds = parseInt(timeLimitArray[1]);//taking the seconds
+      //console.log(timeLimit);
+      console.log(checkMinutes);
+      console.log(checkSeconds);
       document.getElementById("label").contentEditable="false";
       startTimer();
 
