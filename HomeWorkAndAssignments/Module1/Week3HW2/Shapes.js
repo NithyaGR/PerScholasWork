@@ -9,7 +9,7 @@ class Circle{
   }
 //This is  a function called circle_area that returns the area of the object.
   circle_area(){
-    return 3.14 * this.radius * this.radius;
+    return Math.PI * this.radius * this.radius;
   }
 // This is a function total_sides that returns the number of sides of the object.
   total_sides(){
