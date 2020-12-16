@@ -16,10 +16,23 @@ constructor(name, age, color, legs, superPower){
   this.superPower = superPower;
 }
 userSuperPower(){
-  
+  console.log(this.superPower);
+
+}
+speak(sound){
+  console.log("I say "+sound);
+}
+run(){
+  console.log("I walk and run");
 }
 
 
 }
 var cow = new Animal("Lux", 5, "Brown",4,"Gives Milk to Humans");
-var elphant = new Animal("Gaj", 10, "Black", 4, "It can lift logs");
+var elephant = new Animal("Gaj", 10, "Black", 4, "It can lift logs");
+cow.userSuperPower();
+cow.speak("Moo");
+cow.run();
+elephant.userSuperPower();
+elephant.speak("woooo!");
+elephant.run();
