@@ -1,0 +1,46 @@
+Go to http://dummy.restapiexample.com/ (Links to an external site.)
+Identify all the HTTP methods for this API:
+	GET, POST, PUT, DELETE
+Identify the differences in their URLs:
+	Each method with an employee id
+What are different types of Web Services?
+(A web service is a collection of open protocols and standards used for exchanging data between applications or systems.)
+	•	Web template
+	•	SON-RPC
+	•	JSON-WSP
+	•	Web Services Description Language (WSDL)
+	•	Web Services Conversation Language (WSCL)
+	•	Web Services Flow Language (WSFL)
+	•	Web Services Metadata Exchange (WS-MetadataExchange)
+	•	XML Interface for Network Services (XINS)
+What are disadvantages of SOAP Web Services?
+	•	Difficult set-up
+	•	more convoluted coding
+	•	harder to develop.
+	•	SOAP requires more bandwidth for its usage.
+	•	SOAP can only work with XML format.
+What are disadvantages of REST web services?
+	•	Point-to-point communication
+	•	 lack of standards
+What are different HTTP Methods supported in Restful Web Services?
+	•	POST, GET, PUT, PATCH, and DELETE. These correspond to create, read, update, and delete (or CRUD) operations, respectively.
+What is JAX-RS API?
+	•	JAX-RS stands for JAVA API for RESTful Web Services. JAX-RS is a JAVA based programming language API and specification to provide support for created RESTful Web Services.
+Create a URI for the different Http Verbs for a School.
+	url/home/
+	url/admin/post
+	url/admin/put
+	url/admin/patch
+	url/admin/get
+	url/admin/delete
+
+
+Sources:
+https://www.cleo.com/blog/knowledge-base-web-services
+https://smartbear.com/blog/test-and-monitor/soap-vs-rest-whats-the-difference/
+https://www.tutorialspoint.com/webservices/what_are_web_services.htm
+https://www.tutorialspoint.com/restful/restful_methods.htm
+https://www.guru99.com/comparison-between-web-services.html
+https://blog.dreamfactory.com/microservices-vs-web-services/#:~:text=A%20microservice%20is%20a%20small,applications%20running%20on%20different%20platforms
+https://www.tutorialspoint.com/restful/restful_jax_rs.htm
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods

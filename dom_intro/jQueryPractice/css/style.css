@@ -1,0 +1,11 @@
+
+.blue {
+  background-color: blue;
+}
+.square{
+  width: 100px;
+  height: 100px;
+  margin-left: 20px;
+  background-color: red;
+  display: flex;
+}
