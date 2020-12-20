@@ -1,0 +1,12 @@
+
+.label {
+
+}
+.buttons {
+  margin-left: 50px;
+  value: "Toggle Police Response";
+  text-align: center;
+  text: Toggle Police Response;
+  width: auto;
+  height: 20px;
+}
