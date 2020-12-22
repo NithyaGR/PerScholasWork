@@ -141,12 +141,15 @@ $(() => {
                            buttons.setAttribute("id", id);
                            buttons.setAttribute("type", "submit");
                            buttons.setAttribute("value", "Toggle Police Response");
-                           // $('body').on('click', '#id1', function() {
-                           //   console.log("Clicked");
-                           //    alert("blabla");
-                           // });
+                           $('table').on('click', 'td', function() {
+                             console.log("Clicked");
+                              alert("blabla");
+                           });
+                           buttons.
                            //console.log(data[i].resolution_description));
                            td.appendChild(buttons);//check
+                           //table.cell( i, j).data( 'Updated' ).draw();
+                           table.getCell(( i, j )).innerHTML = "Working";
                          }
 
                          tr.appendChild(td);
