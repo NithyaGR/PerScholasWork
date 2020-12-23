@@ -2,8 +2,9 @@ const toDoList = [];
 var doneList = [];
 
 
-const completeButton = "<button type = 'submit'> COMPLETED </button>";
+const completeButton = "<input type = 'submit' value= 'COMPLETED'>";
 const removeButton = "<br> <button type = 'submit'> REMOVE </button>";
+
 
 
 $('form').on('submit', (event) => {
@@ -14,21 +15,17 @@ $('form').on('submit', (event) => {
 
   render();
 });
-
-
-
 const render = ()=>{
   console.log("render");
+  var counter=0;
   //$('ul').empty(); // This will empty the previous list and add items only once while using for each to add the list
     $('ul').append('<div class="toDoMini"> <li>'+ toDoList[toDoList.length-1] +'</li> <br>'+ completeButton+ '</div>');
-    //console.log(toDoList.indexOf(toDoList.length-1));
+
+    $(completeButton).attr("id", "id_" + counter); // setting id to button
     console.log(completeButton);
-    // var Removed = completeButton.parentNode;
-    // console.log(Removed);
-    console.log($('li').text());
-    $('li').on('click', (event) =>{ //this learn from the team to click the button
-       //console.log($(this).val());
-        //$(event.currentTarget).css('text-decoration','line-through');
+    // console.log(completeButton.attr('id'));
+    $('li').on('click', (event) => { //this learn from the team to click the button
+
         $(event.currentTarget).css('text-decoration','line-through');
 
         var item = $(event.currentTarget).text();
@@ -40,8 +37,8 @@ const render = ()=>{
         console.log(toDoList);
         var parent = $(event.currentTarget).parent();
         console.log(parent);
+        parent.toggleClass('doneMini');
         parent.hide();
-        //$(event.currentTarget).hide();
 
   });
 

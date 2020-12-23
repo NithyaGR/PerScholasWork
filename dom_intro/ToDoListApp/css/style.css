@@ -18,6 +18,8 @@ form{
 }
 
 .toDoMini {
+      display: grid;
+      grid-template-rows: auto;
       margin-left: : 200px;
       margin-top: 20px;
       height: 100px;
@@ -35,15 +37,19 @@ form{
       border-radius: 5px;
 
 }
-/* #ED6495 */
+#listDiv{
+  width: 30%;
+}
+/*  */
 
 .doneMini {
+      display: flex;
       margin-right: 200px;
-      margin-top: 80px;
+      margin-top: 20px;
       height: 100px;
       width: 200px;
       border-radius: 5px;
-      background-color: #0277bd;
+      background-color: #ED6495;
       font-family: Arial;
       text-align: center;
 }
