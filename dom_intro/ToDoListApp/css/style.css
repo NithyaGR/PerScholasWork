@@ -37,13 +37,33 @@ form{
       border-radius: 5px;
 
 }
-#listDiv{
+#bothList{
+  display: grid;
+  grid-template-columns: auto auto;
+}
+#toDoList{
+  width: 30%;
+}
+#doneList{
   width: 30%;
 }
 /*  */
+/* .doneListClass {
+  display: grid;
+  grid-template-columns:
+  margin-right: 200px;
+  margin-top: 20px;
+  height: 100px;
+  width: 200px;
+  border-radius: 5px;
+  background-color: #ED6495;
+  font-family: Arial;
+  text-align: center;
 
+} */
 .doneMini {
-      display: flex;
+      display: grid;
+      grid-template-columns:
       margin-right: 200px;
       margin-top: 20px;
       height: 100px;
@@ -52,4 +72,7 @@ form{
       background-color: #ED6495;
       font-family: Arial;
       text-align: center;
+}
+#doneUL button {
+
 }
