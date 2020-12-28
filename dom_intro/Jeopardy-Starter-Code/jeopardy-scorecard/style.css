@@ -1,3 +1,67 @@
 body{
     background: aquamarine;
 }
+
+.teams {
+  /* margin:auto; */
+  margin-left: 350px;
+  margin-top: 580px;
+  bottom: 0px;
+  height: 200px;
+  width: 330px;
+  border-radius: 5px;
+  background-color: white;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  text-align: center;
+  color: white;
+  font-size: 20px;
+}
+#team1 {
+    margin: auto;
+    height: 200px;
+    width: 100px;
+    border-radius: 5px;
+    background-color: blue;
+    text-align: center;
+}
+#team2 {
+    margin: auto;
+    height: 200px;
+    width: 100px;
+    border-radius: 5px;
+    background-color: blue;
+    text-align: center;
+}
+#team3 {
+    margin: auto;
+    height: 200px;
+    width: 100px;
+    border-radius: 5px;
+    background-color: blue;
+    text-align: center;
+}
+button{
+
+  width: 45px;
+  height: 45px;
+  font-size: 30px;
+  margin-bottom: 0px;
+}
+.increment{
+  margin-left: auto;
+
+}
+.decrement{
+  margin-right: auto;
+
+}
+.score1{
+  height: 70px;
+}
+.score2{
+  height: 70px;
+}
+.score3{
+  height: 70px;
+}

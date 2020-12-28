@@ -66,6 +66,7 @@
     right: 0px;
     z-index: 5;
   }
+
   .board .row .tile.active .question-value {
     display: none;
   }
@@ -89,3 +90,71 @@
       font-family: Arial;
       cursor: pointer;
   }
+.ModalReveal {
+      background-color: green;
+      display:none;
+}
+/* Score card */
+.teams {
+  margin: auto;
+  /* margin-left: 350px;
+  margin-top: 580px; */
+  height: 150px;
+  width: 330px;
+  border-radius: 5px;
+  background-color: white;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  font-family: inherit;
+}
+#team1 {
+    margin: auto;
+    height: 200px;
+    width: 100px;
+    border-radius: 5px;
+    background-color: blue;
+    text-align: center;
+}
+#team2 {
+    margin: auto;
+    height: 200px;
+    width: 100px;
+    border-radius: 5px;
+    background-color: blue;
+    text-align: center;
+}
+#team3 {
+    margin: auto;
+    height: 200px;
+    width: 100px;
+    border-radius: 5px;
+    background-color: blue;
+    text-align: center;
+}
+.increment{
+  margin-left: auto;
+  margin-bottom: 2px;
+  width: 25px;
+  height: 25px;
+  font-size: 20px;
+}
+.decrement{
+  margin-right: auto;
+  margin-bottom: 2px;
+  width: 25px;
+  height: 25px;
+  font-size: 20px;
+
+}
+.score1{
+  height: 50px;
+}
+.score2{
+  height: 50px;
+}
+.score3{
+  height: 50px;
+}
