@@ -2,6 +2,8 @@ var targetHitStatus;
 var alienShipsDestroyed = 0;
 var activeAttacker, opponent;
 var retreat;
+var noOfAlienShips;
+var alienSpaceShips = [];
 $( () => {
 
       //Creating an object USS Schwarzenegger and initialising it with hull, firepower and accuracy
@@ -11,52 +13,64 @@ $( () => {
       //hull - between `3` and `6` * firepower - between `2` and `4` * accuracy - between `.6` and `.8`
 
       const alienShip1 = new SpaceBattleShip(4, 3, 0.6, "spaceArmada001","Aliens");
-      // const alienShip2 = new AlienSpaceShip(hull, firepower, accuracy);
-      // const alienShip3 = new AlienSpaceShip(hull, firepower, accuracy);
-      // const alienShip4 = new AlienSpaceShip(hull, firepower, accuracy);
-      // const alienShip5 = new AlienSpaceShip(hull, firepower, accuracy);
-      activeAttacker = USSS;
-      opponent = alienShip1;
-      while(opponent.hull>0){
-        targetHitStatus = attack(activeAttacker, opponent); /*fetching the result of the attack's status*/
-        alert(activeAttacker.name+" attack is "+targetHitStatus);
-        console.log(targetHitStatus);
-        console.log(opponent.hull);
-        if(targetHitStatus == "failure"){
-            console.log(activeAttacker.name);
-            console.log(opponent.name);
-            swapFighters(activeAttacker, opponent);
-            console.log(activeAttacker.name);
-            console.log(opponent.name);
-            targetHitStatus = attack(activeAttacker, opponent);
-        }
-      }
-      console.log(`activeAttacker is ${activeAttacker.name} and the opponent is ${opponent.name}`);
-      if(opponent.name != "USSS1"){ /*if the active fighter is USSS1 and won the attack, then alienship is destroyed */
-            alienShipsDestroyed++;
-            console.log(alienShipsDestroyed);
-            if(alienShipsDestroyed == 2){ /*last alien ship destroyed */
-                alert(" Battle Over!! "+activeAttacker.name+ "won the Battle!!");
-                console.log("Game over!");
-                console.log("USSS1 won the battle");
-            } else {
-                    console.log("You want to retreat?");
-                    retreat = prompt("You want to retreat?", "yes");
-                    if(retreat == "yes"){
-                      alert(" Battle Over!! "+activeAttacker.name+ "retreat the Battle!!")
-                      console.log("Game over!");
-                      console.log("USSS1 retreat the battle");
-                    }
-                    else {
-                      alert("Start the Battle with the next Space Ship");
-                      console.log("Start Over"); //write th code here
-                    }
-            }
-      } else {
-        console.log("USSS1 destoyed! You lost the battle");
-        alert("USSS1 destoyed! You lost the battle!!!")
-      }
+      const alienShip2 = new SpaceBattleShip(4, 3, 0.6, "spaceArmada002","Aliens");
+      const alienShip3 = new SpaceBattleShip(4, 3, 0.6, "spaceArmada003","Aliens");
+      const alienShip4 = new SpaceBattleShip(4, 3, 0.6, "spaceArmada004","Aliens");
+      const alienShip5 = new SpaceBattleShip(4, 3, 0.6, "spaceArmada005","Aliens");
+      const alienShip6 = new SpaceBattleShip(4, 3, 0.6, "spaceArmada006","Aliens");
 
+      alienSpaceShips = [alienShip1, alienShip2, alienShip3, alienShip4, alienShip5, alienShip6];
+      noOfAlienShips = alienSpaceShips.length;
+      activeAttacker = USSS;
+      //opponent = alienShip1;
+      opponent = alienSpaceShips[0];
+      spaceBattleLoop:
+      for(let i=0; i<noOfAlienShips; i++){
+            activeAttacker = USSS;
+            opponent = alienSpaceShips[i];
+            while(opponent.hull>0){
+                  targetHitStatus = attack(activeAttacker, opponent); /*fetching the result of the attack's status*/
+                  alert(activeAttacker.name+"'s attack " + (i+1) + " is "+targetHitStatus);
+                  console.log(targetHitStatus);
+                  console.log(opponent.hull);
+                  if(targetHitStatus == "failure"){
+                      console.log(activeAttacker.name);
+                      console.log(opponent.name);
+                      swapFighters(activeAttacker, opponent);
+                      console.log(activeAttacker.name);
+                      console.log(opponent.name);
+                      targetHitStatus = attack(activeAttacker, opponent);
+                  }
+                }//while loop
+
+                console.log(`activeAttacker is ${activeAttacker.name} and the opponent is ${opponent.name}`);
+                if(opponent.name != "USSS1"){ /*if the active fighter is USSS1 and won the attack, then alienship is destroyed */
+                      alienShipsDestroyed++;
+                      console.log(alienShipsDestroyed);
+                      if(alienShipsDestroyed == noOfAlienShips){ /*last alien ship destroyed */
+                          alert(" Battle Over!! "+activeAttacker.name+ " won the Battle!!");
+                          console.log("Game over!");
+                          console.log(activeAttacker.name+ "won the battle");
+                      } else {
+                              console.log("You want to retreat?");
+                              retreat = prompt("You destroyed "+(i+1)+" alien ship! Your hull count is: "+activeAttacker.hull+" Do you want to retreat?", "yes");
+                              if(retreat == "yes"){
+                                    alert(" Battle Over!! "+activeAttacker.name+ " retreat the Battle!!")
+                                    console.log("Game over!");
+                                    console.log("USSS1 retreat the battle");
+                                    break spaceBattleLoop;
+                              }
+                              // else {
+                              //   alert("Start the Battle with the next Space Ship");
+                              //   console.log("Start Over"); //write th code here
+                              // }
+                       }
+                } else {
+                  console.log("USSS1 destoyed! You lost the battle");
+                  alert("USSS1 destoyed! You lost the battle!!!");
+                  break spaceBattleLoop;
+                }
+      }//for loop
 });
 
 /*
