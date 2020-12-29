@@ -19,6 +19,7 @@ $( () => {
       opponent = alienShip1;
       while(opponent.hull>0){
         targetHitStatus = attack(activeAttacker, opponent); /*fetching the result of the attack's status*/
+        alert(activeAttacker.name+" attack is "+targetHitStatus);
         console.log(targetHitStatus);
         console.log(opponent.hull);
         if(targetHitStatus == "failure"){
@@ -35,21 +36,25 @@ $( () => {
             alienShipsDestroyed++;
             console.log(alienShipsDestroyed);
             if(alienShipsDestroyed == 2){ /*last alien ship destroyed */
+                alert(" Battle Over!! "+activeAttacker.name+ "won the Battle!!");
                 console.log("Game over!");
                 console.log("USSS1 won the battle");
             } else {
-              console.log("You want to retreat?");
+                    console.log("You want to retreat?");
                     retreat = prompt("You want to retreat?", "yes");
                     if(retreat == "yes"){
+                      alert(" Battle Over!! "+activeAttacker.name+ "retreat the Battle!!")
                       console.log("Game over!");
                       console.log("USSS1 retreat the battle");
                     }
                     else {
-                      console.log("Start Over");
+                      alert("Start the Battle with the next Space Ship");
+                      console.log("Start Over"); //write th code here
                     }
             }
       } else {
         console.log("USSS1 destoyed! You lost the battle");
+        alert("USSS1 destoyed! You lost the battle!!!")
       }
 
 });
@@ -91,11 +96,12 @@ $( () => {
        */
       var targetHit;
       activeAttacker.damageToBeMade = Math.random();
-      console.log("Active Attacker's hit damage is : "+activeAttacker.damageToBeMade);
+      console.log(activeAttacker.name+"'s hit damage is : "+activeAttacker.damageToBeMade);
+      console.log(activeAttacker.name+"'s accuracy is : "+activeAttacker.accuracy);
       if(activeAttacker.damageToBeMade <= activeAttacker.accuracy){
         targetHit = "successful";
         opponent.hull = opponent.hull - activeAttacker.firepower;
-        console.log("Opponent hull count is : "+opponent.hull);
+        console.log(opponent.name+"'s hull count is : "+opponent.hull);
       } else {
           targetHit = "failure";
 
