@@ -9,8 +9,8 @@ class done {
 
 }
 
-var toDoList = [];
-var doneList = [];
+var toDoList = []; //list of to do things
+var doneList = []; // done list of things
 const completeButton = "<input type = 'submit' value= 'COMPLETED'>";
 const removeButton = "<input type = 'submit' value= 'REMOVE'>";
 $('form').on('submit', (event) => {
@@ -24,7 +24,9 @@ const render = ()=>{
 
     // Instead of adding event listeners to every li tag all at once, we add it to this newly created one only
     // We target divs with class of toDoMini, focus on the last in the returned collection, and then focus further on it's li child
-    let newlyAddedLi = $('.toDoMini').last().children('li');//
+    let newlyAddedLi = $('.toDoMini').last().children('li');//.eq()
+    //let newlyAddedLi = $("li").eq(0).last().children();
+    //let newlyAddedLi = $('.toDoMini').eq(1);
     //let newlyAddedLi = $('.toDoMini').last().children('input');
     console.log(newlyAddedLi);
     $(newlyAddedLi).on('click', eventClickFunction);
@@ -33,7 +35,7 @@ const createDoneSection = (someElement) =>{
   $('#doneUL').append('<div class="doneMini"> <li>'+ someElement +'</li> <br>'+ removeButton+ '</div>');
 
   let newlyAddedLi = $('.doneMini').last().children('li');
-  //let newlyAddedLi = $('.doneMini').last().children('input');
+
   console.log(newlyAddedLi);
   // Notice that we also add an event handler on the newly appended li tag
   // Previously, the event handlers were only being applied after user clicked the "Add" button
