@@ -51,8 +51,3 @@ $(() => {
         $("#"+currentElementId).toggle();
       }
 })
-/* Points to remember
- * In the td adding 2 divs helped in separating the elements within the td
- * avoiding another onclick event listener after the button is removes confusion
- * instead used another function called response to handle that event.
- */
