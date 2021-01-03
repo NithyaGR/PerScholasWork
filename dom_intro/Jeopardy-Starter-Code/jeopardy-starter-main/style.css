@@ -74,7 +74,7 @@
   .board .row .tile.active .question {
     display: block;
     font-family: verdana;
-    font-size: 70px;
+    font-size: 30px;
   }
 
   .board .row .tile.active .question-answer {

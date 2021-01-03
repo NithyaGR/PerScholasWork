@@ -1,8 +1,6 @@
 var currentScorePoint;
 $(()=>{
 
-      // const $tiles = $('.tile').on('click', (event)=>{
-      // $(event.currentTarget).toggleClass('active');
       const team1 = new Team('team1', $('#team1')).setup();
       const team2 = new Team('team2', $('#team2')).setup();
       const team3 = new Team('team3', $('#team3')).setup();
@@ -10,36 +8,51 @@ $(()=>{
       const tiles = $('.tile');
       $(tiles).on('click', eventClickFunction);
       const btn = $('button'); //creating variable btn to grab the element button
-      //$('button').on('click', eventClickFunction);
-
-      $(btn).on('click', (event)=>{
-
-          $('.question .question-answer').show();
-          currentScorePoint = $('.board .row .tile.active .question-value').text();
-          /* The above text is $100, we need without $, so make substring and fetch only the number,
-           * and then convert from text into number
-           */
-          currentScorePoint = Number(currentScorePoint.substring(1,4));
-          console.log(currentScorePoint);
-          $('.board .row .tile.active .question-value').text("");//to change value to null so that we know it's taken already
-          revealAnswer();// test1
-          event.preventDefault();//The event.preventDefault() method stops the default action of an element from happening.
-          //$('.board .row .tile.active .question-value').off('click'); didn't work
-          //console.log( event.isDefaultPrevented());//to check whether the preventDefault() method was called for the event
-      });
+      //to avoid the same click event on the same form - calling a different function.
+      $(btn).on('click', revealAnswer);
     })
 
-// $('button').on('click', (event)=>{
-  // $('.question-answer').css('display': 'block');
 const eventClickFunction = (event) =>{
-  var currentElement = $(event.currentTarget).attr("id");
-  console.log(currentElement);
-  $(event.currentTarget).toggleClass('active');
+  // var currentElement = $(event.currentTarget).attr("id");
+  // console.log(currentElement);
+  // var textValue = $('.board .row .tile.active .question-value').text();
+  // console.log(textValue);
+  //$('.question .question-answer').hide();
+  // if (textValue !== null){
+  //   $('.question .question-answer').hide();
+  // }
+  console.log(event.target.nodeName);
+  //if you click the answer key, it shouldn't go back to the main page.
+  if(event.target.nodeName !== "BUTTON"){
+      $(event.currentTarget).toggleClass('active');
+  }
+
 };
 
 //test1
 const revealAnswer = () =>{
-  $('.ModalReveal').css('display', 'block');
+  console.log("revealAnswer");
+  console.log(event.target.nodeName);
+  var className = $(event.currentTarget).attr("class");
+  console.log(className);
+  if(className == "answer-buttons") {
+            var idButton = $(event.currentTarget).attr("id");//grabbing the id to reveal only the curent answer.
+            id= idButton.substring(6); //to fetch the number from the answer button id ex-answer6 => 6 which is the id of answer div
+            console.log(id);
+            $("#"+id).show();
+             currentScorePoint = $('.board .row .tile.active .question-value').text();
+            /* The above text is $100, we need without $, so make substring and fetch only the number,
+             * and then convert from text into number
+             */
+            currentScorePoint = Number(currentScorePoint.substring(1,4));
+            console.log(currentScorePoint);
+            $('.board .row .tile.active .question-value').text("");//to change value to null so that we know it's taken already
+            //revealAnswer();// test1
+            event.preventDefault();//The event.preventDefault() method stops the default action of an element from happening.
+            //$('.board .row .tile.active .question-value').off('click'); didn't work
+            //console.log( event.isDefaultPrevented());//to check whether the preventDefault() method was called for the event
+            $("#"+idButton).remove();
+      }
 }
 /*
  * The below codes for score card display

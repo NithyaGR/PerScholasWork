@@ -15,133 +15,219 @@
 <div>
     <div class="board">
       <div class="row categories">
-        <div class="tile">Variables</div>
-        <div class="tile">if else</div>
-        <div class="tile">Arrays</div>
-        <div class="tile">OOPs</div>
-        <div class="tile">JQuery</div>
+            <div class="tile">Variables</div>
+            <div class="tile">if else</div>
+            <div class="tile">Arrays</div>
+            <div class="tile">OOPs</div>
+            <div class="tile">JQuery</div>
       </div>
       <div class="row clues">
-        <div class="tile" id="tile1">
-          <div class="question-value">$100</div>
-          <div class="question">Define a variable called age, and assign a value 10 to it. Provide the Syntax.
-          <button id="answer" class="answer-buttons" href="#">answer</button>
-          <div class="question-answer">var age = 10; </div>
-          <!--  If you define div next to question-value, under tiles, it's displayed next, or it's displayed down -->
-        </div>
-        </div>
-
-        <div class="tile">
-          <div class="question-value">$100</div>
-          <div class="question">var x=10; if(condition!="true"){
-            //some code
-          } Will this block of code execute if the expression is x>=10 ?
-          <button id="answer1" class="answer-buttons" href="#">answer</button>
-          <div class="question-answer">No, as x>=10, the expression is true. </div>
-        </div>
+            <div class="tile" id="tile1">
+              <div class="question-value">$100</div>
+                  <div class="question">Define a variable called age, and assign a value 10 to it. Provide the Syntax.
+                      <button id="answer1" class="answer-buttons" href="#">answer</button>
+                      <div id="1" class="question-answer">var age = 10; </div>
+                      <!--  If you define div next to question-value, under tiles, it's displayed next, or it's displayed down -->
+                  </div>
+            </div>
+            <div class="tile">
+              <div class="question-value">$100</div>
+                  <div class="question">var x=10; if(condition!="true"){
+                    //some code
+                    } Will this block of code execute if the expression is x>=10 ?
+                      <button id="answer2" class="answer-buttons" href="#">answer</button>
+                      <div id="2" class="question-answer">No, as x>=10, the expression is true. </div>
+                  </div>
+            </div>
+            <div class="tile">
+                  <div class="question-value">$100</div>
+                  <div class="question"> Declare an array to store odd nos from 1 to 10.
+                      <button id="answer3" class="answer-buttons" href="#">answer</button>
+                      <div id="3" class="question-answer">var oddNos=[1,3,5,7,9]; </div>
+                </div>
+            </div>
+            <div class="tile">
+                  <div class="question-value">$100</div>
+                  <div class="question"> How many ways you can create an object in Java Script?
+                      <button id="answer4" class="answer-buttons" href="#">answer</button>
+                      <div id="4" class="question-answer">4 ways. 1.Using object literals 2. Using constructor and new keyword. 3. Using methds.
+                      4. Using Object.create() method. </div>
+                  </div>
+            </div>
+            <div class="tile">
+                  <div class="question-value">$100</div>
+                  <div class="question"> What is Jquery?
+                      <button id="answer5" class="answer-buttons" href="#">answer</button>
+                      <div id="5" class="question-answer">jQuery is an efficient & fast JavaScript Library. </div>
+                  </div>
+            </div>
       </div>
-        <div class="tile">
-          <div class="question-value">$100</div>
-          <div class="question"> Declare an array to store odd nos from 1 to 10.
-          <button id="answer1" class="answer-buttons" href="#">answer</button>
-          <div class="question-answer">var oddNos=[1,3,5,7,9]; </div>
-        </div>
+      <div class="row clues">
+           <div class="tile">
+              <div class="question-value">$200</div>
+              <div class="question"> What are the different types of variables you can declare in Java Script?
+                        <button id="answer6" class="answer-buttons" href="#">answer</button>
+                        <div id="6" class="question-answer">var, let and const </div>
+              </div>
+           </div>
+           <div class="tile">
+              <div class="question-value">$200</div>
+                    <div class="question"> what does the else part of the if-else statement do?
+                    <button id="answer7" class="answer-buttons" href="#">answer</button>
+                    <div id="7" class="question-answer">if the condition fails, the else part of the code will be executed. </div>
+              </div>
+           </div>
+           <div class="tile">
+                    <div class="question-value">$200</div>
+                    <div class="question"> How to find the no of elements in an array?
+                          <button id="answer8" class="answer-buttons" href="#">answer</button>
+                          <div id="8" class="question-answer">Using nameOfArray.length  </div>
+                    </div>
+           </div>
+           <div class="tile">
+                   <div class="question-value">$200</div>
+                   <div class="question"> How to create an object of a class using new key word?
+                         <button id="answer9" class="answer-buttons" href="#">answer</button>
+                         <div id="9" class="question-answer">const myCar = new Car(); </div>
+                   </div>
+           </div>
+           <div class="tile">
+                  <div class="question-value">$200</div>
+                  <div class="question"> How to select an element <p> using jQuery?
+                        <button id="answer10" class="answer-buttons" href="#">answer</button>
+                        <div id="10" class="question-answer">var mytarget = $('p').  </div>
+                  </div>
+           </div>
       </div>
+      <div class="row clues">
+           <div class="tile">
+                  <div class="question-value">$300</div>
+                  <div class="question"> What is the diffenence between var and const?
+                        <button id="answer11" class="answer-buttons" href="#">answer</button>
+                        <div id="11" class="question-answer">If a variable declared as const - constant
+                        - the value stored in it cannot be changed.  </div>
+                  </div>
+           </div>
+           <div class="tile">
+                   <div class="question-value">$300</div>
+                   <div class="question"> What is a loop?
+                         <button id="answer12" class="answer-buttons" href="#">answer</button>
+                         <div id="12" class="question-answer">loop is a control flow statement that iterates
+                           a part of the programs multiple times or on the basis of the given boolean condition. </div>
+                   </div>
+           </div>
+           <div class="tile">
+                  <div class="question-value">$300</div>
+                  <div class="question"> How to print all the elements of given array var myArray = [1,2,3,56,54,32]?
+                        <button id="answer13" class="answer-buttons" href="#">answer</button>
+                        <div id="13" class="question-answer"> console.log(myArray) </div>
+                  </div>
+           </div>
+           <div class="tile">
+                 <div class="question-value">$300</div>
+                 <div class="question"> What are the constructors for?
+                       <button id="answer14" class="answer-buttons" href="#">answer</button>
+                       <div id="14" class="question-answer"> Constructors are for initialising an object. </div>
+                 </div>
+           </div>
+           <div class="tile">
+                <div class="question-value">$300</div>
+                <div class="question"> What are the constructors for?
+                      <button id="answer15" class="answer-buttons" href="#">answer</button>
+                      <div id="15" class="question-answer"> Constructors are for initialising an object. </div>
+                </div>
+           </div>
+      </div>
+      <div class="row clues">
         <div class="tile">
-          <div class="question-value">$100</div>
-          <div class="question-answer">This is the answer.</div>
+             <div class="question-value">$400</div>
+             <div class="question"> The difference between the var and let?
+                   <button id="answer16" class="answer-buttons" href="#">answer</button>
+                   <div id="16" class="question-answer"> var and let are both used for variable
+                   declaration in javascript but the difference between them is that var is function scoped and let is block scoped.  </div>
+             </div>
         </div>
         <div class="tile">
-          <div class="question-value">$100</div>
-          <div class="question-answer">This is the answer.</div>
+             <div class="question-value">$400</div>
+             <div class="question"> The difference between the for loop and while loop?
+                   <button id="answer17" class="answer-buttons" href="#">answer</button>
+                   <div id="17" class="question-answer"> When we know the no. of iterations we prefer for loop,
+                     otherwise we'll go for while loops </div>
+             </div>
+        </div>
+        <div class="tile">
+             <div class="question-value">$400</div>
+             <div class="question"> var oddNos = [1,3,5]; How to add 7 to this array?
+                   <button id="answer18" class="answer-buttons" href="#">answer</button>
+                   <div id="18" class="question-answer"> oddNos.push(7); </div>
+             </div>
+        </div>
+        <div class="tile">
+             <div class="question-value">$400</div>
+             <div class="question"> What are interfaces? How many object can you create for an interface?
+                   <button id="answer19" class="answer-buttons" href="#">answer</button>
+                   <div id="19" class="question-answer"> Interfaces are blueprints for classes. Interfaces
+                     cannot be instantiated. (i.e) we can not create an object of interfaces </div>
+             </div>
+        </div>
+        <div class="tile">
+             <div class="question-value">$400</div>
+             <div class="question"> Name some of the jquery methds.
+                   <button id="answer20" class="answer-buttons" href="#">answer</button>
+                   <div id="20" class="question-answer"> before(), after(), text(), html(), css(),
+                   attr(),val(), addClass(),removeClass(), toggleClass </div>
+             </div>
         </div>
       </div>
       <div class="row clues">
         <div class="tile">
-          <div class="question-value">$200</div>
-          <div class="question-answer">This is the answer.</div>
+             <div class="question-value">$500</div>
+             <div class="question"> function grade(){
+                                         var marks = 95;
+                                             function printAssignmentsMarks(){
+                                               var marks = 100;
+                                               cosole.log(marks);
+                                             }
+                                         console.log(marks);  ----(1)
+                                         printAssignmentsMarks(); --(2)
+                                       }
+                                       grade(); ---(3)
+                                       What are the outputs?
+                   <button id="answer21" class="answer-buttons" href="#">answer</button>
+                   <div id="21" class="question-answer">95 on line 1, 100 on line 2, 95,100 on line 3  </div>
+             </div>
         </div>
         <div class="tile">
-          <div class="question-value">$200</div>
-          <div class="question-answer">This is the answer.</div>
+             <div class="question-value">$500</div>
+             <div class="question"> What is the diiference between while loop and do while loop?
+                   <button id="answer22" class="answer-buttons" href="#">answer</button>
+                   <div id="22" class="question-answer">do while loop will be executed at least once
+                   even if the condtion is false, where as in while loop, block code inside loop won't be executed.</div>
+             </div>
         </div>
         <div class="tile">
-          <div class="question-value">$200</div>
-          <div class="question-answer">This is the answer.</div>
+             <div class="question-value">$500</div>
+             <div class="question"> What is the diiference between splice and slice?
+                   <button id="answer23" class="answer-buttons" href="#">answer</button>
+                   <div id="23" class="question-answer">array.splice(), will return an array of removed elements, and change
+                     the original array. array.slice() won't change the origial array. </div>
+             </div>
         </div>
         <div class="tile">
-          <div class="question-value">$200</div>
-          <div class="question-answer">This is the answer.</div>
+             <div class="question-value">$500</div>
+             <div class="question"> How to create a sub class?
+                   <button id="answer24" class="answer-buttons" href="#">answer</button>
+                   <div id="24" class="question-answer"> By using the keyword extends </div>
+             </div>
         </div>
         <div class="tile">
-          <div class="question-value">$200</div>
-          <div class="question-answer">This is the answer.</div>
-        </div>
-      </div>
-      <div class="row clues">
-        <div class="tile" onclick="toggleActive(this)">
-          <div class="question-value">$300</div>
-          <div class="question-answer">This is the answer.</div>
-        </div>
-        <div class="tile" onclick="toggleActive(this)">
-          <div class="question-value">$300</div>
-          <div class="question-answer">This is the answer.</div>
-        </div>
-        <div class="tile" onclick="toggleActive(this)">
-          <div class="question-value">$300</div>
-          <div class="question-answer">This is the answer.</div>
-        </div>
-        <div class="tile" onclick="toggleActive(this)">
-          <div class="question-value">$300</div>
-          <div class="question-answer">This is the answer.</div>
-        </div>
-        <div class="tile" onclick="toggleActive(this)">
-          <div class="question-value">$300</div>
-          <div class="question-answer">This is the answer.</div>
-        </div>
-      </div>
-      <div class="row clues">
-        <div class="tile" onclick="toggleActive(this)">
-          <div class="question-value">$400</div>
-          <div class="question-answer">This is the answer.</div>
-        </div>
-        <div class="tile" onclick="toggleActive(this)">
-          <div class="question-value">$400</div>
-          <div class="question-answer">This is the answer.</div>
-        </div>
-        <div class="tile" onclick="toggleActive(this)">
-          <div class="question-value">$400</div>
-          <div class="question-answer">This is the answer.</div>
-        </div>
-        <div class="tile" onclick="toggleActive(this)">
-          <div class="question-value">$400</div>
-          <div class="question-answer">This is the answer.</div>
-        </div>
-        <div class="tile" onclick="toggleActive(this)">
-          <div class="question-value">$400</div>
-          <div class="question-answer">This is the answer.</div>
-        </div>
-      </div>
-      <div class="row clues">
-        <div class="tile" onclick="toggleActive(this)">
-          <div class="question-value">$500</div>
-          <div class="question-answer">This is the answer.</div>
-        </div>
-        <div class="tile" onclick="toggleActive(this)">
-          <div class="question-value">$500</div>
-          <div class="question-answer">This is the answer.</div>
-        </div>
-        <div class="tile" onclick="toggleActive(this)">
-          <div class="question-value">$500</div>
-          <div class="question-answer">This is the answer.</div>
-        </div>
-        <div class="tile" onclick="toggleActive(this)">
-          <div class="question-value">$500</div>
-          <div class="question-answer">This is the answer.</div>
-        </div>
-        <div class="tile" onclick="toggleActive(this)">
-          <div class="question-value">$500</div>
-          <div class="question-answer">This is the answer.</div>
+          <!-- onclick="toggleActive(this)" -->
+            <div class="question-value">$500</div>
+            <div class="question"> What does the toggle method in JQuery do?
+                <button id="answer25" class="answer-buttons" href="#">answer</button>
+                <div id="25" class="question-answer"> The jQuery toggle() method is used to toggle between the hide() and show()
+                   method. It displays the hidden elements and hides the visible element. Refer the below syntax: </div>
+            </div>
         </div>
       </div>
       <div class="teams">
