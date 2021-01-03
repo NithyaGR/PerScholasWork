@@ -5,7 +5,8 @@ var retreat;
 var noOfAlienShips;
 var alienSpaceShips = [];
 $( () => {
-
+      //Keeping the back ground image -
+      //$('body').css('background-image','url("../img/Battle_of_Endor.png")');
       //Creating an object USS Schwarzenegger and initialising it with hull, firepower and accuracy
       const USSS = new SpaceBattleShip(20, 5, 0.7, "USSS1","Humans");
       //check whether name can be same as the USSS.name
@@ -24,15 +25,20 @@ $( () => {
       activeAttacker = USSS;
       //opponent = alienShip1;
       opponent = alienSpaceShips[0];
+      alert("Hi Captain! Your Ship Name is "+USSS.name+" And you are about to start the battle against evil Aliens! Good Luck!");
+      console.log('%c You are attacking Alien', 'font-size: 20px ; color: green');
       spaceBattleLoop:
       for(let i=0; i<noOfAlienShips; i++){
             activeAttacker = USSS;
             opponent = alienSpaceShips[i];
             while(opponent.hull>0){
                   targetHitStatus = attack(activeAttacker, opponent); /*fetching the result of the attack's status*/
-                  alert(activeAttacker.name+"'s attack " + (i+1) + " is "+targetHitStatus);
-                  console.log(targetHitStatus);
+                  alert(activeAttacker.name+"'s attack " + (i+1) + " was "+targetHitStatus);
+                  console.log("%c"+ activeAttacker.name +"'s attack "+" was "+ targetHitStatus, 'font-size: 20px; color: black');
+                  //console.log('%c Your Attack was ' + targetHitStatus, 'font-size: 40px');
+                  //console.log(targetHitStatus);
                   console.log(opponent.hull);
+                  console.log("%c"+ activeAttacker.name +"'s enemy hull "+" was "+ opponent.hull, 'font-size: 20px; color: black');
                   if(targetHitStatus == "failure"){
                       console.log(activeAttacker.name);
                       console.log(opponent.name);
@@ -41,6 +47,7 @@ $( () => {
                       console.log(opponent.name);
                       targetHitStatus = attack(activeAttacker, opponent);
                   }
+
                 }//while loop
 
                 console.log(`activeAttacker is ${activeAttacker.name} and the opponent is ${opponent.name}`);
@@ -49,28 +56,29 @@ $( () => {
                       console.log(alienShipsDestroyed);
                       if(alienShipsDestroyed == noOfAlienShips){ /*last alien ship destroyed */
                           alert(" Battle Over!! "+activeAttacker.name+ " won the Battle!!");
-                          console.log("Game over!");
-                          console.log(activeAttacker.name+ "won the battle");
+                          console.log("%c You won the Game! Game over!", 'font-size: 40px; color: green');
+                          console.log("%c Captain! "+ activeAttacker.name+ " won the battle! ", 'font-size: 40px; color: green');
                       } else {
                               console.log("You want to retreat?");
                               retreat = prompt("You destroyed "+(i+1)+" alien ship! Your hull count is: "+activeAttacker.hull+" Do you want to retreat?", "yes");
                               if(retreat == "yes"){
                                     alert(" Battle Over!! "+activeAttacker.name+ " retreat the Battle!!")
-                                    console.log("Game over!");
-                                    console.log("USSS1 retreat the battle");
+                                    console.log("%c Game over!",'font-size: 30px; color: blue');
+                                    console.log("%c You - USSS1 retreat the battle",'font-size: 30px; color: blue');
                                     break spaceBattleLoop;
                               }
+                              //for both the cancel click and no the battle continues
                               // else {
                               //   alert("Start the Battle with the next Space Ship");
                               //   console.log("Start Over"); //write th code here
                               // }
                        }
                 } else {
-                  console.log("USSS1 destoyed! You lost the battle");
-                  alert("USSS1 destoyed! You lost the battle!!!");
+                  console.log("%c USSS1 is destroyed! You lost the battle",'font-size: 30px; color: red');
+                  alert("USSS1 destroyed! You lost the battle!!!");
                   break spaceBattleLoop;
                 }
-      }//for loop
+      }//end of for loop
 });
 
 /*
@@ -110,12 +118,12 @@ $( () => {
        */
       var targetHit;
       activeAttacker.damageToBeMade = Math.random();
-      console.log(activeAttacker.name+"'s hit damage is : "+activeAttacker.damageToBeMade);
-      console.log(activeAttacker.name+"'s accuracy is : "+activeAttacker.accuracy);
+      console.log("%c"+activeAttacker.name+"'s hit damage is : "+activeAttacker.damageToBeMade, 'font-size: 30px; color: red');
+      console.log("%c"+activeAttacker.name+"'s accuracy is : "+activeAttacker.accuracy, 'font-size: 30px; color: red');
       if(activeAttacker.damageToBeMade <= activeAttacker.accuracy){
         targetHit = "successful";
         opponent.hull = opponent.hull - activeAttacker.firepower;
-        console.log(opponent.name+"'s hull count is : "+opponent.hull);
+        console.log("%c"+opponent.name+"'s hull count is : "+opponent.hull, 'font-size: 30px; color: red');
       } else {
           targetHit = "failure";
 
