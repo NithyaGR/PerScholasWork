@@ -5,8 +5,7 @@ var retreat;
 var noOfAlienShips;
 var alienSpaceShips = [];
 $( () => {
-      //Keeping the back ground image -
-      //$('body').css('background-image','url("../img/Battle_of_Endor.png")');
+      
       //Creating an object USS Schwarzenegger and initialising it with hull, firepower and accuracy
       const USSS = new SpaceBattleShip(20, 5, 0.7, "USSS1","Humans");
       //check whether name can be same as the USSS.name
