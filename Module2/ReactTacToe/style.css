@@ -39,12 +39,12 @@ body {
 }
 .playersDiv {
   margin: auto;
-  display: flex;
+  /* display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  /* display: grid;
+  justify-content: space-around; */
+  display: grid;
   grid-template-columns: auto auto;
-  grid-gap: 50%; */
+  grid-gap: 50%;
 }
 
 .board {
@@ -71,7 +71,7 @@ h4 {
 }
 
 .X, .O {
-  /* margin: auto; 
+  /* margin: auto;
   flex-basis: 50%;
   text-align: center;
   justify-content: center;

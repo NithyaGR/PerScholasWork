@@ -1,0 +1,77 @@
+
+/* <MainTopElements className="reviews" />
+<MainTopElements className="averageRatings" />
+<MainTopElements className="SA" /> */
+
+body{
+  margin: auto;
+  background: rgba(102, 163, 167, 0.9);
+  margin: 1%;
+	box-sizing: border-box;
+}
+/* .container{
+  margin: auto;
+  display: flex;
+	display: -webkit-flex;
+	flex-direction: row;
+	-webkit-flex-direction: row;
+	justify-content: center;
+  height: 100%;
+} */
+.dashContainer {
+  margin: auto;
+  display: flex;
+	display: -webkit-flex;
+	flex-direction: row;
+	-webkit-flex-direction: row;
+	justify-content: center;
+  height: 100%;
+}
+.container .sideBar {
+  margin: auto;
+  height: 820px;
+  width: 20%;
+	background: linear-gradient(#2e96ea, #30c8ca);
+  /* linear-gradient(#2e96ea, #30c8ca); */
+}
+.container .main{
+  height: 820px;
+  width: 80%;
+  background-color: rgba(36, 38, 38, 0.9);
+  display: flex;
+
+}
+.container .main .mainTop {
+  height: 820px;
+  width: 80%;
+  background-color: rgba(36, 38, 38, 0.9);
+  display: flex;
+}
+.mainTop .reviews{
+  height: 300px;
+  width: 300px;
+  background-color: rgb(88, 70, 59);
+
+}
+.mainTop .averageRating {
+  height: 300px;
+  width: 300px;
+  background-color: rgb(79, 61, 68);
+
+}
+
+.mainTop .sentimentalAnalysis {
+  height: 300px;
+  width: 300px;
+  background-color: rgb(79, 61, 68);
+
+}
+
+.main .mainBottom {
+  display: flex;
+  height:300px;
+  width: 500px;
+  background-color: rgb(79, 61, 68);
+}
+
+/*  */
