@@ -1,0 +1,39 @@
+
+*{
+  margin: 0;
+  box-sizing: border-box;
+  /* background-color: rgb(55, 57, 68); */
+}
+.container{
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+.truck-name {
+  margin: auto;
+  align-items: center;
+  text-align: center;
+  color: black;
+  font-family: fantasy;
+}
+.container2{
+  display: flex;
+  justify-content: space-around;
+
+}
+.container2 .receipt{
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+  width: 280px;
+  border-radius: 15px;
+  background: rgb(138, 203, 217);
+  font: black;
+  justify-content: space-around;
+  font-family: inherit;
+  text-align: center;
+
+}
+h1, h2, h3, h4, h5 {
+
+}
