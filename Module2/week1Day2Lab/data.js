@@ -42,6 +42,6 @@ const receipt3 = {
     drink: 'Sparkling Blood Orange Soda',
     cost: 20
   },
-  paid: true
+  paid: false
 }
 const receipts = [receipt1, receipt2, receipt3];

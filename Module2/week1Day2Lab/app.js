@@ -1,19 +1,24 @@
 
 class Receipt extends React.Component{
-  const[isPaid: remove]= useState(false);
-  handleChange = (event) => {
+    // var isReceiptVisible;
+    state = {
+      isReceiptVisible : true
+    }
+    handleChange = (event) => {
     console.log(event.target.value);
     // this.state.value = event.target.value
     //this.setState({value: event.target.value});
     console.log(this.props.receipt.paid);
     this.props.receipt.paid = true;
     console.log(this.props.receipt.paid);
-    this.setState({[event.target.id]:event.target.value});//need to remove this receipt -change the css to remove
-    
+    this.props.isReceiptVisible = false;
+    console.log("After clicking the checkbox isReceiptVisible is set " + this.props.isReceiptVisible);
+    this.setState({isReceiptVisible:false});
+
   }
   render() {
       return(
-       <div className="receipt"> 
+       <div className="receipt" isReceiptVisible="true"> 
 
               <h3> {this.props.receipt.person}</h3>
               <h5> <span> Main: </span> {this.props.receipt.order.main}</h5>
@@ -39,7 +44,7 @@ class App extends React.Component {
           <div>
             <h1 className="truck-name">Korilla</h1>
             <div className="container2">
-                  {this.state.receipts.map(receipt => receipt.paid ? '' : <Receipt receipt={receipt}/>)}
+                  {this.state.receipts.map(receipt => (receipt.paid) && (!isReceiptVisible) ? '' : <Receipt receipt={receipt}/>)}
             </div>
 
           </div>
