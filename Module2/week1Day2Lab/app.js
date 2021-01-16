@@ -1,21 +1,11 @@
 
 class Receipt extends React.Component{
-    // var isReceiptVisible;
-    state = {
-      isReceiptVisible : true
-    }
-    handleChange = (event) => {
-    console.log(event.target.value);
-    // this.state.value = event.target.value
-    //this.setState({value: event.target.value});
-    console.log(this.props.receipt.paid);
-    this.props.receipt.paid = true;
-    console.log(this.props.receipt.paid);
-    this.props.isReceiptVisible = false;
-    console.log("After clicking the checkbox isReceiptVisible is set " + this.props.isReceiptVisible);
-    this.setState({isReceiptVisible:false});
 
-  }
+    // state = {
+    //   receipts,
+    //   isReceiptVisible : true //is the receipt visbible
+    // }
+
   render() {
       return(
        <div className="receipt" isReceiptVisible="true"> 
@@ -27,24 +17,45 @@ class Receipt extends React.Component{
               <h5> <span> Sauce: </span> {this.props.receipt.order.sauce}</h5>
               <h5> <span> Drink: </span> {this.props.receipt.order.drink}</h5>
               <h5> <span> Cost: </span> {this.props.receipt.order.cost}</h5>
-              <input type="checkbox" onChange={this.handleChange} id="cb"/>
-              <label htmlFor="checkBox">Paid</label>
+              <input type="checkbox" onClick={(event) => this.props.onClick(event, this.props.receipt)} id="cb" name="cb"/>
+              <label htmlFor="cb">Paid</label>
 
         </div> 
     )
   }
 }
 class App extends React.Component {
+
   state = {
-     receipts
+     receipts: receipts,
+     isReceiptVisible : true //is the receipt visbible
+
   }
+  handleClick = (event, receipt) => {
+      console.log("inside Handle change");
+      const getIndex = this.state.receipts.findIndex ((eachItemInsideArray) => eachItemInsideArray.person === receipt.person);
+      console.log(getIndex);
+      console.log(receipt);
+      console.log(receipt.paid);
+      console.log(this.state.receipts);
+      let updatedReceipts = this.state.receipts;
+      updatedReceipts[getIndex].paid = true;
+      console.log(updatedReceipts[getIndex].paid);
+      this.setState(
+          {
+            receipts : updatedReceipts
+          }
+      )
+}
+
 
   render(){
+    console.log("Inside App");
     return(
-          <div>
+          <div onChange={this.handleChange}>
             <h1 className="truck-name">Korilla</h1>
             <div className="container2">
-                  {this.state.receipts.map(receipt => (receipt.paid) && (!isReceiptVisible) ? '' : <Receipt receipt={receipt}/>)}
+                  {this.state.receipts.map(receipt => receipt.paid ? '' : <Receipt receipt={receipt} onClick={this.handleClick}/>)}
             </div>
 
           </div>
