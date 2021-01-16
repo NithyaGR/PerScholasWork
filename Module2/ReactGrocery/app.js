@@ -1,18 +1,5 @@
 
-class ShoppingList extends React.Component {
-  render() {
-    return(
-      <div className="shoppinglist">
-          <h3> {this.props.list.item}</h3>
-          <h4> {this.props.list.brand}</h4>
-          <h4> {this.props.list.units}</h4>
-          <h4> {this.props.list.quantity}</h4>
-          <input type="checkbox" id="isPurchased" name="isPurchased" />
-          <label htmlFor="isPurchased">Purchased</label>
-      </div>
-    )
-  }
-}
+
 class App extends React.Component{
 
   state = {
@@ -20,6 +7,9 @@ class App extends React.Component{
   }
   addToList = (item) => {
     this.setState({groceries: [item, ...this.state.groceries]})
+  }
+  handleChange = (event) => {
+    this.setState({[event.target.id]:event.target.value});
   }
   itemChange = (event) => {
         this.setState({
@@ -32,6 +22,7 @@ class App extends React.Component{
   handleSubmit = (event) => {
       event.preventDefault()
       console.log("Clicking Submit Button");
+      console.log(this.state.item);
       const item = {
           item: this.state.item,
           brand: this.state.brand,
@@ -48,6 +39,7 @@ class App extends React.Component{
           quantity: '',
           isPurchased: false
     })
+    console.log(this.state.groceries);
   }
 
   render(){
@@ -72,24 +64,28 @@ class App extends React.Component{
           <br />
           <h3>To Be Purchased</h3>
           <div className="toBePurchased">
-          <ul>
-                {
-                    this.state.groceries.map(
-                        (list) => !list.isPurchased
-                        ? <li>
-                            {list.item}</li>
-                        : "")
-                }
-            </ul>
 
-
+          {this.state.groceries.map(list => !list.isPurchased ? (<ShoppingList list={list} handleAdd={this.addToList}/>): "")}
           </div>
           </div>
         )
   }
 
 }
-
+class ShoppingList extends React.Component {
+  render() {
+    return(
+      <div className="shoppinglist">
+          <h3> {this.props.list.item}</h3>
+          <h4> {this.props.list.brand}</h4>
+          <h4> {this.props.list.units}</h4>
+          <h4> {this.props.list.quantity}</h4>
+          <input type="checkbox" id="isPurchased" name="isPurchased" />
+          <label htmlFor="isPurchased">Purchased</label>
+      </div>
+    )
+  }
+}
 ReactDOM.render(
   <App />,
   document.querySelector('.container')
@@ -103,3 +99,14 @@ ReactDOM.render(
 // }
 // )}
 //{this.state.groceries.map(list => (<ShoppingList list={list} handleAdd={this.addToList}/>))}
+
+// <ul>
+//
+//       {
+//           this.state.groceries.map(
+//               (list) => !list.isPurchased
+//               ? <li>
+//                   {list.item}</li>
+//               : "")
+//       }
+//   </ul>

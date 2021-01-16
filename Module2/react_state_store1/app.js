@@ -18,6 +18,7 @@ class App extends React.Component{
   }
   handleSubmit = (event) => {
       event.preventDefault()
+      console.log(this.state.name);
       const newItem = {
           name: this.state.name,
           price: this.state.price,
@@ -29,7 +30,9 @@ class App extends React.Component{
       price: 0,
       description: 'Description of item'
     })
+    console.log(products[0]);
   }
+
   toggleHiring = () => {
     this.setState({ isHiring : !this.state.isHiring })
   }
