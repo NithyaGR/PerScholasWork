@@ -32,16 +32,16 @@ class App extends React.Component{
   handleSubmit = (event) => {
       event.preventDefault()
       console.log("Clicking Submit Button");
-      const newItem = {
+      const item = {
           item: this.state.item,
           brand: this.state.brand,
           units: this.state.units,
           quantity: this.state.quantity,
           isPurchased: false
       }
-      console.log(newItem.item);
+      console.log(item.item);
       this.setState({
-          groceries :[newItem, ...this.state.groceries],
+          groceries :[item, ...this.state.groceries],
           item: '',
           brand: '',
           units: '',
@@ -72,7 +72,16 @@ class App extends React.Component{
           <br />
           <h3>To Be Purchased</h3>
           <div className="toBePurchased">
-                      {this.state.groceries.map(list => (<ShoppingList list={list} handleAdd={this.addToList}/>))}
+          <ul>
+                {
+                    this.state.groceries.map(
+                        (list) => !list.isPurchased
+                        ? <li>
+                            {list.item}</li>
+                        : "")
+                }
+            </ul>
+
 
           </div>
           </div>
@@ -93,3 +102,4 @@ ReactDOM.render(
 //   )
 // }
 // )}
+//{this.state.groceries.map(list => (<ShoppingList list={list} handleAdd={this.addToList}/>))}
