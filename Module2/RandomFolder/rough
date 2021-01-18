@@ -1,0 +1,22 @@
+[
+  {
+    "id": 46927,
+    "answer": "Rome",
+    "question": "When Italy was declared united in 1861, it was still missing Venice & this current capital",
+    "value": 100,
+    "airdate": "2000-10-20T12:00:00.000Z",
+    "created_at": "2014-02-11T23:14:13.059Z",
+    "updated_at": "2014-02-11T23:14:13.059Z",
+    "category_id": 809,
+    "game_id": null,
+    "invalid_count": null,
+    "category": {
+      "id": 809,
+      "title": "european history",
+      "created_at": "2014-02-11T22:50:23.810Z",
+      "updated_at": "2014-02-11T22:50:23.810Z",
+      "clues_count": 70
+    }
+  }
+]
+//<h3>{isShowAnswer ? this.state.answer : ''} </h3>

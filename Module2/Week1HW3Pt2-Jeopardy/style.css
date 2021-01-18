@@ -1,0 +1,69 @@
+
+body {
+  margin: auto;
+  box-sizing: border-box;
+}
+.container {
+  background-color: rgb(70, 75, 111);
+  margin-left: auto;
+
+
+}
+.jeopardy {
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      font-family: fantasy;
+      font: yellow;
+      align-items: center;
+
+}
+ #divForButtons {
+       display: flex;
+       flex-direction: row;
+       align-items: center;
+
+       font: black;
+
+ }
+ #increase {
+   background-color: rgb(191, 54, 82);
+   height: 60px;
+   width: 120px;
+   border-radius: 10px;
+   font-size: 20px;
+ }
+ #decrease {
+   background-color: rgb(75, 87, 149);
+   height: 60px;
+   width: 120px;
+   border-radius: 10px;
+   font-size: 20px;
+ }
+ #reset {
+   background-color: rgb(207, 82, 49);
+   height: 60px;
+   width: 120px;
+   border-radius: 10px;
+   font-size: 20px;
+ }
+ #getQuestion {
+   background-color: yellow;
+   height: 50px;
+   width: 150px;
+   border-radius: 10px;
+   font-size: 20px;
+ }
+ #revealAnswer {
+   background-color: rgb(86, 170, 154);
+   height: 60px;
+   width: 120px;
+   border-radius: 10px;
+   font-size: 20px;
+
+ }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: fantasy;
+  color: yellow;
+}
