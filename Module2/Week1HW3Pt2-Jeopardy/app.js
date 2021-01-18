@@ -14,8 +14,8 @@ class App extends React.Component {
 
   }
   // http://jservice.io/api/random
-  componentDidMount() {
-  //fetchQuestion() {
+  //componentDidMount() {
+  fetchQuestion() {
         fetch('http://jservice.io/api/random')
           .then(response => {
             return response.json()
@@ -35,16 +35,17 @@ class App extends React.Component {
             value: data[0].value,
             category: {
               title : data[0].category.title
-            }
+            },
+            showQuestion: true,
+            showAnswer: false
+
           })
       })
   }
       display = (event) =>{
         console.log(event.target.id);
         if (event.target.id === "getQuestion"){
-              this.setState(
-                {showQuestion: true}
-              )
+              this.fetchQuestion();
         }
         if (event.target.id === "revealAnswer"){
               this.setState(
@@ -87,10 +88,7 @@ class App extends React.Component {
             </div>
             <div id="answer">
                   <button id="revealAnswer" onClick={this.display}> Answer </button>
-                  <div>
-                      <h3> Answer: </h3> <br />
-                      <h3>{isShowAnswer ? this.state.answer : ''} </h3>
-                  </div>
+                  {  isShowAnswer ? <h3> Answer: {this.state.answer} </h3> : ''  }
             </div>
 
         </div>
