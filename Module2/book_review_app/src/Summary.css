@@ -1,0 +1,9 @@
+.summaryContainer {
+  margin: auto;
+  height: 300px;
+  width: 500px;
+  background-image: url("photo-books.jpeg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
