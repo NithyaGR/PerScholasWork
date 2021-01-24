@@ -19,24 +19,30 @@ class App extends Component {
     instructions: true,
     formClickCount: 0
   }
+  // handle change - call function will bind the text which we type in the text box
   handleChange = (event) =>{
     console.log(event.target.id);
     this.setState({ [event.target.id]: event.target.value })
   }
+  // this will grab the selection from the dropdown (which is a search type - title or author ) and assign that value in variable
+  // declared in the state searchType
   onSelectChange = (event) => {
+    this.setState({
+      searchType: event.target.value
+    })
+    /* Verification poits*/
     console.log("inside onSelectChange method");
     console.log("id is "+event.target.id);
     console.log("value is "+event.target.value);
-    console.log("inside onSelectChange method");
-    this.setState({
-      searchType: event.target.value
-      //searchText: event.target.value
-    })
     console.log("searchType is "+this.state.searchType);
     console.log("searchText is "+this.state.searchText);
   }
+
   handleSubmit = (event) =>{
     event.preventDefault();
+    /* While submitting  the form without changing the dropdown it's not fetching or changing the searchType by defaul
+    To change that mannually, I added the following logic - If in case the user doesn't choose the option, as it's there
+    already displayed, the search text is empty. Explicitly adding the text to the searchText */
     let valueForSearchType = document.getElementById('searchType').value;
     console.log(valueForSearchType);
     if(this.state.searchType === null){
