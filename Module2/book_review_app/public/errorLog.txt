@@ -1,0 +1,23 @@
+You provided a `value` prop to a form field without an `onChange` handler. This will render a read-only field. If the field should be mutable use `defaultValue`. Otherwise, set either `onChange` or `readOnly`.
+    at input
+    at form
+    at div
+    at div
+    at App
+
+
+
+    Warning: React does not recognize the `hrmlFor` prop on a DOM element. If you intentionally want it to appear in the DOM as a custom attribute, spell it as lowercase `hrmlfor` instead. If you accidentally passed it from a parent component, remove it from the DOM element.
+    at label
+    at form
+    at div
+    at div
+    at App
+    _____________ syntax = htmlFor
+
+    When I entered text in txt box, the value was not updated as I changed the id, but didn't change {this.state."id"}
+------------------------------------
+Line 62:17:  Expected an assignment or function call and instead saw an expression  no-unused-expressions
+_______________________________
+ react/jsx-no-undef --- Summary was undefined
+ Solution - You need to import Summary from './summary.js'; NOT import './summary'

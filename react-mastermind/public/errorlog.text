@@ -1,0 +1,18 @@
+
+You attempted to import ../../pages/App/App which falls outside of the project src/ directory. Relative imports out
+side of src/ are not supported.
+
+
+
+Afte {this.state.instructions ?
+    Before  <Portal> .... </Portal>
+When I added to test whether the it's executing the code within this class, I added h3 tag.  Like below.Exact error message
+Parsing error: Adjacent JSX elements must be wrapped in an enclosing tag. Did you want a JSX fragment <>...</>?
+{this.state.instructions ?
+  151 |          <h3>Displaying the Portal </h3>
+> 152 |          <Portal>
+      |          ^
+  153 |                 <div className='portal'>
+  154 |                 <h1>How To Play</h1>
+
+  155 |                 <p>

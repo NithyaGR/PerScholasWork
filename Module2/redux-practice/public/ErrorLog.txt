@@ -1,0 +1,12 @@
+Error: Reducer "counter" returned undefined during initialization. If the state passed to the reducer is undefined, you must explicitly return the initial state. The initial state may not be undefined. If you don't want to set a value for this reducer, you can use null instead of undefined.
+▶ 3 stack frames were collapsed.
+Module.<anonymous>
+src/reducers/index.js:5
+  2 | import counterReducer from './counter';
+  3 | import { combineReducers } from 'redux';
+  4 |
+> 5 | const allReducers = combineReducers ({
+  6 |   counter: counterReducer
+  7 | })
+  8 | export default allReducers;
+View compiled

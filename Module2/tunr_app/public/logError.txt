@@ -1,0 +1,16 @@
+
+state is undefined
+__________________
+I didn't export " export default playlists" in the data.js in the bottom most line
+
+index.js:1 Warning: A component is changing an uncontrolled input to be controlled.
+This is likely caused by the value changing from undefined to a defined value, which should not happen. Decide between using a controlled or uncontrolled input element for the lifetime of the component. More info: https://reactjs.org/link/controlled-components
+    at input
+    at form
+    at div
+    at div
+    at App (http://localhost:3002/static/js/main.chunk.js:167:5)
+
+    --------------------------------------
+    In my set state method, I changed the order of the object elements. Thats why the error was thrown.
+    
