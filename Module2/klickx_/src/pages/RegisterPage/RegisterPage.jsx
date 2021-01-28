@@ -1,13 +1,23 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import './RegisterPage.css';
 
 const RegisterPage = () => {
     return (
         <>
-            <Link to='/'> HOME </Link>
-            <h1>Register Page - Add Code here to register the user </h1>
+            
+            <h3>Register Page  </h3>
+            <form className='registerForm'>
+                <input type='text' placeholder='Name' id='name' />    
+                <input type='text' placeholder='Email' id='email' />
+                <input type='password' placeholder='Password' id='password' />
+                <input type='password' placeholder='confirmPassword' id='confirmPassword' />
+                <button type='submit' id='registerButton' value='register'>Register</button>
+            </form>
+            <Link to='/login'> LoginPage </Link>
+            
         </>
     )
 }
 
-export default SettingsPage;
+export default RegisterPage;
