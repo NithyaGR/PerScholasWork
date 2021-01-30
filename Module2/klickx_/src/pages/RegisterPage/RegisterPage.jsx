@@ -6,7 +6,7 @@ const RegisterPage = () => {
     return (
         <>
             
-            <h3>Register Page  </h3>
+            <h3>Register - Create a User Account  </h3>
             <form className='registerForm'>
                 <input type='text' placeholder='Name' id='name' />    
                 <input type='text' placeholder='Email' id='email' />

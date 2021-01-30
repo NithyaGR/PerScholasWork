@@ -10,6 +10,9 @@
     flex-grow: 2;
     border-radius: 10px;
     margin: 0;
+    margin: 10% auto;
+    margin-left: auto;
+    margin-right: auto;
 }
 #name, #email, #password, #confirmPassword, #registerButton {
   width: 220px;

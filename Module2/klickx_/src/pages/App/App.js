@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-//import LoginForm from '../../components/LoginForm';
+import LoginForm from '../../components/LoginForm';
 import RegisterPage from '../../pages/RegisterPage/RegisterPage';
 import {BrowserRouter as Router} from 'react-router-dom';
 import { Link, Route, Switch } from 'react-router-dom';
@@ -38,45 +38,29 @@ class App extends Component {
    
   return (
      <div className='appContainer'>
-        <div className='innerContainer'>
-      <header> K L I C K X_
+        {/* <div className='innerContainer'>*/}
+      <header> <h1> K L I C K X_ </h1>
       </header>
-      
+       
           
           <Router>
               <Switch>
-                  <Route exact path='/login'>
-                       <div className='loginForm'>
-                        <form onSubmit={this.handleSubmit}>
-                            <input type='text' placeholder='Login_Id or Email' id='login' onChange={this.handleChange}/>
-                            <input type='password' placeholder='Password' id='password' onChange={this.handleChange}/>
-                            <button type='submit' id='loginButton' value='Login' >Login</button>
-                        </form>
-                        </div>
-                        <Link className='btn btn-default' to='/register'> Create New Account </Link>
+                  <Route exact path='/login' render ={ (props) =>
+                            <LoginForm />}>
+                    
                     </Route>
-                </Switch>    
-                 {/* <Link to="/register" className="btn btn-primary">Sign up</Link> */}
-                 
-                 {/* <Link className='btn btn-default' to='/register'> Create New Account </Link> */}
-                     {/* <Link to='/register'> 
-                            <button onClick={this.onClickHandle}>Sign-Up</button>
-                            {/* {this.state.showRegister ? <RegisterPage /> : ''} //'/register'
-                      </Link> */}
-                      <Switch>
-                      <Route>
-                      <Route path='/register' render ={ (props) =>
-                                    <RegisterPage {...props}/>
-                        } />
+                    <Route>
+                            <Route path='/register' component={RegisterPage} />
                      </Route>
-                     </Switch>
-             
+                      {/* If logged in true- render HomePage
+                        {this.state.isLoggedIn ? <HomePage /> : '' }*/}
+                </Switch>    
+            
           </Router>
-          {/* If logged in true- render HomePage*/}
-          {this.state.isLoggedIn ? <HomePage /> : '' }
+         
       
           </div>                
-      </div>
+    //   </div>
 
   );
 }

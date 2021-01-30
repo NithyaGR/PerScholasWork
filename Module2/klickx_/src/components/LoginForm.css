@@ -1,0 +1,67 @@
+/* .innerContainer {
+
+    background-color: rgb(112, 110, 108);
+    display: flex;
+    flex-grow: 2;
+    flex-direction: column;
+    text-align: center;
+    align-content: center;
+    display:inline-block;
+    border-radius: 10px;
+    height: 320px;
+    width: 300px;
+    padding: 15px 18px;
+    margin: 10% auto;
+    margin-left: auto;
+    margin-right: auto;
+    /* padding: 1.2em; 
+  
+  } */
+  
+  .loginForm {
+    background-color: rgb(112, 110, 108);
+    display: flex;
+    flex-grow: 2;
+    flex-direction: column;
+    text-align: center;
+    align-content: center;
+    display:inline-block;
+    border-radius: 10px;
+    height: 350px;
+    width: 300px;
+    padding: 15px 18px;
+    margin: 10% auto;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    padding: 1em;
+  
+  }
+  
+  #login, #password {
+    width: 220px;
+    height: 30px;
+    padding: 1em;
+    align-content: space-around;
+    margin: 10px;
+    align-items: center;
+  }
+   
+  #loginButton {
+  
+    width: 250px;
+    height: 50px;
+    padding: 1em;
+    background-color: rgb(243, 242, 248);
+    font-size: 18px;
+  
+  }
+  /* .linkButton {
+    width: 250px;
+    height: 50px;
+    padding: 1em;
+    background-color: rgb(243, 242, 248);
+    text-decoration: none;
+  } */
