@@ -1,0 +1,66 @@
+
+questions to ask Jade
+
+Redux - where to store the data.
+users - have the data ready, how to store photos, where? 
+css  - why the the flex grow doesn't work
+want app to look only the components rendering - no codes inside. How to do that?
+How to make the register page link to a button? RElate to mastermind
+How to render a component on onClick event?
+Though the router taking to the new page, the previous page contents are there. How to resolve. 
+
+
+Can i keep those handleSubmit and onChange methods globally in Redux as well? I'm thinking. 
+I believe there can't be 2 exports of state in reducers - klickx_reducers - 
+I have 2 data .js. How to handle them
+
+each and every action needs to be separate? Or can we combine? Like add comment or delete comment? I mean in different action .js or single? 
+
+should we use constructor explicitly? 
+Should we use bind ?
+Verify my data. How to call them in the code?
+
+
+
+errors
+Line 8:23:   'Vrindavan' is not defined     no-undef
+  Line 8:34:   'Fall' is not defined          no-undef
+  Line 8:40:   'Sunflower' is not defined     no-undef
+  Line 41:23:  'GantakiRiver' is not defined  no-undef
+  Line 41:37:  'Red' is not defined           no-undef
+  Line 41:42:  'Fire' is not defined          no-undef
+  Line 73:21:  'SriRangam' is not defined     no-undef
+  Line 73:32:  'Rose' is not defined          no-undef
+  Line 73:38:  'Nature' is not defined        no-undef
+
+
+  I need to enclose the data file winthin single or double quotes
+
+  in reducers - users was not defined message - 
+  You SHOULD export the data from the data file. export default users
+  also include import users from './users.js'
+
+  ×
+Error: Reducer "users" returned undefined during initialization. If the state passed to the reducer is undefined,
+ you must explicitly return the initial state. The initial 
+state may not be undefined. If you don't want to set a value for this reducer, you can use null instead of undefined.
+
+-- Use default switch case
+
+ReferenceError: Cannot access 'LOGIN_USER' before initialization
+
+
+
+
+Error: Objects are not valid as a React child (found: object with keys {users, changeLoginStatus}). 
+If you meant to render a collection of children, use an array instead.
+
+
+
+
+
+
+
+In your app - you should have your <home page> first- set private path , then login then register
+
+ Line 48:20:  React Hook "useHistory" cannot be called in a class component. React Hooks must be called in a React function component or a custom React Hook function  react-hooks/rules-of-hooks

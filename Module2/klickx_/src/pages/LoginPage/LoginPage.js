@@ -1,21 +1,23 @@
 import React, { Component} from 'react';
-import { Link, Router,Switch, Route } from 'react-router-dom';
-import styles from './LoginForm.css';
-import HomePage from '../pages/HomePage/HomePage';
+import { Link, Redirect } from 'react-router-dom';
+//import { Router,Switch, Route, useHistory } from 'react-router-dom';
+import HomePage from '../HomePage/HomePage';
 import { connect } from 'react-redux';
-import users from '../reducers/users';
-import pictures from '../reducers/pictureData';
-import { login } from '../actions/LoginLogoutAction';
+import users from '../../reducers/users';
+import pictures from '../../reducers/pictureData';
+import { login } from '../../actions/LoginLogoutAction';
+import './LoginPage.css';
 
-//import { ActionITem } from '../actions/YourActions';
 
-//const LoginForm = (props) => (
-  class LoginForm extends Component {
+  class LoginPage extends Component {
     //Can we have our state here? As we are going to have our redux store?
     state = {
         users: users,
         pictures: pictures,
-        currentUser: ''
+        currentUser: '',
+        email: '',
+        isLoggedIn: false
+
         // isLoggedIn: false
       }
   
@@ -30,12 +32,12 @@ import { login } from '../actions/LoginLogoutAction';
       //set the state isLoggedIn to true
      
       console.log('inside handle submit');
-      console.log(document.getElementById('login').value);
+      console.log(document.getElementById('email').value);
       console.log(document.getElementById('password').value);
       console.log(this.props.users);
       console.log(this.props.users.length);
       //storing the data in the variables - to validate the credentials
-      let userEmail = document.getElementById('login').value;
+      let userEmail = document.getElementById('email').value;
       let userPassword = document.getElementById('password').value;
       console.log(userEmail+" : userInput : "+ this.props.users[2].email);
       console.log(userPassword+" : userInput Password : "+this.props.users[2].password);
@@ -51,6 +53,11 @@ import { login } from '../actions/LoginLogoutAction';
                   //the status of the login 
                   this.props.changeLoginStatus(this.props.users[i]);
                   this.setState({currentUser : this.props.users[i]});
+                  this.setState({
+                                
+                                email: this.props.users[i].email,
+                                isLoggedIn: true
+                  })
                   //this.setState({currentUser.isLoggedIn : true});
                   break outer;
               }
@@ -62,40 +69,51 @@ import { login } from '../actions/LoginLogoutAction';
             alert('Check Your Email - No such user');
           }
       }
-      
-
   }
 
     render() {
+      console.log('inside login page');
       console.log(this.state.currentUser);
+      console.log(this.props.users);
+      console.log(this.state.isLoggedIn);
       return ( 
         
         <div className='loginForm'>
         <form onSubmit={this.handleSubmit}>
-                 <input type='text' placeholder='Login_Id or Email' id='login' onChange={this.handleChange}/>
+                 <input type='text' placeholder='Login_Id or Email' id='email' onChange={this.handleChange}/>
                   <input type='password' placeholder='Password' id='password' onChange={this.handleChange}/>
                   <button type='submit' id='loginButton' value='Login'>Login</button>             
         </form>
         <Link className='btn btn-default' to='/register'> Create New Account </Link>
         {/* If logged in true- render HomePage*/}
        
-            {/* {this.props.isLoggedIn ? <HomePage /> : '' }
-            {this.state.currentUser.name}
+              {this.state.isLoggedIn ? <HomePage /> : '' }
+              
+             {/* <Redirect to='/home' />*/}
+            {/*{this.state.currentUser.name}
             {this.state.currentUser.email}
-            {this.state.currentUser.isLoggedIn} */}
-            <HomePage />
+            {this.state.currentUser.isLoggedIn} 
+            <Router>
+              <Switch>
+              <Route exact path='home' render ={ (props) =>
+                            <HomePage />  }>
+                            {/* {this.state.currentUser.isLoggedIn ? <HomePage /> : '' } 
+             </Route>
+              </Switch>
+            </Router> */}
+            
         
         </div>
-  // );
+  
       )
     }
   }
   // create a copy of the props make them accessible for this component
   const mapStateToProps = (state) => ({
+    // trigger the action - > call the reducer -> reducer will change the state
     users: state.users.users
   })
 
-  // trigger the action - > call the reducer -> reducer will change the state
   // Adds a prop called "changeLoginStatus" which is a function that takes in a payload
   // then dispatches payload to the action creator: "login"
   const mapDispatchToProps = (dispatch) => ({
@@ -104,4 +122,4 @@ import { login } from '../actions/LoginLogoutAction';
   
   
  // export default connect(mapStateToProps, mapDispatchToProps)(TodoList);
-export default connect(mapStateToProps, mapDispatchToProps)(LoginForm);
+export default connect(mapStateToProps, mapDispatchToProps)(LoginPage);
