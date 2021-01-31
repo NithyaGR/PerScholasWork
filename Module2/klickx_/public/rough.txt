@@ -1,0 +1,22 @@
+        //Can we have our state here? As we are going to have our redux store? Yes, this is the global state's
+        //copy
+        // state = {
+        //     users: users,
+        //     pictures: pictures
+        //     // isLoggedIn: false
+        //   }
+    
+    // handleChange = (e) =>{
+    //     //to bind the text which we entered and to store in that corresponding ids  
+    //     this.setState({ [e.target.id]: e.target.value })
+    // }
+    // handleSubmit=(e) => {
+    //     e.preventDefault();
+    //     //write the code to verify the user credentials and once done it needs to redirect to home page.
+    //     // How to redirect to home page? 
+    //     //set the state isLoggedIn to true
+    //     this.setState({
+    //         isLoggedIn : true
+    //     });
+    //     console.log('inside handle submit');
+    // }

@@ -6,9 +6,11 @@ import reportWebVitals from './reportWebVitals';
 import {BrowserRouter as Router} from 'react-router-dom';
 
 import { createStore } from 'redux';
-import { Provider } from 'react-redux'
+import { Provider } from 'react-redux';
+//import { syncHistoryWithStore } from 'react-router-redux';
 
 import rootReducer from './reducers';
+import history from './helpers/history';
 
 const store = createStore(rootReducer);
 
@@ -16,7 +18,7 @@ const store = createStore(rootReducer);
 
 ReactDOM.render(
   <Provider store={store}>
-      <Router>
+      <Router history={history}>
         <App />
       </Router>
     </Provider>,

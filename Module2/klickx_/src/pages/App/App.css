@@ -3,10 +3,18 @@
     margin: auto;
     text-align: center;
     border-radius: 10px; 
-    height: auto;
+    height: 100%;
+    /* margin-top: 0px; */
     
 }
-.innerContainer {
+.appContainer .sidenav {
+  /* font-weight: bold; */
+}
+
+.appContainer .container{
+  align-content: center
+}
+/* .innerContainer {
 
   background-color: rgb(112, 110, 108);
   display: flex;
@@ -24,7 +32,7 @@
   margin-right: auto;
   /* padding: 1.2em; */
 
-}
+/*}
 
 .loginForm {
   display: flex;
@@ -91,4 +99,4 @@
   height: 50px;
   background-color: rgb(63, 126, 126);
   
-}
+} */

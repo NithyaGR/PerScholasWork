@@ -64,3 +64,6 @@ If you meant to render a collection of children, use an array instead.
 In your app - you should have your <home page> first- set private path , then login then register
 
  Line 48:20:  React Hook "useHistory" cannot be called in a class component. React Hooks must be called in a React function component or a custom React Hook function  react-hooks/rules-of-hooks
+
+ history is not exported error - when I used router history={history} in app.js - got this error
+ moved this to index.js

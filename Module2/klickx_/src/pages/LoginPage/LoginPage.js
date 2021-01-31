@@ -1,11 +1,10 @@
 import React, { Component} from 'react';
 import { Link, Redirect } from 'react-router-dom';
-//import { Router,Switch, Route, useHistory } from 'react-router-dom';
-import HomePage from '../HomePage/HomePage';
 import { connect } from 'react-redux';
 import users from '../../reducers/users';
 import pictures from '../../reducers/pictureData';
 import { login } from '../../actions/LoginLogoutAction';
+import history from '../../helpers/history';
 import './LoginPage.css';
 
 
@@ -17,8 +16,6 @@ import './LoginPage.css';
         currentUser: '',
         email: '',
         isLoggedIn: false
-
-        // isLoggedIn: false
       }
   
   handleChange = (e) =>{
@@ -58,6 +55,7 @@ import './LoginPage.css';
                                 email: this.props.users[i].email,
                                 isLoggedIn: true
                   })
+                  history.push('/home');
                   //this.setState({currentUser.isLoggedIn : true});
                   break outer;
               }
@@ -85,24 +83,6 @@ import './LoginPage.css';
                   <button type='submit' id='loginButton' value='Login'>Login</button>             
         </form>
         <Link className='btn btn-default' to='/register'> Create New Account </Link>
-        {/* If logged in true- render HomePage*/}
-       
-              {this.state.isLoggedIn ? <HomePage /> : '' }
-              
-             {/* <Redirect to='/home' />*/}
-            {/*{this.state.currentUser.name}
-            {this.state.currentUser.email}
-            {this.state.currentUser.isLoggedIn} 
-            <Router>
-              <Switch>
-              <Route exact path='home' render ={ (props) =>
-                            <HomePage />  }>
-                            {/* {this.state.currentUser.isLoggedIn ? <HomePage /> : '' } 
-             </Route>
-              </Switch>
-            </Router> */}
-            
-        
         </div>
   
       )
