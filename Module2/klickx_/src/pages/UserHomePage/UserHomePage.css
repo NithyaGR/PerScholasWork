@@ -1,14 +1,7 @@
 .userHomePage {
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-    grid-gap: 10px;
-    padding: 10px;
-
-
-}
-.mainContent {
-  grid-area: 2 / 2 / span 2 / span 3; /* will start on row 2 and column 1, and span 2 rows and 3 columns:*/
-      
+    margin-top: 100px;
+    margin-left: 230px;
+    /* padding: 10px; */
 }
 .userHeader {
     width: 100%;
@@ -16,3 +9,7 @@
     background-color: rgb(240, 247, 247);
     
   }
+.userContent {
+    background-color: thistle;
+      
+}

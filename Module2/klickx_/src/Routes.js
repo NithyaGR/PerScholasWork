@@ -9,6 +9,7 @@ import ProfilePage from './pages/ProfilePage/ProfilePage';
 //import FavoritesPage from './pages/FavoritesPage';
 //import SettingsPage from './pages/SettingsPage';
 import history from './helpers/history';
+import UserHomePage from './pages/UserHomePage/UserHomePage';
 
 export default class Routes extends Component {
     render() {
@@ -20,6 +21,8 @@ export default class Routes extends Component {
                         <Route path='/login' component={LoginPage} />
 
                         <Route path='/register' component={RegisterPage} />
+
+                        <Route path='/userHome' component={UserHomePage} />
 
                         <Route path='/profile' component={ProfilePage} />
 

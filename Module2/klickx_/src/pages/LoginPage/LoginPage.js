@@ -55,7 +55,7 @@ import './LoginPage.css';
                                 email: this.props.users[i].email,
                                 isLoggedIn: true
                   })
-                  history.push('/home');
+                  history.push('/userHome');
                   //this.setState({currentUser.isLoggedIn : true});
                   break outer;
               }

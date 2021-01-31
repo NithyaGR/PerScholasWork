@@ -13,9 +13,7 @@ const UserHomePage = () => {
                     </div>
                     <div className='userContent'>
                                     <p>I'm going to display the selected Menu contents</p>
-                     </div>
-                    
-                </div>
+                    </div>
                 
             </div>
         </>
