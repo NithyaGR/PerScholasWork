@@ -1,46 +1,4 @@
-/* body {
-    min-height: 100vh;
-  }
-  /* SIDEBAR POSITION */
- /* .sidebar {
-    background-color: #f1f1f1;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    right: 0;
-    min-width: 300px;
-  }
-  .sidebar__content {
-    padding: 8px;
-    overflow-y: scroll;
-    overflow-x: hidden;
-  }
-  .sidenav {
-    height: 100%;
-    width: 250px;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: #111;
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 60px;
-  }
-  .sidenav a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #818181;
-    display: block;
-    transition: 0.3s;
-  }
-  
-  .sidenav a:hover {
-    color: #f1f1f1;
-  }*/
-  
-  
+
   .homePage {
     margin-top: 100px;
     margin-left: 230px;
@@ -54,6 +12,7 @@
     grid-template-rows: 33% 33% auto;
     grid-gap: 10px;
     padding: 10px;
+    justify-content: center;
       
 }
 
@@ -62,8 +21,8 @@
     img {
       border: 1px solid #ddd; /* Gray border */
       border-radius: 4px;  /* Rounded border */
-      padding: 5px; /* Some padding */
-      width: 150px; /* Set a small width */
+      padding: 2px; /* Some padding */
+      width: 200px; /* Set a small width */
    }
 
 /* Add a hover effect (blue shadow) */

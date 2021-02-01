@@ -11,7 +11,7 @@ const RegisterPage = () => {
                 <input type='text' placeholder='Name' id='name' />    
                 <input type='text' placeholder='Email' id='email' />
                 <input type='password' placeholder='Password' id='password' />
-                <input type='password' placeholder='confirmPassword' id='confirmPassword' />
+                {/* <input type='password' placeholder='confirmPassword' id='confirmPassword' /> */}
                 <button type='submit' id='registerButton' value='register'>Register</button>
             </form>
             <Link to='/login'> LoginPage </Link>

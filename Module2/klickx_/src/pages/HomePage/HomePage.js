@@ -1,6 +1,16 @@
 
 import React, { Component } from 'react';
 import './HomePage.css';
+import Moon from '../../Pictures/Moon.jpg';
+import Fall from '../../Pictures/Fall.jpg';
+import Fire from '../..//Pictures/Fire.jpeg';
+import matches from '../../Pictures/matches.png';
+import sunset from '../../Pictures/sunset.jpg';
+import nature1 from '../../Pictures/nature1.jpg';
+import Journey from '../../Pictures/Journey.jpeg';
+import cosmos from '../../Pictures/cosmos.jpeg';
+import earth from '../../Pictures/earth.jpeg';
+
 
 
 class HomePage extends Component{
@@ -10,32 +20,32 @@ class HomePage extends Component{
         return(
                 <div className='homePage'>                            
                     <div className='mainContent'>
-                        <div className='image1'>
-                            <img src='../../Pictures/biology.jpg' alt='biology' />
+                        <div className='image1'>   
+                            <img src={Fall} alt='fall' />        
                         </div>
                         <div className='image2'>
-                            <img src='Users/student/Desktop/PerScholasWorks/Module2/klickx_/src/Pictures/Fall.jpg' alt='fall' />
+                            <img src={nature1} alt='nature' />
                         </div>
                         <div className='image3'>
-                            <img src='/Users/student/Desktop/PerScholasWorks/Module2/klickx_/src/Pictures/Fire.jpeg' alt='fire' />
+                            <img src={Journey} alt='journey' />
                         </div>
                         <div className='image4'>
-                            <img src='/Users/student/Desktop/PerScholasWorks/Module2/klickx_/src/Pictures/matches.png' alt='matches' />
+                             <img src={Fire} alt='fire' />       
                         </div>
                         <div className='image5'>
-                            <img src='/Users/student/Desktop/PerScholasWorks/Module2/klickx_/src/Pictures/sunset.jpg' alt='sunset' />
+                            <img src={matches} alt='matches' />
                         </div>
                         <div className='image6'>
-                            <img src='/Users/student/Desktop/PerScholasWorks/Module2/klickx_/src/Pictures/nature1.jpg' alt='nature' />
+                            <img src={Moon} alt='moon' />  
                         </div>
                         <div className='image7'>
-                            <img src='/Users/student/Desktop/PerScholasWorks/Module2/klickx_/src/Pictures/Journey.jpeg' alt='journey' />
+                            <img src={sunset} alt='sunset' />
                         </div>
                         <div className='image8'>
-                            <img src='/Users/student/Desktop/PerScholasWorks/Module2/klickx_/src/Pictures/cosmos.jpeg' alt='cosmos' />
+                            <img src={cosmos} alt='cosmos' />
                         </div>
                         <div className='image9'>
-                            <img src='/Users/student/Desktop/PerScholasWorks/Module2/klickx_/src/Pictures/earth.jpeg' alt='earth' />
+                            <img src={earth} alt='earth' />
                         </div>
                     </div>
                 </div>

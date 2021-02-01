@@ -1,5 +1,5 @@
 import React, { Component} from 'react';
-import { Link, Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import users from '../../reducers/users';
 import pictures from '../../reducers/pictureData';
@@ -14,6 +14,7 @@ import './LoginPage.css';
         users: users,
         pictures: pictures,
         currentUser: '',
+        name: '',
         email: '',
         isLoggedIn: false
       }
@@ -43,7 +44,7 @@ import './LoginPage.css';
       outer: 
       for(let i=0; i<this.props.users.length; i++){
           if((this.props.users[i].email) === userEmail  && (this.props.users[i].password) === userPassword ){
-              if(this.props.users[i].password === userPassword){
+              
                   console.log(this.props.users[i].name);
                   console.log('loginSuccessful');
                   //dispatching the changeStatus to trigger the login action to trigger the reducer to change
@@ -51,21 +52,17 @@ import './LoginPage.css';
                   this.props.changeLoginStatus(this.props.users[i]);
                   this.setState({currentUser : this.props.users[i]});
                   this.setState({
-                                
+                                name: this.props.users[i].name,
                                 email: this.props.users[i].email,
                                 isLoggedIn: true
                   })
                   history.push('/userHome');
                   //this.setState({currentUser.isLoggedIn : true});
                   break outer;
-              }
-              else {
-                alert ('Incorrect password');
-              }
-          }
+          } 
           else {
-            alert('Check Your Email - No such user');
-          }
+                  alert('Invalid Credentials');
+               }
       }
   }
 

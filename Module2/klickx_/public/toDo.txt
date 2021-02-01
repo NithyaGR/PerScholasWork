@@ -1,0 +1,21 @@
+
+sun - 2.43pm
+
+1) Router is not working right after clicking the any button- requires refresh everytime - how will it 
+store the logged in status? 
+2) Images are not displayed.
+3) Register page - take the data and create a user and keep that user in the browser memory
+4) While logging in successful, keep the user name and display it into the next userHome page
+5) While displaying image, grab the comments, likes.
+6) Change the login and logout based on the login status in the side bar. 
+6) Delete the user account - 
+
+User story - Register a user, Login - post comments, likes, dislikes, delete the comments and the user
+User story - already available users - you should be able to see the fav pages, profile pages, except
+deleting her/him self, should be able to delete the comments. 
+
+
+function logout() {
+    // remove user from local storage to log user out
+    localStorage.removeItem('user');
+}

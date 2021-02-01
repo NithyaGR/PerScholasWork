@@ -7,7 +7,8 @@ const SideNavBar = (props) => { //why props? learn this
     console.log('Rendering SideBar - Check the props and learn');
     console.log(props); // check here
     return (
-        <div id="mySidenav" className="sidenav">      
+        <div id="mySidenav" className="sidenav">   
+                <Link to='/home'>Home</Link>   
                 <Link to='/login'>Login</Link>
                 <Link to='/profile'>Profile</Link>
                 <Link to='/favorites'>Favorites</Link>

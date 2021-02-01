@@ -4,6 +4,7 @@
 import { combineReducers } from 'redux';
 import klickx_reducers from './kiickx_reducers';
 
+
 const rootReducer = combineReducers({
     users : klickx_reducers
 })
