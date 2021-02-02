@@ -17,7 +17,8 @@ class UserHomePage extends Component {
     //   }
     imgDetails =  (e) => {
         console.log('onclick - imgDetails');
-        console.log(e.target.className);
+        console.log(e.target.id);
+        console.log('push to new page - with that image and likes, and comments');
     }
     render () {
     const name = localStorage.getItem('name');
@@ -28,9 +29,9 @@ class UserHomePage extends Component {
                     <div className='userHeader'>
                                 <h3>Welcome to Klickx_ {name} </h3>
                     </div>
-                    <div className='userContent'>
-                          <p>I'm going to display the selected Menu contents</p>
-                         { pictures.map(({id, name, source}) => <img key={id} src={source} alt={name} />)}
+                    <div className='userContent' >
+                         
+                         { pictures.map(({id, name, source}) => <div id={id} onClick={this.imgDetails}><img key={id} src={source} alt={name} /></div>)}
                     </div>
                 
             </div>
@@ -45,4 +46,4 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (state) => {
 
 }
-export default UserHomePage;
+export default connect(mapStateToProps, mapDispatchToProps)(UserHomePage);
