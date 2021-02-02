@@ -16,6 +16,7 @@ import './LoginPage.css';
         currentUser: '',
         name: '',
         email: '',
+        password:'',
         isLoggedIn: false
       }
   
@@ -30,20 +31,20 @@ import './LoginPage.css';
       //set the state isLoggedIn to true
      
       console.log('inside handle submit');
-      console.log(document.getElementById('email').value);
-      console.log(document.getElementById('password').value);
       console.log(this.props.users);
       console.log(this.props.users.length);
       //storing the data in the variables - to validate the credentials
-      let userEmail = document.getElementById('email').value;
-      let userPassword = document.getElementById('password').value;
-      console.log(userEmail+" : userInput : "+ this.props.users[2].email);
-      console.log(userPassword+" : userInput Password : "+this.props.users[2].password);
-
+      const { thisUser } = this.state; //this is as same as grabbing from name store into name id and etc
+    //   const currentUser = {
+    //     email: this.state.email,
+    //     password: this.state.password
+    // }   
+      // let userEmail = document.getElementById('email').value;
+      // let userPassword = document.getElementById('password').value;
       //code to verify the login credentials
       outer: 
       for(let i=0; i<this.props.users.length; i++){
-          if((this.props.users[i].email) === userEmail  && (this.props.users[i].password) === userPassword ){
+          if((this.props.users[i].email) === thisUser.email  && (this.props.users[i].password) === thisUser.password ){
               
                   console.log(this.props.users[i].name);
                   console.log('loginSuccessful');
@@ -56,6 +57,10 @@ import './LoginPage.css';
                                 email: this.props.users[i].email,
                                 isLoggedIn: true
                   })
+                  const {name, isLoggedIn} = this.state;
+                  localStorage.setItem('name', name);
+                  localStorage.setItem('isLoggedIn', isLoggedIn ? this.state.currentUser : '');
+                  console.log(localStorage.getItem('user'));
                   history.push('/userHome');
                   //this.setState({currentUser.isLoggedIn : true});
                   break outer;
@@ -68,8 +73,8 @@ import './LoginPage.css';
 
     render() {
       console.log('inside login page');
-      console.log(this.state.currentUser);
-      console.log(this.props.users);
+      //console.log(this.state.currentUser); state is for global data - not for this class specific one
+      console.log(this.props.users); //actually, props for the current class's variables and methods
       console.log(this.state.isLoggedIn);
       return ( 
         

@@ -6,7 +6,9 @@ console.log(users);
 
 export const initialState = {
     users : users,
-    pictures: pictures
+    pictures: pictures,
+    name: '',
+    isLoggedIn: false
     
 }
 
@@ -26,16 +28,31 @@ const klickx_reducers = (state = initialState, action) => {
             case 'LOGIN_USER' :
                 console.log('inside login user');
                 console.log(action.payload);
+                localStorage.setItem("name", JSON.stringify(action.payload.name));
+                localStorage.setItem("isLoggedIn", JSON.stringify(action.payload.isLoggedIn));
                 return {
                     users:
                     {
                         ...state,       
 	                    users: { 		
 		                        isLoggedIn : true
-	                    }
+                        },
+                        name: action.payload.name,
+                        isLoggedIn: true
                         
                     }
                 }
+            case 'LOGOUT_USER' :
+                    localStorage.clear();
+                    return {
+                      ...state,
+                      users: {
+                                isLoggedIn : false
+                      },
+                      name: null,
+                      isLoggedIn: false
+                    };
+           
                 
         default: 
             return state    

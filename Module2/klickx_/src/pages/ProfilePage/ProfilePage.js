@@ -1,11 +1,16 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './ProfilePage.css'
 
-const ProfilePage = () => {
+class ProfilePage extends Component {
+    
+    render(){
     return (
-        <>
+       
             <div className='ProfilePage'>
+                <div className='profile'>
+                    <p> Display the profile details here</p>
+                </div>
                 <div className='image1'>
                     <img src=''></img>
                     <div className='image1Data'>
@@ -20,7 +25,8 @@ const ProfilePage = () => {
                 </div>
                 
             </div>
-        </>
+        
     )
+}
 }
 export default ProfilePage;
