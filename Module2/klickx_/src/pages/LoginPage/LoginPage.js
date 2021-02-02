@@ -48,6 +48,9 @@ import './LoginPage.css';
       if(curUser.email === userEmail && curUser.password === userPassword){
         console.log('Login successful');
         alert("Login Successful");
+        
+        this.setState({currentUser : curUser});
+        this.setState({isLoggedIn : true});
         history.push('/userHome');
       }
       else {
