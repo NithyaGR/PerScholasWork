@@ -31,51 +31,60 @@ import './LoginPage.css';
       //set the state isLoggedIn to true
      
       console.log('inside handle submit');
-      console.log(this.props.users);
-      console.log(this.props.users.length);
+      console.log(this.props.users.newUser);
+      const curUser = this.props.users.newUser;
+      console.log(curUser);
+      console.log(curUser.email);
+      //console.log(this.props.users.length); - users is not array
       //storing the data in the variables - to validate the credentials
       const { thisUser } = this.state; //this is as same as grabbing from name store into name id and etc
     //   const currentUser = {
     //     email: this.state.email,
     //     password: this.state.password
     // }   
-      // let userEmail = document.getElementById('email').value;
-      // let userPassword = document.getElementById('password').value;
+      let userEmail = document.getElementById('email').value;
+      let userPassword = document.getElementById('password').value;
       //code to verify the login credentials
-      outer: 
-      for(let i=0; i<this.props.users.length; i++){
-          if((this.props.users[i].email) === thisUser.email  && (this.props.users[i].password) === thisUser.password ){
-              
-                  console.log(this.props.users[i].name);
-                  console.log('loginSuccessful');
-                  //dispatching the changeStatus to trigger the login action to trigger the reducer to change
-                  //the status of the login 
-                  this.props.changeLoginStatus(this.props.users[i]);
-                  this.setState({currentUser : this.props.users[i]});
-                  this.setState({
-                                name: this.props.users[i].name,
-                                email: this.props.users[i].email,
-                                isLoggedIn: true
-                  })
-                  const {name, isLoggedIn} = this.state;
-                  localStorage.setItem('name', name);
-                  localStorage.setItem('isLoggedIn', isLoggedIn ? this.state.currentUser : '');
-                  console.log(localStorage.getItem('user'));
-                  history.push('/userHome');
-                  //this.setState({currentUser.isLoggedIn : true});
-                  break outer;
-          } 
-          else {
-                  alert('Invalid Credentials');
-               }
+      if(curUser.email === userEmail && curUser.password === userPassword){
+        console.log('Login successful');
+        alert("Login Successful");
+        history.push('/userHome');
       }
+      else {
+        alert('Invalid Credentials');
+     }
+      // outer: 
+      // for(let i=0; i<this.props.users.length; i++){
+      //     if((this.props.users[i].email) === thisUser.email  && (this.props.users[i].password) === thisUser.password ){
+              
+      //             console.log(this.props.users[i].name);
+      //             console.log('loginSuccessful');
+      //             //dispatching the changeStatus to trigger the login action to trigger the reducer to change
+      //             //the status of the login 
+      //             this.props.changeLoginStatus(this.props.users[i]);
+      //             this.setState({currentUser : this.props.users[i]});
+      //             this.setState({
+      //                           name: this.props.users[i].name,
+      //                           email: this.props.users[i].email,
+      //                           isLoggedIn: true
+      //             })
+      //             const {name, isLoggedIn} = this.state;
+      //             localStorage.setItem('name', name);
+      //             localStorage.setItem('isLoggedIn', isLoggedIn ? this.state.currentUser : '');
+      //             console.log(localStorage.getItem('user'));
+      //             history.push('/userHome');
+      //             //this.setState({currentUser.isLoggedIn : true});
+      //             break outer;
+      //     } 
+      
+      
   }
 
     render() {
       console.log('inside login page');
       //console.log(this.state.currentUser); state is for global data - not for this class specific one
       console.log(this.props.users); //actually, props for the current class's variables and methods
-      console.log(this.state.isLoggedIn);
+      console.log(this.state);
       return ( 
         
         <div className='loginForm'>

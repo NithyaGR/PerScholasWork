@@ -33,12 +33,13 @@ class HomePage extends Component{
     //   }
     render() {
         console.log('inside the home page');
-        console.log(this.props.pictures);
-        console.log(this.state.pictures);//printing the state declared here after class declaration
+        console.log(this.props);
+        console.log(this.state);
         return(
-                <div className='homePage'>                            
+            <div className='homePage'>                            
                     <div className='mainContent'>
-                    {this.state.pictures.map(picture => {
+            console.log(this.state);//printing the state declared here after class declaration
+                    {this.state.pictureName.map(picture => {
                         return (
                           <Images picture={picture} />
                         )
@@ -46,10 +47,10 @@ class HomePage extends Component{
                     )}
                     <button className='likeButton'>Like</button>
                     <button className='favButton'>Add To Favorite</button>
-                    {this.state.pictures.comments.map(comments => {
+                    {/* {this.state.pictures.comments.map(comments => {
                         <li>{comments}</li>
                         
-                    })}
+                    })} */}
                         {/* <div className='image1'>   
                             <img src={Fall} alt='fall' />        
                         </div>
@@ -83,9 +84,9 @@ class HomePage extends Component{
     }
 
 }
-// const mapStateToProps = (state) =>({
-//     pictures: state.pictures.pictures
-// })
+const mapStateToProps = (state) =>({
+    pictures: state.pictures.pictures
+})
 
-//export default connect(mapStateToProps)(HomePage);
-export default HomePage;
+export default connect(mapStateToProps)(HomePage);
+//export default HomePage;

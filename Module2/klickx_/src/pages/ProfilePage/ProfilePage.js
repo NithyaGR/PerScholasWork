@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 import './ProfilePage.css'
 
 class ProfilePage extends Component {
+
     
     render(){
     return (
@@ -10,6 +11,7 @@ class ProfilePage extends Component {
             <div className='ProfilePage'>
                 <div className='profile'>
                     <p> Display the profile details here</p>
+                    <h4>{this.props.users}</h4>
                 </div>
                 <div className='image1'>
                     <img src=''></img>
@@ -29,4 +31,16 @@ class ProfilePage extends Component {
     )
 }
 }
-export default ProfilePage;
+const mapStateToProps = (state) => ({
+    // trigger the action - > call the reducer -> reducer will change the state
+    user: state.users.users
+  })
+
+  // Adds a prop called "changeLoginStatus" which is a function that takes in a payload
+  // then dispatches payload to the action creator: "register"
+//   const mapDispatchToProps = (dispatch) => ({
+//     updateProfileInfo : profile => dispatch(Edit(profile))
+
+
+//   })
+export default connect(mapStateToProps)(ProfilePage);

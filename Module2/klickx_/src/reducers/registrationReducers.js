@@ -4,7 +4,7 @@ console.log(users);
 
 export const initialState = {
     users : users,
-    new_user: {
+    newUser: {
         name: '',
         email: '',
         password: '',
@@ -13,7 +13,8 @@ export const initialState = {
         picture: [],
         profilePicture: ''
     },
-    isRegistered: false
+    isRegistered: false,
+    isLoggedIn: false
    
 }
 const registrationReducers = (state = {}, action) => {
@@ -25,7 +26,7 @@ const registrationReducers = (state = {}, action) => {
                     users:
                         {
                             ...state,       
-                            new_user: { 
+                            newUser: { 
                                 name: action.payload.name,
                                 email: action.payload.email,
                                 password: action.payload.password	

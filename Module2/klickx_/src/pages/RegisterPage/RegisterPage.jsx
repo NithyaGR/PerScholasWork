@@ -31,6 +31,7 @@ class RegisterPage extends Component {
         }    
       
         if (newUser.name && newUser.email && newUser.password) {
+            alert('Registration - SuccesFul - Please Login!');
             this.props.register(newUser); //line 56 - you created  props method called register
         }   
         console.log('inside form submission of register user - redirecting to login page');
@@ -64,7 +65,7 @@ const mapStateToProps = (state) => ({
   // Adds a prop called "changeLoginStatus" which is a function that takes in a payload
   // then dispatches payload to the action creator: "register"
   const mapDispatchToProps = (dispatch) => ({
-    register : new_user => dispatch(register(new_user))
+    register : newUser => dispatch(register(newUser))
   })
   
  // export default connect(mapStateToProps, mapDispatchToProps)(TodoList);

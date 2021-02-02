@@ -21,7 +21,7 @@ const Images = (props) => { //why props? learn this
     console.log(props); // check here
     return (
            <div className='imageContainer'>
-               <img src={this.props.name} /> {/* send the name of the image through props */}
+               <img src={this.props.pictureName} /> {/* send the name of the image through props */}
                
            </div>
     )

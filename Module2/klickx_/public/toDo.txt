@@ -21,3 +21,5 @@ function logout() {
 }
 
 1) Image component is not rendering - this.props is undefined I used only map
+2) How to login using the new Register credentials? HOw to access these state? If I use mapSateToProps
+will it correctly connect to RegusterUSer Reducer and bring that data?
