@@ -37,7 +37,9 @@ class RegisterPage extends Component {
         console.log('inside form submission of register user - redirecting to login page');
         localStorage.setItem('user', newUser);
         console.log(localStorage.getItem('user'));
-        history.push('/login');
+        this.props.history.push('/login');
+        console.log(this.props);
+
     }
     render(){
         return (

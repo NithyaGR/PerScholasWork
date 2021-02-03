@@ -10,17 +10,12 @@ import pictures from '../../reducers/pictureData';
 class HomePage extends Component{
     state = {
         pictures: pictures,
-        // pictureName : [Vrindavan, Srirangam, GantakiRiver, Moon, Fall, Fire, matches, sunset, nature1, Journey, cosmos, earth],
-        // userLiked: false,
-        // userComments: [],
-        // userFavorite: []
+
     }
-    // addToLikes = (item) => {
-    //     this.setState({cartItems: [item, ...this.state.cartItems]})
-    //   }
+   
     imgDetails =  (e) => {
         console.log('onclick - imgDetails');
-        console.log(e.target.className);
+        alert('Please Login - To Access!');
     }
     render() {
         console.log('inside the home page');

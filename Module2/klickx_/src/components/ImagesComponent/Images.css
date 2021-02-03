@@ -1,15 +1,101 @@
+   
+   .popup-box {
+      margin-top: 90px;
+      margin-left: 230px;
+      padding: 10px;
+      position: fixed;
+      background: #00000050;
+      width: 600px;
+      height: 600px;
+      top: 0;
+      left: 0;
+    }
+     
+    .box {
+      /* position: relative;
+      width: 400px;
+      margin: 0 auto;
+      height: auto;
+      max-height: 70vh;
+      margin-top: calc(100vh - 85vh - 20px);
+      background: #fff;
+      border-radius: 4px;
+      padding: 20px;
+      border: 1px solid #999;
+      overflow: auto; */
+      margin-top: 5px;
+      border-radius: 12px;
+      height: 600px;
+      width: 600px;
+      display : flex;
+      flex-direction: column;
+      /* flex-wrap: wrap; */
+      justify-content: flex-start;
+      background-color: #fff;
+    }
+     
+    .close-icon {
+      content: 'x';
+      cursor: pointer;
+      position: fixed;
+      right: calc(15% - 30px);
+      top: calc(100vh - 85vh - 17px);
+      background: #ededed;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      line-height: 20px;
+      text-align: center;
+      border: 1px solid #999;
+      font-size: 20px;
+    }
+   .container{
+      border: solid;
+      border-radius: 5px;
+      height: 500px;
+      width: 500px;
+      display : flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      background-color: yellow;
+   }
+   .imageContainer {
+      border-radius: 5px;
+   }
+   .imageContainer img {
+     width: 500px;
+     height: 300px;
+   }
+   .btnContainer {
+      margin-top: 0%;
+      height:50px;
+      width:400px;
+      display: flex;
+      flex-wrap: row;
+      justify-content: space-around;
+   }
+   .btnContainer #totalLikes {
+      width: auto;
+      height: 40px;
+      background-color: transparent;
+      border: unset;
+   }
+   .btnContainer #like {
+      width: auto;
+      height: 40px;
+      background-color: transparent;
+      border: unset;
+      
+   }
+   .btnContainer #fav {
+      width: auto;
+      height: 40px;
+      background-color: transparent;
+      border: unset
+      
+   }
+   .commentsContainer{
+      display: flex;
+      flex-wrap: wrap;
 
-.imageContainer {
-
-}
-/* This will display the contents of selected links */
-img {
-    border: 1px solid #ddd; /* Gray border */
-    border-radius: 4px;  /* Rounded border */
-    padding: 2px; /* Some padding */
-    width: 200px; /* Set a small width */
- }
- /* Add a hover effect (blue shadow) */
- img:hover {
-    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
-  }
+   }

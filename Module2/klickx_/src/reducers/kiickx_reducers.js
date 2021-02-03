@@ -14,17 +14,7 @@ export const initialState = {
 
 
 const klickx_reducers = (state = initialState, action) => {
-    switch(action.type) {
-        case 'ADD_COMMENT' :
-            console.log("Adding the comment");
-            return state
-             //add the updated code later
-            //return the updated state after adding a comment
-            //the action is bringing here the data which needs to be updated - 
-            //this comment needs to be added in the pictureData.js - pictures.comments - learn the syntax and the procedure
-            // return{
-            //     pictures[].comments: [...state.pictures[].comments, action.payload];
-            // }
+    switch(action.type) {   
             case 'LOGIN_USER' :
                 console.log('inside login user');
                 console.log(action.payload);

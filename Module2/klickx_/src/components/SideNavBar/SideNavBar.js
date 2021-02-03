@@ -7,8 +7,8 @@ import { connect } from 'react-redux';
 class SideNavBar extends Component {
  
     render(){
-        console.log('Rendering SideBar');
-        console.log(this.props.users);
+        // console.log('Rendering SideBar');
+        // console.log(this.props.users);
     return (
         <div id="mySidenav" className="sidenav">   
                 <Link to='/home'>Home</Link>   
