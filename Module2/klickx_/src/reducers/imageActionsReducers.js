@@ -9,10 +9,11 @@ export const initialState = {
     pictures: pictures,
     userLiked: false,
     Comments: [],
-    userFavorite: [],
+    userFavorites: [],
     isClicked: false,
     selectedImage: '',
-    isOpen : false
+    isOpen : false,
+    isFavorite: true
     
 }
 const imageActionReducers = (state= initialState, action) => {
@@ -32,7 +33,10 @@ const imageActionReducers = (state= initialState, action) => {
         case 'ADD_TO_FAV':
             console.log("Adding the favorites");
             console.log(action.payload);
-            return state
+            return {
+                ...state,
+                userFavorites: [action.payload, ...state.userFavorites] // check this please
+            }
         case 'DELETE_COMMENT' :
             console.log("Deleting the comment");
             console.log(action.payload);
@@ -52,7 +56,15 @@ const imageActionReducers = (state= initialState, action) => {
             return {
                 ...state,
                 isOpen : action.payload
-            }      
+            }  
+
+        case 'REMOVE_FAVORITE' :
+            console.log('Deleting from favorites list')      
+            console.log(action.payload);
+            return {
+                ...state,
+                isFavorite: false
+            }
         default: 
             return state        
 

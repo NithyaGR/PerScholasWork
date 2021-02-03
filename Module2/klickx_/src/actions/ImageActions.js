@@ -3,10 +3,11 @@
 // CONSTANT FOR AN ACTION (MAKES OUR LIFE EASIER)
 export const ADD_COMMENT = 'ADD_COMMENT'
 export const LIKE_IMG = 'LIKE_IMG'
-export const ADD_TO_FAV = 'MAKE_FAV'
+export const ADD_TO_FAV = 'ADD_TO_FAV'
 export const DELETE_COMMENT = 'DELETE_COMMENT'
 export const IMG_CLICKED = 'IMG_CLICKED'
 export const TOGGLE_POPUP = 'TOGGLE_POPUP'
+export const REMOVE_FAVORITE = 'REMOVE_FAVORITE'
 
 // ACTION CREATOR 
 export const addComment = (data) => ({
@@ -33,5 +34,9 @@ export const imageClicked = (data) => ({
 })
 export const togglePopUp = (data) => ({
     type: TOGGLE_POPUP,
+    payload: data
+})
+export const removeFavorite = (data) => ({
+    type: REMOVE_FAVORITE,
     payload: data
 })

@@ -19,6 +19,14 @@ class Images extends Component { //why props? learn this
     }
     handleClick = (e) => {
         console.log(e.target.id);
+        if(e.target.id === 'fav'){
+            //call actions of fav 
+            this.props.addToFavorites(this.props.selectedImage)
+            alert('Added to your favorites!!!')
+        }
+        if(e.target.id === 'like'){
+            
+        }
     }
     handleChange = (e) =>{
         //to bind the text which we entered and to store in that corresponding ids  
@@ -65,7 +73,8 @@ const mapStateToProps = (state) => ({
 
     pictures: state.pictures.pictures,
     selectedImage : state.pictures.selectedImage,
-    isOpen : state.pictures.isOpen
+    isOpen : state.pictures.isOpen,
+    userLiked: state.pictures.userLiked
 
 })
 const mapDispatchToProps = (dispatch) => ({
