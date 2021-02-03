@@ -13,12 +13,12 @@ class FavoritesPage extends Component {
         userFavorites: []
 
     }
-    handleClick = (e) => {
+    handleClick = (e, favImg) => {
         console.log(e.target.id);
         console.log(e.target.className);
-        console.log();
-        this.props.removeFavorite(e.target.className);
-    }
+        console.log(favImg);
+        this.props.removeFavorite(e.target.className);//passing name as a parameter
+    }    
 
     render() {
         console.log('inside favorites page');
@@ -30,10 +30,10 @@ class FavoritesPage extends Component {
             <h3> Favorites Page ! Here are your most favorite pictures</h3>
             {this.props.userFavorites.map(({id, name, source}) => 
             <div onClick={this.imgDetails}><img id={id} key={id} src={source} alt={name} />
-            <button className={name} id='removeBtn' onClick={this.handleClick}>Remove</button>
+            <button className={name} id='removeBtn' onClick={(event) => this.handleClick(event, this.props.userFavorites)}>Remove</button>
             </div>)}
             {/* <div className='details'>
-
+onClick={(event) => this.props.onClick(event, this.props.receipt)}
             </div> */}
             
             

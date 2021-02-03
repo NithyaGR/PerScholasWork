@@ -61,9 +61,12 @@ const imageActionReducers = (state= initialState, action) => {
         case 'REMOVE_FAVORITE' :
             console.log('Deleting from favorites list')      
             console.log(action.payload);
-            return {
-                ...state,
-                isFavorite: false
+            return { // returning a copy of orignal state
+                ...state, //copying the original state
+                //isFavorite: false,
+                userFavorites: state.userFavorites.filter(fav => fav.name !== action.payload) 
+                                               // returns a new filtered fav array
+                  
             }
         default: 
             return state        
