@@ -35,8 +35,6 @@ import './LoginPage.css';
       const curUser = this.props.users.newUser;
       console.log(curUser);
       console.log(curUser.email);
-      //console.log(this.props.users.length); - users is not array
-      //storing the data in the variables - to validate the credentials
       const { thisUser } = this.state; //this is as same as grabbing from name store into name id and etc
     //   const currentUser = {
     //     email: this.state.email,
@@ -48,10 +46,11 @@ import './LoginPage.css';
       if(curUser.email === userEmail && curUser.password === userPassword){
         console.log('Login successful');
         alert("Login Successful");
-        
-        this.setState({currentUser : curUser});
-        this.setState({isLoggedIn : true});
-        history.push('/userHome');
+        // this.setState({currentUser : curUser});
+        // this.setState({isLoggedIn : true});
+        //to change the state globally
+        this.props.changeLoginStatus(curUser.name);
+        this.props.history.push('/userHome');
       }
       else {
         alert('Invalid Credentials');
@@ -105,13 +104,14 @@ import './LoginPage.css';
   // create a copy of the props make them accessible for this component
   const mapStateToProps = (state) => ({
     // trigger the action - > call the reducer -> reducer will change the state
-    users: state.users.users
+    users: state.users.users,
+    currentUser: state.users.currentUser
   })
 
   // Adds a prop called "changeLoginStatus" which is a function that takes in a payload
   // then dispatches payload to the action creator: "login"
   const mapDispatchToProps = (dispatch) => ({
-    changeLoginStatus : item => dispatch(login(item))
+    changeLoginStatus : data => dispatch(login(data))
   })
   
   

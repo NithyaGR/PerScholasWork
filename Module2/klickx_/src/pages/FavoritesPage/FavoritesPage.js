@@ -32,11 +32,6 @@ class FavoritesPage extends Component {
             <div onClick={this.imgDetails}><img id={id} key={id} src={source} alt={name} />
             <button className={name} id='removeBtn' onClick={(event) => this.handleClick(event, this.props.userFavorites)}>Remove</button>
             </div>)}
-            {/* <div className='details'>
-onClick={(event) => this.props.onClick(event, this.props.receipt)}
-            </div> */}
-            
-            
             </div> 
           </div>
         )

@@ -4,6 +4,8 @@ import { addComment, likeImage, addToFavorites, deleteComment, togglePopUp } fro
 import './Images.css';
 
 import pictures from '../../reducers/pictureData';
+import users from '../../reducers/users';
+
 
 
 class Images extends Component { //why props? learn this
@@ -15,9 +17,13 @@ class Images extends Component { //why props? learn this
         Comments: [],
         userFavorite: [],
         isClicked: false,
-        isOpen: ''
+        isOpen: '',
+        selectedImage: {
+            liked: false
+        }
     }
     handleClick = (e) => {
+        console.log('onclick- function');
         console.log(e.target.id);
         if(e.target.id === 'fav'){
             //call actions of fav 
@@ -25,7 +31,16 @@ class Images extends Component { //why props? learn this
             alert('Added to your favorites!!!')
         }
         if(e.target.id === 'like'){
-            
+            console.log(users.length);
+            let totalNumberOfUsers = users.length + 1 // existing users plus the new registered user
+            console.log(this.props.likes);
+            let newNumberOfLikes = Number(this.props.likes)+1;
+            if(this.props.selectedImage.likes < totalNumberOfUsers) {
+                this.props.likeImage(this.props.selectedImage);
+            }
+            else {
+                alert('Already Liked the image!!');
+            }
         }
     }
     handleChange = (e) =>{
@@ -33,13 +48,16 @@ class Images extends Component { //why props? learn this
         this.setState({ [e.target.id]: e.target.value })
     }
     handleClose = (e) =>{
-        this.props.togglePopUp(false)
+        console.log('clicking the close button');
+        this.props.togglePopUp(false);
     }
   
     render(){
         console.log('Rendering Images');
         console.log(this.props.selectedImage);
-        console.log(this.props.selectedImage.comments);
+        // console.log(this.props.selectedImage.liked);
+        console.log(this.props.selectedImage.comments[0].comment);
+        console.log(this.props.selectedImage.comments[0].name);
         return (
             // <div className='container'>
             <div className='popup-box'>
@@ -49,18 +67,19 @@ class Images extends Component { //why props? learn this
                 <img id={this.props.selectedImage.id} src={this.props.selectedImage.source} alt={this.props.selectedImage.name} />
                 </div>
                 <div className='btnContainer' >
-                    <button id='like' onClick={this.handleClick}>Like</button >                
                     <button id='fav' onClick={this.handleClick}>Add To Favorites </button>
-                    <button id='totalLikes'>Total Likes{this.props.selectedImage.likes} </button>
-                    
+                    <label id='totalLikes'>Total Likes </label>
+                    <label> {this.props.selectedImage.likes} </label>
+                    <button id='like' onClick={this.handleClick}>{this.props.selectedImage.liked ? 'Unlike' : 'Like'}</button > 
+                    { this.props.selectedImage.liked  ? <img id='likedIcon' src='/likedIcon.png' alt='likedImage'/> : ''}                   
                 </div>
                 <div className='commentsContainer' >
                     <ul>
-                        {/* {this.props.selectedImage.comments.comments.map(comment => {
+                        {this.props.selectedImage.comments.map(comment => {
                             return(
-                               <li>{comment}</li> 
+                               <li> {comment.comment}</li> 
                         )} 
-                        )} */}
+                        )}
                     </ul>
                 </div>
                 </div>
@@ -74,7 +93,8 @@ const mapStateToProps = (state) => ({
     pictures: state.pictures.pictures,
     selectedImage : state.pictures.selectedImage,
     isOpen : state.pictures.isOpen,
-    userLiked: state.pictures.userLiked
+    //userLiked: state.pictures.selectedImage.liked,
+    likes : state.pictures.selectedImage.likes
 
 })
 const mapDispatchToProps = (dispatch) => ({

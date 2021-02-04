@@ -8,7 +8,11 @@ export const initialState = {
     users : users,
     pictures: pictures,
     name: '',
-    isLoggedIn: false
+    isLoggedIn: false,
+    currentUser: {
+        name: '',
+        isLoggedIn: false
+    }
     
 }
 
@@ -28,7 +32,11 @@ const klickx_reducers = (state = initialState, action) => {
 		                        isLoggedIn : true
                         },
                         name: action.payload.name,
-                        isLoggedIn: true
+                        isLoggedIn: true,
+                        currentUser: {
+                            name: action.payload.name,
+                            isLoggedIn: true
+                        }
                         
                     }
                 }
@@ -40,7 +48,11 @@ const klickx_reducers = (state = initialState, action) => {
                                 isLoggedIn : false
                       },
                       name: null,
-                      isLoggedIn: false
+                      isLoggedIn: false,
+                      currentUser: {
+                        name: '',
+                        isLoggedIn: false
+                    }
                     };
            
                 

@@ -17,13 +17,9 @@ class UserHomePage extends Component {
         console.log('onclick - imgDetails');
         console.log(e.target.id);
         console.log('push to new page - with that image and likes, and comments');
-        this.setState({
-            isClicked: true,
-            isOpen: true
-        })
         console.log(e.target.alt);
-        this.props.updateClick(e.target.alt);
-        this.props.togglePopUp(true)
+        this.props.updateClick(e.target.alt);//setting the state isOpen in reducers
+        this.props.togglePopUp(true); //closing the modal - pop-up
 
     }
     handlePopUp = () =>{
@@ -43,7 +39,7 @@ class UserHomePage extends Component {
          {pictures.map(({id, name, source}) => <div onClick={this.imgDetails}><img id={id} key={id} src={source} alt={name} /></div>)}
                 
         </div>
-        {this.state.isOpen ? <Images />: ''}
+        {this.props.isOpen ? <Images />: ''}
                 
      </div>
         
@@ -53,6 +49,8 @@ class UserHomePage extends Component {
 const mapStateToProps = (state) => ({
  
     pictures : state.pictures.pictures,
+    isOpen : state.pictures.isOpen,
+    isClicked : state.pictures.isClicked
     
 })
 const mapDispatchToProps = (dispatch) => ({

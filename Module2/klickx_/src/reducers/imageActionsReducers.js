@@ -13,7 +13,8 @@ export const initialState = {
     isClicked: false,
     selectedImage: '',
     isOpen : false,
-    isFavorite: true
+    isFavorite: true,
+    
     
 }
 const imageActionReducers = (state= initialState, action) => {
@@ -29,7 +30,16 @@ const imageActionReducers = (state= initialState, action) => {
         case 'LIKE_IMG' :
             console.log("like image");
             console.log(action.payload);
-            return state    
+            console.log(state.selectedImage);
+            return {
+                ...state,
+                userLiked : true,
+                selectedImage: {
+                    ...state.selectedImage,
+                    likes: Number(action.payload.likes)+1,
+                    liked: true
+                }
+            }    
         case 'ADD_TO_FAV':
             console.log("Adding the favorites");
             console.log(action.payload);
@@ -41,6 +51,7 @@ const imageActionReducers = (state= initialState, action) => {
             console.log("Deleting the comment");
             console.log(action.payload);
             return state
+
         case 'IMG_CLICKED'  :
             console.log("IMG Clicked Action");
             console.log(action.payload);
@@ -48,6 +59,7 @@ const imageActionReducers = (state= initialState, action) => {
             return {
                 ...state,
                 isClicked : true,
+                isOpen : true,
                 selectedImage : state.pictures.filter ( (picture) => action.payload === picture.name)[0]
               };
         case 'TOGGLE_POPUP' :
@@ -55,7 +67,8 @@ const imageActionReducers = (state= initialState, action) => {
             console.log(action.payload);
             return {
                 ...state,
-                isOpen : action.payload
+                isOpen : action.payload,
+                isClicked : false
             }  
 
         case 'REMOVE_FAVORITE' :
