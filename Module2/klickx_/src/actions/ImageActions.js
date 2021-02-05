@@ -8,6 +8,7 @@ export const DELETE_COMMENT = 'DELETE_COMMENT'
 export const IMG_CLICKED = 'IMG_CLICKED'
 export const TOGGLE_POPUP = 'TOGGLE_POPUP'
 export const REMOVE_FAVORITE = 'REMOVE_FAVORITE'
+export const WANT_TO_ADD_COMMENT = 'WANT_TO_ADD_COMMENT'
 
 // ACTION CREATOR 
 export const addComment = (data) => ({
@@ -38,5 +39,9 @@ export const togglePopUp = (data) => ({
 })
 export const removeFavorite = (data) => ({
     type: REMOVE_FAVORITE,
+    payload: data
+})
+export const wantToAddComment = (data) => ({
+    type: WANT_TO_ADD_COMMENT,
     payload: data
 })

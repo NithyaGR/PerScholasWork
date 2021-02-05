@@ -72,3 +72,26 @@ In your app - you should have your <home page> first- set private path , then lo
 react_devtools_backend.js:2430 Warning: <BrowserRouter> ignores the history prop. To use a custom history, use `import { Router }` instead of `import { BrowserRouter as Router }`. 
     at BrowserRouter (http://localhost:3000/static/js/0.chunk.js:37013:35)
     at Provider (http://localhost:3000/static/js/0.chunk.js:34629:20)
+    state not iterable :
+
+    Comments: [...state.Comments, action.payload] this is right 
+    I used [Comments]: [..state, action.payload] this is wrong, thats why got that error
+
+
+    {id: 1, name: "Vrindavan", postedDate: "01/01/2021", postedBy: "Krishna", source: "../Pictures/Vrindavan.jpg", …}
+comments: Array(3)
+0: {comment: "Beautifully captured!", by: "Kumar"}
+1: {comment: "So Green, and soothing!", by: "Shakthi"}
+2: {comment: "Thanks guys!", by: "Krishna"}
+length: 3
+__proto__: Array(0)
+id: 1
+likes: "3"
+name: "Vrindavan"
+postedBy: "Krishna"
+postedDate: "01/01/2021"
+source: "../Pictures/Vrindavan.jpg"
+__proto__: Object
+
+
+

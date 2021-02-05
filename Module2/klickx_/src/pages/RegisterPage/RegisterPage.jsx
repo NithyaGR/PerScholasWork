@@ -2,18 +2,17 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { register }  from '../../actions/RegisterUserAction';
-import history from '../../helpers/history';
 import './RegisterPage.css';
-import users from '../../reducers/users';
 
 class RegisterPage extends Component {
 
     state = {
-        users: users,   
-        name: '',
-        email: '',
-        password: '',
-        isRegistered: false
+        //users: users,   
+        newUser: {
+                name: '',
+                email: '',
+                password: ''
+        }
     }
     handleChange = (e) =>{
         //to bind the text which we entered and to store in that corresponding ids  
@@ -31,7 +30,7 @@ class RegisterPage extends Component {
         }    
       
         if (newUser.name && newUser.email && newUser.password) {
-            alert('Registration - SuccesFul - Please Login!');
+            alert('Registration - Successful - Please Login!');
             this.props.register(newUser); //line 56 - you created  props method called register
         }   
         console.log('inside form submission of register user - redirecting to login page');
@@ -50,10 +49,8 @@ class RegisterPage extends Component {
                 <input type='text' placeholder='Name' id='name' onChange={this.handleChange} />    
                 <input type='text' placeholder='Email' id='email' onChange={this.handleChange}/>
                 <input type='password' placeholder='Password' id='password' onChange={this.handleChange}/>
-                {/* <input type='password' placeholder='confirmPassword' id='confirmPassword' /> */}
                 <button type='submit' id='registerButton' value='register'>Register</button>
             </form>
-            {/* <Link to='/login'> LoginPage </Link> */}
        </div>
     )
 }
@@ -61,16 +58,22 @@ class RegisterPage extends Component {
 // create a copy of the props make them accessible for this component
 const mapStateToProps = (state) => ({
     // trigger the action - > call the reducer -> reducer will change the state
-    user: state.users.users
+    users: state.users.users,
+    newUser: state.users.newUser
+    // name: state.users.newUser.name,
+    // email: state.users.newUser.email,
+    // password: state.users.newUser.password,
+    // isRegistered: state.users.newUser.isRegistered
   })
 
-  // Adds a prop called "changeLoginStatus" which is a function that takes in a payload
-  // then dispatches payload to the action creator: "register"
+  // Adds a props called "register" which is a function that takes in a payload of inputted newUser 
+  // data then dispatches payload to the action creator: "register"
   const mapDispatchToProps = (dispatch) => ({
     register : newUser => dispatch(register(newUser))
   })
   
- // export default connect(mapStateToProps, mapDispatchToProps)(TodoList);
+
 export default connect(mapStateToProps, mapDispatchToProps)(RegisterPage);
+//export default connect(mapDispatchToProps)(RegisterPage);
 
 

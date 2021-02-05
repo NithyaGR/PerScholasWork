@@ -11,7 +11,8 @@ export const initialState = {
         isLoggedIn: false,
         favorites: [],
         picture: [],
-        profilePicture: ''
+        profilePictures: '',
+        isRegistered: false
     },
     isRegistered: false,
     isLoggedIn: false
@@ -29,8 +30,8 @@ const registrationReducers = (state = {}, action) => {
                             newUser: { 
                                 name: action.payload.name,
                                 email: action.payload.email,
-                                password: action.payload.password	
-                            
+                                password: action.payload.password,
+                                isRegistered: true	
                             },
                             isRegistered: true          
                         }

@@ -14,6 +14,8 @@ export const initialState = {
     selectedImage: '',
     isOpen : false,
     isFavorite: true,
+    commentPosted: '',
+    wantToAddComment: false
     
     
 }
@@ -23,7 +25,25 @@ const imageActionReducers = (state= initialState, action) => {
         case 'ADD_COMMENT' :
             console.log("Adding the comment");
             console.log(action.payload);
-            return state
+            console.log(action.payload.comment);
+            console.log(action.payload.by);
+            return {
+                ...state,
+                Comments: [...state.Comments, action.payload.comment],
+                selectedImage: {
+                    ...state.selectedImage,
+                    commentPosted: true,
+                    comments: [
+                        
+                        {...state.comments},
+                        {
+                            comment: action.payload.comment,
+                            by: action.payload.by
+                         }
+                        ]
+
+                }
+            } 
             // return{
             //     pictures[].comments: [...state.pictures[].comments, action.payload];
             // }
@@ -37,15 +57,28 @@ const imageActionReducers = (state= initialState, action) => {
                 selectedImage: {
                     ...state.selectedImage,
                     likes: Number(action.payload.likes)+1,
-                    liked: true
+                    liked: true,
+                    commentPosted: false
                 }
-            }    
+            }   
+        case 'WANT_TO_ADD_COMMENT'  :
+            console.log('wantToAddComment');
+            console.log(action.payload);
+            return {
+                ...state,
+                selectedImage: {
+                    ...state.selectedImage,
+                    wantToAddComment: true
+                }
+
+            }
         case 'ADD_TO_FAV':
             console.log("Adding the favorites");
             console.log(action.payload);
             return {
                 ...state,
-                userFavorites: [action.payload, ...state.userFavorites] // check this please
+                userFavorites: [action.payload, ...state.userFavorites], // check this please
+                commentPosted: false
             }
         case 'DELETE_COMMENT' :
             console.log("Deleting the comment");

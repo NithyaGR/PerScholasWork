@@ -10,7 +10,6 @@ class App extends Component {
        
   render() {
    console.log("Inside the app");
-  //  console.log(this.state.users);
   return (
      <div className='appContainer'>
           

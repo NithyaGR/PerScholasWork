@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import users from '../../reducers/users';
 import pictures from '../../reducers/pictureData';
+
 import './ProfilePage.css'
 
 class ProfilePage extends Component {
@@ -10,12 +11,21 @@ class ProfilePage extends Component {
         users: users,
         pictures: pictures,
         userFavorites: [],
-        currentUser: ''
+        currentUser: '',
+        newUser:'',
+        userFavorites:[],
+        currentUser: {
+            name: '',
+            isLoggedIn: ''
+        },
     }
     
     render(){
         console.log('profile picture');
+        console.log(this.props);
         console.log(this.props.currentUser);
+        console.log(this.props.newUser);
+        console.log(this.state);
     return (
        
             <div className='ProfilePage'>
@@ -45,7 +55,9 @@ const mapStateToProps = (state) => ({
     // trigger the action - > call the reducer -> reducer will change the state
     user: state.users.users,
     picture: state.pictures.pictures,
-    currentUser: state.users.newUser
+    newUser: state.users.newUser,
+    currentUser: state.users.currentUser,
+    userFavorites: state.pictures.userFavorites
   })
 
   // Adds a prop called "changeLoginStatus" which is a function that takes in a payload

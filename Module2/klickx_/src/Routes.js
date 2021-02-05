@@ -15,7 +15,7 @@ export default class Routes extends Component {
         return (
             
               <Switch>
-                        <Route exact path='/home' exact component={HomePage} />
+                        <Route path='/home' exact component={HomePage} />
                 
                         <Route path='/login' component={LoginPage} />
 
@@ -28,8 +28,6 @@ export default class Routes extends Component {
                         <Route path='/favorites' component={FavoritesPage} />
 
                         {/* <Route path='/settings' component={SettingsPage} /> */}
-                     
-                        {/*<Route path='/home' component={HomePage} />*/}
                         
                </Switch>           
           

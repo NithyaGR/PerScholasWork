@@ -26,13 +26,20 @@ import './LoginPage.css';
   }
   handleSubmit=(e) => {
       e.preventDefault();
-      //write the code to verify the user credentials and once done it needs to redirect to home page.
-      // How to redirect to home page? 
-      //set the state isLoggedIn to true
-     
       console.log('inside handle submit');
-      console.log(this.props.users.newUser);
+      
+      try{
+        console.log(this.props.users.newUser);      
+      }
+      catch(exception){
+        alert('No such user! Please create new account!');
+        console.log(exception);
+        this.props.history.push('/register');
+      }
+      
+      console.log(this.props.users.newUser);  
       const curUser = this.props.users.newUser;
+      
       console.log(curUser);
       console.log(curUser.email);
       const { thisUser } = this.state; //this is as same as grabbing from name store into name id and etc
@@ -45,12 +52,10 @@ import './LoginPage.css';
       //code to verify the login credentials
       if(curUser.email === userEmail && curUser.password === userPassword){
         console.log('Login successful');
+        this.props.login(curUser);
         alert("Login Successful");
-        // this.setState({currentUser : curUser});
-        // this.setState({isLoggedIn : true});
-        //to change the state globally
-        this.props.changeLoginStatus(curUser.name);
         this.props.history.push('/userHome');
+        
       }
       else {
         alert('Invalid Credentials');
@@ -79,7 +84,7 @@ import './LoginPage.css';
       //             break outer;
       //     } 
       
-      
+     
   }
 
     render() {
@@ -111,7 +116,7 @@ import './LoginPage.css';
   // Adds a prop called "changeLoginStatus" which is a function that takes in a payload
   // then dispatches payload to the action creator: "login"
   const mapDispatchToProps = (dispatch) => ({
-    changeLoginStatus : data => dispatch(login(data))
+    login : data => dispatch(login(data))
   })
   
   

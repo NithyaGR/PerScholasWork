@@ -104,3 +104,18 @@
       width: 40px;
       height: 40px;
    }
+   .postingComment{
+
+   }
+   .btnPost{
+      width: auto;
+      height: 40px;
+      background-color: transparent;
+      border: unset
+   }
+   .btnDelete{
+      width: auto;
+      height: 40px;
+      background-color: transparent;
+      border: unset
+   }
