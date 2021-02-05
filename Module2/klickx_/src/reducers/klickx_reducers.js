@@ -7,16 +7,14 @@ console.log(users);
 
 export const initialState = {
     users : users,
-    pictures: pictures,
-    name: '',
-    isLoggedIn: false,
+    //pictures: pictures, checking
     currentUser: {
         name: '',
-        isLoggedIn: false,
         email: '',
         password: '',
+        isLoggedIn: false,
         favorites: [],
-        picture: [],
+        pictures: [],
         profilePictures: '',
         isRegistered: true
     }
@@ -25,46 +23,28 @@ export const initialState = {
 
 const klickx_reducers = (state = initialState, action) => {
     switch(action.type) {   
-            case 'LOGIN_USER' :
+            case LOGIN_USER :
                 console.log('inside login user');
                 console.log(action.payload);
                 // localStorage.setItem("name", JSON.stringify(action.payload.name));
                 // localStorage.setItem("isLoggedIn", JSON.stringify(action.payload.isLoggedIn));
                 return {
-                    users:
-                    {
                         ...state,       
-	                    users: { 		
-		                        isLoggedIn : true
-                        },
-                        name: action.payload.name,
-                        isLoggedIn: true,
                         currentUser: {
-                            name: action.payload.name,
+                            ...state.currentUser,
+                            email: action.payload.email,
                             isLoggedIn: true
                         }
                         
-                    }
-                }
-            case 'LOGOUT_USER' :
+                    }   
+            
+            case LOGOUT_USER :
                 console.log('logging out');
                     localStorage.clear();
-                    return {
-                      ...state,
-                      users: {
-                                isLoggedIn : false
-                      },
-                      name: null,
-                      isLoggedIn: false,
-                      currentUser: {
-                        name: '',
-                        isLoggedIn: false
-                    }
-                    };
-           
-                
-        default: 
-            return state    
+                    return initialState    
+              
+            default: 
+                return state    
 
     }
 }

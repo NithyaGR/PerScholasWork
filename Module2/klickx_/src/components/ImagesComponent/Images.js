@@ -31,7 +31,7 @@ class Images extends Component { //why props? learn this
         console.log(e.target.id);
         if(e.target.id === 'fav'){
             //call actions of fav 
-            this.props.addToFavorites(this.props.selectedImage)
+            this.props.addToMyFavorites(this.props.selectedImage)
             alert('Added to your favorites!!!')
         }
         if(e.target.id === 'like'){
@@ -40,7 +40,7 @@ class Images extends Component { //why props? learn this
             console.log(this.props.likes);
             let newNumberOfLikes = Number(this.props.likes)+1;
             if(this.props.selectedImage.likes < totalNumberOfUsers) {
-                this.props.likeImage(this.props.selectedImage);
+                this.props.likeThisImage(this.props.selectedImage);
             }
             else {
                 alert('Already Liked the image!!');
@@ -48,11 +48,11 @@ class Images extends Component { //why props? learn this
         }
         if(e.target.id === 'btnPost'){
             console.log(e.target.id);
-            this.props.wantToAddComment(true);
+            this.props.wantToAddNewComment(true);
         }
         if(e.target.id === 'btnDelete'){
             console.log(e.target.id);
-            this.props.wantToAddComment(false);
+            //this.props.wantToAddNewComment(false);
         }
     }
     handleChange = (e) =>{
@@ -61,7 +61,10 @@ class Images extends Component { //why props? learn this
     }
     handleSubmit = (e ) => {
         e.preventDefault();
+        e.stopPropagation();
         console.log('handleSubmit');
+        var newDate = new Date()
+        console.log(newDate);
         let newComment = document.getElementById('textPostComment').value;
         console.log(newComment);
         let newCommentObject = { 
@@ -69,19 +72,16 @@ class Images extends Component { //why props? learn this
             by: localStorage.getItem('name')
          }
          console.log(newCommentObject);
-        this.props.addComment(this.props.addComment(newCommentObject));
+        this.props.addNewComment(newCommentObject);
 
     }
     handleClose = (e) =>{
         console.log('clicking the close button');
-        this.props.togglePopUp(false);
+        this.props.togglePopUpModal(false);
     }
 
     render(){
-        console.log('Rendering Images');
-        console.log(this.props.selectedImage);
-        // console.log(this.props.selectedImage.liked);
-        //console.log(this.props.selectedImage.comments[0].comment);
+        console.log('Rendering Images ',this.props.selectedImage);
         return (
             // <div className='container'>
             <div className='popup-box'>
@@ -98,28 +98,31 @@ class Images extends Component { //why props? learn this
                     { this.props.selectedImage.liked  ? <img id='likedIcon' src='/likedIcon.png' alt='likedImage'/> : ''}                   
                 </div>
                 <div className='commentsContainer' >
+                    <div className='commentsList'>
                     <ul>
-                        {this.props.selectedImage.comments.map(comment => {
+                        {this.props.selectedImage.comments.map((comment, index)=> {
                             return(
-                               <li> {comment.comment}</li> 
+                               <li key={index}> {comment.comment}</li> 
                         )} 
                         )}
                     </ul>
+                    </div>
                     <div className='postingComment'> 
                     {!this.props.selectedImage.commentPosted ? <button id='btnPost' onClick={this.handleClick}>Post Comment</button> 
-                    : <button id='btnDelete' onClick={this.handleClick}>Delete Comment</button> }
-                    {this.props.selectedImage.wantToAddComment ? 
-                    <form onSubmit={this.handleSubmit}>
+                    : ''}
+                    {/* <button id='btnDelete' onClick={this.handleClick}>Delete Comment</button>  */}
+                    {this.props.selectedImage.wantToAddComment && !this.props.selectedImage.commentPosted ? 
+                    <form>
                     
                     <input type='textarea' id='textPostComment' onChange={this.handleChange}/>
-                    <input type='submit' id='submit'/>
+                    <input type='button' value='submit' id='submit' onClick={this.handleSubmit} />
                      </form>   
                      : ''}
                     </div>
                 </div>
                 </div>
            </div>
-    
+        
         )
 }
 }
@@ -128,7 +131,6 @@ const mapStateToProps = (state) => ({
     pictures: state.pictures.pictures,
     selectedImage : state.pictures.selectedImage,
     isOpen : state.pictures.isOpen,
-    //userLiked: state.pictures.selectedImage.liked,
     likes : state.pictures.selectedImage.likes,
     commentPosted: state.pictures.selectedImage.commentPosted,
     wantToAddComment: state.pictures.selectedImage.wantToAddComment,
@@ -137,12 +139,12 @@ const mapStateToProps = (state) => ({
 
 })
 const mapDispatchToProps = (dispatch) => ({
-    likeImage : data => dispatch(likeImage(data)),
-    addComment : data => dispatch(addComment(data)),
-    deleteComment : data => dispatch(deleteComment(data)),
-    addToFavorites : data => dispatch(addToFavorites(data)),
-    togglePopUp : data => dispatch(togglePopUp(data)),
-    wantToAddComment : data => dispatch(wantToAddComment(data))
+    likeThisImage : data => dispatch(likeImage(data)),
+    addNewComment : data => dispatch(addComment(data)),
+    deleteThisComment : data => dispatch(deleteComment(data)),
+    addToMyFavorites : data => dispatch(addToFavorites(data)),
+    togglePopUpModal : data => dispatch(togglePopUp(data)),
+    wantToAddNewComment : data => dispatch(wantToAddComment(data))
     
 })
 export default connect(mapStateToProps, mapDispatchToProps)(Images);

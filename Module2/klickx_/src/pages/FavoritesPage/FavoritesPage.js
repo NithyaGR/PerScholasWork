@@ -29,7 +29,7 @@ class FavoritesPage extends Component {
             <div className='mainContent'> 
             <h3> Favorites Page ! Here are your most favorite pictures</h3>
             {this.props.userFavorites.map(({id, name, source}) => 
-            <div onClick={this.imgDetails}><img id={id} key={id} src={source} alt={name} />
+            <div key={id} onClick={this.imgDetails}><img id={id}  src={source} alt={name} />
             <button className={name} id='removeBtn' onClick={(event) => this.handleClick(event, this.props.userFavorites)}>Remove</button>
             </div>)}
             </div> 

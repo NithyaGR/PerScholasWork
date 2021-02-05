@@ -10,6 +10,7 @@ export const initialState = {
     userLiked: false,
     Comments: [],
     userFavorites: [],
+    likedList: [],
     isClicked: false,
     selectedImage: '',
     isOpen : false,
@@ -17,13 +18,13 @@ export const initialState = {
     commentPosted: '',
     wantToAddComment: false
     
-    
 }
 const imageActionReducers = (state= initialState, action) => {
 
     switch(action.type) {
         case 'ADD_COMMENT' :
-            console.log("Adding the comment");
+            var d = new Date();
+            console.log("Adding the comment @ time: "+d);
             console.log(action.payload);
             console.log(action.payload.comment);
             console.log(action.payload.by);
@@ -34,8 +35,7 @@ const imageActionReducers = (state= initialState, action) => {
                     ...state.selectedImage,
                     commentPosted: true,
                     comments: [
-                        
-                        {...state.comments},
+                        ...state.selectedImage.comments,
                         {
                             comment: action.payload.comment,
                             by: action.payload.by
@@ -44,9 +44,7 @@ const imageActionReducers = (state= initialState, action) => {
 
                 }
             } 
-            // return{
-            //     pictures[].comments: [...state.pictures[].comments, action.payload];
-            // }
+
         case 'LIKE_IMG' :
             console.log("like image");
             console.log(action.payload);
@@ -54,6 +52,7 @@ const imageActionReducers = (state= initialState, action) => {
             return {
                 ...state,
                 userLiked : true,
+                likedList: [...state.likedList, action.payload],
                 selectedImage: {
                     ...state.selectedImage,
                     likes: Number(action.payload.likes)+1,

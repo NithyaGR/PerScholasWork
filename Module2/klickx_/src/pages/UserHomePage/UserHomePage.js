@@ -36,7 +36,7 @@ class UserHomePage extends Component {
         </div>
         <div className='userContent' >
                          
-         {pictures.map(({id, name, source}) => <div onClick={this.imgDetails}><img id={id} key={id} src={source} alt={name} /></div>)}
+         {pictures.map(({id, name, source}) => <div key={id} onClick={this.imgDetails}><img id={id} src={source} alt={name} /></div>)}
                 
         </div>
         {this.props.isOpen ? <Images />: ''}

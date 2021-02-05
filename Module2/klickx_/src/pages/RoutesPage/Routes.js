@@ -2,13 +2,14 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
 
-import HomePage from './pages/HomePage/HomePage';
-import LoginPage from './pages/LoginPage/LoginPage';
-import RegisterPage from './pages/RegisterPage/RegisterPage';
-import ProfilePage from './pages/ProfilePage/ProfilePage';
-import FavoritesPage from './pages/FavoritesPage/FavoritesPage';
+
+import HomePage from '../HomePage/HomePage';
+import LoginPage from '../LoginPage/LoginPage';
+import RegisterPage from '../RegisterPage/RegisterPage';
+import ProfilePage from '../ProfilePage/ProfilePage';
+import FavoritesPage from '../FavoritesPage/FavoritesPage';
 //import SettingsPage from './pages/SettingsPage';
-import UserHomePage from './pages/UserHomePage/UserHomePage';
+import UserHomePage from '../UserHomePage/UserHomePage';
 
 export default class Routes extends Component {
     render() {

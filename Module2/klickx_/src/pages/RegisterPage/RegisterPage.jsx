@@ -20,7 +20,7 @@ class RegisterPage extends Component {
     }
     handleSubmit = (e) =>{
         e.preventDefault();
-        this.setState({ submitted: true });
+        // this.setState({ submitted: true }); checking -2
         console.log(this.state);
         //const { newUser } = this.state; //this is as same as grabbing from name store into name id and etc
         const newUser = {
@@ -31,7 +31,7 @@ class RegisterPage extends Component {
       
         if (newUser.name && newUser.email && newUser.password) {
             alert('Registration - Successful - Please Login!');
-            this.props.register(newUser); //line 56 - you created  props method called register
+            this.props.registerUser(newUser); //line 56 - you created  props method called register
         }   
         console.log('inside form submission of register user - redirecting to login page');
         localStorage.setItem('user', newUser);
@@ -56,24 +56,21 @@ class RegisterPage extends Component {
 }
 }
 // create a copy of the props make them accessible for this component
-const mapStateToProps = (state) => ({
-    // trigger the action - > call the reducer -> reducer will change the state
-    users: state.users.users,
-    newUser: state.users.newUser
-    // name: state.users.newUser.name,
-    // email: state.users.newUser.email,
-    // password: state.users.newUser.password,
-    // isRegistered: state.users.newUser.isRegistered
-  })
+// const mapStateToProps = (state) => ({
+//     // trigger the action - > call the reducer -> reducer will change the state
+//     users: state.users.users,
+//     newUser: state.users.newUser
+
+//   })
 
   // Adds a props called "register" which is a function that takes in a payload of inputted newUser 
   // data then dispatches payload to the action creator: "register"
   const mapDispatchToProps = (dispatch) => ({
-    register : newUser => dispatch(register(newUser))
+    registerUser : newUser => dispatch(register(newUser))
   })
   
 
-export default connect(mapStateToProps, mapDispatchToProps)(RegisterPage);
-//export default connect(mapDispatchToProps)(RegisterPage);
+//export default connect(mapStateToProps, mapDispatchToProps)(RegisterPage);
+export default connect(null,mapDispatchToProps)(RegisterPage);
 
 

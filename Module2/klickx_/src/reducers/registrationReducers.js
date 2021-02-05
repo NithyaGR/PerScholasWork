@@ -10,7 +10,7 @@ export const initialState = {
         password: '',
         isLoggedIn: false,
         favorites: [],
-        picture: [],
+        pictures: [],
         profilePictures: '',
         isRegistered: false
     },
@@ -18,24 +18,23 @@ export const initialState = {
     isLoggedIn: false
    
 }
-const registrationReducers = (state = {}, action) => {
+const registrationReducers = (state = initialState, action) => {
 
     switch(action.type) {
         case 'REGISTER_USER' :
+                console.log('Registering the User');
                 localStorage.setItem("name", JSON.stringify(action.payload.name));  
-                return {
-                    users:
-                        {
-                            ...state,       
-                            newUser: { 
-                                name: action.payload.name,
-                                email: action.payload.email,
-                                password: action.payload.password,
-                                isRegistered: true	
-                            },
-                            isRegistered: true          
-                        }
-                } 
+                    return {
+                        ...state,
+                        newUser: {
+                            ...state.newUser,
+                            name: action.payload.name,
+                            email: action.payload.email,
+                            password: action.payload.password,
+                            isRegistered: true   
+                        },
+                        isRegistered: true
+                    }
         default: 
             return state    
     }

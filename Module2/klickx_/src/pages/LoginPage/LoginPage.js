@@ -1,24 +1,17 @@
 import React, { Component} from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import users from '../../reducers/users';
-import pictures from '../../reducers/pictureData';
 import { login } from '../../actions/LoginLogoutAction';
-import history from '../../helpers/history';
 import './LoginPage.css';
 
 
   class LoginPage extends Component {
     //Can we have our state here? As we are going to have our redux store?
+    //check no:1  we can use the state whichever we need to map the 
     state = {
-        users: users,
-        pictures: pictures,
-        currentUser: '',
-        name: '',
-        email: '',
-        password:'',
-        isLoggedIn: false
-      }
+      email: '',
+      password:''
+    }
   
   handleChange = (e) =>{
       //to bind the text which we entered and to store in that corresponding ids  
@@ -29,7 +22,7 @@ import './LoginPage.css';
       console.log('inside handle submit');
       
       try{
-        console.log(this.props.users.newUser);      
+        console.log(this.props.newUser);      
       }
       catch(exception){
         alert('No such user! Please create new account!');
@@ -37,12 +30,12 @@ import './LoginPage.css';
         this.props.history.push('/register');
       }
       
-      console.log(this.props.users.newUser);  
-      const curUser = this.props.users.newUser;
+      console.log(this.props.newUser);  
+      const curUser = this.props.newUser;
       
       console.log(curUser);
       console.log(curUser.email);
-      const { thisUser } = this.state; //this is as same as grabbing from name store into name id and etc
+      //const { thisUser } = this.state; this is as same as grabbing from name store into name id and etc
     //   const currentUser = {
     //     email: this.state.email,
     //     password: this.state.password
@@ -52,7 +45,9 @@ import './LoginPage.css';
       //code to verify the login credentials
       if(curUser.email === userEmail && curUser.password === userPassword){
         console.log('Login successful');
-        this.props.login(curUser);
+        this.props.loginUser(curUser);
+
+        console.log(this.props);
         alert("Login Successful");
         this.props.history.push('/userHome');
         
@@ -109,14 +104,15 @@ import './LoginPage.css';
   // create a copy of the props make them accessible for this component
   const mapStateToProps = (state) => ({
     // trigger the action - > call the reducer -> reducer will change the state
-    users: state.users.users,
-    currentUser: state.users.currentUser
+    newUser: state.users.newUser
+    //currentUser: state.users.currentUser
+    //currentUser: state.users1.currentUser
   })
 
   // Adds a prop called "changeLoginStatus" which is a function that takes in a payload
   // then dispatches payload to the action creator: "login"
   const mapDispatchToProps = (dispatch) => ({
-    login : data => dispatch(login(data))
+    loginUser : data => dispatch(login(data))
   })
   
   

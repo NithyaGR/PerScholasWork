@@ -3,13 +3,13 @@
 
 import { combineReducers } from 'redux';
 import imageActionsReducers from './imageActionsReducers';
-import klickx_reducers from './kiickx_reducers';
+import klickx_reducers from './klickx_reducers';
 import registrationReducers from './registrationReducers';
 
 
 const rootReducer = combineReducers({
-    users: klickx_reducers,
-    pictures: klickx_reducers,
+    users1 : klickx_reducers,
+    // pictures: klickx_reducers, -checking
     users: registrationReducers,
     pictures: imageActionsReducers
 })

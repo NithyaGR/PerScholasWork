@@ -8,22 +8,14 @@ import users from '../../reducers/users';
 
 class SideNavBar extends Component {
  
-    state = {
-        users: users,
-        currentUser: {
-            name: '',
-            isLoggedIn: ''
-        }
-        // isLoggedIn: false,
-        // isRegistered: false
-    }
+ 
     handleClick = (e) => {
         console.log('clicking logout link');
-        this.props.logout();
+        this.props.logoutUser();
     }
     render(){
-        // console.log('Rendering SideBar');
-        // console.log(this.props.users);
+        console.log('Rendering SideBar');
+        console.log(this.props.users);
         console.log(this.props.isLoggedIn);
         console.log(this.props.name);
     return (
@@ -51,7 +43,7 @@ const mapStateToProps = (state) => ({
   })
  
   const mapDispatchToProps = (dispatch) => ({
-    logout : data => dispatch(logout(data))
+    logoutUser : data => dispatch(logout(data))
   })
 //export default withRouter(SideNavBar);
 export default connect(mapStateToProps, mapDispatchToProps)(SideNavBar)
