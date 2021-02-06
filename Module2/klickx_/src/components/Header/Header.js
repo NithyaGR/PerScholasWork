@@ -6,8 +6,9 @@ const Header = (props) => { //why props? learn this
     // console.log('Rendering Header - Check the props and learn');
     // console.log(props); // check here
     return (
-           <header className='mainHeader'>
+           <header className='mainHeader'>   
                <h1> K L I C K X_</h1>
+               <img src='camera icon.png'/>   
            </header> 
     )
 }

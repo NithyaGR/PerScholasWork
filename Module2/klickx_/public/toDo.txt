@@ -33,3 +33,20 @@ feb2nd - 8.59 - Things to do
 4. settings page
 5. existing user - login
 6. delete the comments, user
+
+Saturday - 6.35 am
+Todo List
+1. adding pictures into likes - change the state - update with the time
+2. Profile picture with Images - retrieve the based on the time
+3. Delete the comments and user account - latter is done by default while logging out. 
+4. CSS - CSS _ STYLING
+5. readMd and comments - beautify the code
+6. Heroku
+https://perscholas.instructure.com/courses/630/assignments/80647
+userstory 1 - done - create an account - login - logout
+userstory 2 - profile images display - yet to do
+userstory 3 - deleting the comments - settings page for deleting the user(logging out removing the user)
+userstory 4 - unlike clicks should remove it from the liked List - remove the liked image from the page
+              user homepage should be sorted by no of likes in descending order  
+              if same no of likes, sort by time - most recent one on top 
+userstory 5 - favorites page - Done CSS CSS CSS              

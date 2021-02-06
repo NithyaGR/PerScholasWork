@@ -1,45 +1,37 @@
-   
+   /* Centering the modal is fairly simple if you use the CSS calc() function on the left CSS 
+   property. Let's say that the modal has a width of 600px. You can use 50% of the screen width minus half of the width for the modal. 
+   This example below has the modal at 600px so I have the calc() function at 50% - 300px */
    .popup-box {
-      margin-top: 90px;
-      margin-left: 230px;
+      /* margin-top: 90px;
+      margin-left: 230px; */
       padding: 10px;
       position: fixed;
-      background: #00000050;
-      width: 600px;
+      width: 800px;
       height: 600px;
-      top: 0;
-      left: 0;
+      top: 15%;
+      left: 24.5%;
+      /* left: calc(50% - 400px); */
+      
     }
      
     .box {
-      /* position: relative;
-      width: 400px;
-      margin: 0 auto;
-      height: auto;
-      max-height: 70vh;
-      margin-top: calc(100vh - 85vh - 20px);
-      background: #fff;
-      border-radius: 4px;
-      padding: 20px;
-      border: 1px solid #999;
-      overflow: auto; */
+      
       margin-top: 5px;
       border-radius: 12px;
       height: 600px;
-      width: 600px;
+      width: 620px;
       display : flex;
       flex-direction: column;
       /* flex-wrap: wrap; */
       justify-content: flex-start;
       background-color: #fff;
+      border: solid;
+      border-color: #004d7a;
     }
      
     .close-icon {
       content: 'x';
       cursor: pointer;
-      position: fixed;
-      right: calc(15% - 30px);
-      top: calc(100vh - 85vh - 17px);
       background: #ededed;
       width: 25px;
       height: 25px;
@@ -48,17 +40,8 @@
       text-align: center;
       border: 1px solid #999;
       font-size: 20px;
+      float: right;
     }
-   .container{
-      border: solid;
-      border-radius: 5px;
-      height: 500px;
-      width: 500px;
-      display : flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      background-color: yellow;
-   }
    .imageContainer {
       border-radius: 5px;
    }
@@ -68,33 +51,24 @@
    }
    .btnContainer {
       margin-top: 0%;
-      height:50px;
-      width:400px;
+      margin-left: 10px;
+      height: 50px;
+      width: 600px;
       display: grid;
-      grid-template-columns: auto auto auto auto;
+      grid-template-columns: 180px 20% 20% 20% 20%;
       text-align: center;
-     
+      
    }
-   .btnContainer #totalLikes {
+   .btnContainer button {
       width: auto;
       height: 40px;
       background-color: transparent;
       border: unset;
-   }
-   .btnContainer #like {
-      width: auto;
-      height: 40px;
-      background-color: transparent;
-      border: unset;
+      font-size: 15px;
       
    }
-   .btnContainer #fav {
-      width: auto;
-      height: 40px;
-      background-color: transparent;
-      border: unset
-      
-   }
+   
+   
    .commentsContainer{
       display: flex;
       flex-wrap: wrap;
@@ -118,4 +92,12 @@
       height: 40px;
       background-color: transparent;
       border: unset
+   }
+   .noBulletList {
+         list-style-type: none;
+         margin: 10px;
+         padding: 10px;
+         text-align: left;
+         
+       
    }

@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { register }  from '../../actions/RegisterUserAction';
 import './RegisterPage.css';
 
 class RegisterPage extends Component {
 
-    state = {
-        //users: users,   
+    state = {  
         newUser: {
                 name: '',
                 email: '',
@@ -55,14 +53,6 @@ class RegisterPage extends Component {
     )
 }
 }
-// create a copy of the props make them accessible for this component
-// const mapStateToProps = (state) => ({
-//     // trigger the action - > call the reducer -> reducer will change the state
-//     users: state.users.users,
-//     newUser: state.users.newUser
-
-//   })
-
   // Adds a props called "register" which is a function that takes in a payload of inputted newUser 
   // data then dispatches payload to the action creator: "register"
   const mapDispatchToProps = (dispatch) => ({

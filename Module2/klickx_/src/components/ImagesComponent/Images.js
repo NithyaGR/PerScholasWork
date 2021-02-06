@@ -92,17 +92,18 @@ class Images extends Component { //why props? learn this
                 </div>
                 <div className='btnContainer' >
                     <button id='fav' onClick={this.handleClick}>Add To Favorites </button>
-                    <label id='totalLikes'>Total Likes </label>
-                    <label> {this.props.selectedImage.likes} </label>
+                    <button id='totalLikes'>Total Likes </button>
+                    <button id='totalLikesValue'> {this.props.selectedImage.likes} </button>
                     <button id='like' onClick={this.handleClick}>{this.props.selectedImage.liked ? 'Unlike' : 'Like'}</button > 
                     { this.props.selectedImage.liked  ? <img id='likedIcon' src='/likedIcon.png' alt='likedImage'/> : ''}                   
                 </div>
                 <div className='commentsContainer' >
                     <div className='commentsList'>
-                    <ul>
+                        <label> Comments </label>
+                    <ul className='noBulletList'>
                         {this.props.selectedImage.comments.map((comment, index)=> {
                             return(
-                               <li key={index}> {comment.comment}</li> 
+                              <div> <li key={index}> {comment.comment}</li><br /> </div>
                         )} 
                         )}
                     </ul>

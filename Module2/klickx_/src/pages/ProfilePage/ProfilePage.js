@@ -11,13 +11,19 @@ class ProfilePage extends Component {
         console.log(this.state);
     return (
        
-            <div className='ProfilePage'>
+            <div className='profilePage'>
                 <div className='profile'>
+                    <div className='profileData'>
                      <h3> Hi {this.props.newUser.name} </h3>
                      <h4>Your Profile Details</h4>
                     <h4>{this.props.newUser.name}</h4>
                     <h4>{this.props.newUser.email}</h4>
+                    </div>
+                    <div className='profileImage'>
+                        <img src='' />
+                    </div>
                 </div>
+                <div className='imageSection'>
                 <div className='image1'>
                     <img src=''></img>
                     <div className='image1Data'>
@@ -29,6 +35,7 @@ class ProfilePage extends Component {
                     <div className='image2Data'>
                         <h4>Display the likes and comments here</h4>
                     </div>
+                </div>
                 </div>
                 
             </div>

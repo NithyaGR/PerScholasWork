@@ -16,7 +16,8 @@ export const initialState = {
     isOpen : false,
     isFavorite: true,
     commentPosted: '',
-    wantToAddComment: false
+    wantToAddComment: false,
+    profilePicture:''
     
 }
 const imageActionReducers = (state= initialState, action) => {
