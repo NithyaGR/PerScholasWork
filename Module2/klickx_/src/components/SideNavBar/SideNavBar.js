@@ -4,41 +4,53 @@ import './SideNavBar.css';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { logout } from '../../actions/LoginLogoutAction';
-import users from '../../reducers/users';
 
 class SideNavBar extends Component {
  
  
     handleClick = (e) => {
-        console.log('clicking logout link');
-        this.props.logoutUser();
+        console.log('clicking side bar');
+        if(e.target.id === 'logout'){
+            console.log('clicking logout link');
+            this.props.logoutUser();
+        }
     }
     render(){
         console.log('Rendering SideBar');
-        console.log(this.props.users);
+        console.log(this.props.newUser);
         console.log(this.props.isLoggedIn);
-        console.log(this.props.name);
+        // console.log(this.props.name);
     return (
-        <div id="mySidenav" className="sidenav">   
-
-        <Link to='/home'>Home</Link>   
-        {this.props.isLoggedIn  ? <Link to='/home'> Logout </Link> : <Link to='/login'> Login </Link>}
-        <Link to='/profile'>Profile</Link>
-        <Link to='/favorites'>Favorites</Link>
-        <Link to='/settings'>Settings</Link>
-        <div className='linkToLogOut' onClick={this.handleClick}>
-            <Link to='/home'>Logout</Link>
+        <div id="mySidenav" className="sidenav" onClick={this.handleClick}>   
+        {!this.props.isLoggedIn ?
+        <div>
+        <Link to='/home'> Home </Link> 
+        <Link to='/login'> Login </Link>
+        <Link to='/profile'> Profile </Link>
+        <Link to='/favorites'> Favorites </Link>
+        <Link to='/settings'> Settings </Link>  
+        </div> 
+          :
+        <div>  
+        <Link id='myHome' to='/userHome'>MyHome</Link> 
+        <Link id='logout' to='/home'> Logout </Link>
+        <Link id='profile' to='/profile'> Profile </Link>
+        <Link id='favorites' to='/favorites'> Favorites </Link>
+        <Link id='settings' to='/settings'> Settings </Link>  
         </div>
+        }
+
+
         </div>
     )
 }
 }
+// We need to map the props to retrieve the status whether the user is logged in or not or just 
+//registered. LHS keys are user defined names - RHS values are from the reducers
 const mapStateToProps = (state) => ({
-    users: state.users.users,
-    // isLoggedIn : state.users.isLoggedIn,
-    // isRegistered : state.users.isRegistered,
-    currentUser: state.users.currentUser
-    //name: state.users.currentUser.name
+    //newUser: state.users.newUser, //coming from registration reducers through index named as users
+    newUser: state.users1.newUser, // coming from klickx_ reducers through users1 from index
+    isLoggedIn: state.users1.newUser.isLoggedIn
     
   })
  

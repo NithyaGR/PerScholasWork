@@ -7,16 +7,16 @@ class ProfilePage extends Component {
     render(){
         console.log('profile page');
         console.log(this.props);
-        console.log(this.props.currentUser);
+        console.log(this.props.newUser);
         console.log(this.state);
     return (
        
             <div className='ProfilePage'>
                 <div className='profile'>
-                     <h3> Hi {this.props.currentUser.name} </h3>
+                     <h3> Hi {this.props.newUser.name} </h3>
                      <h4>Your Profile Details</h4>
-                    <h4>{this.props.currentUser.name}</h4>
-                    <h4>{this.props.currentUser.email}</h4>
+                    <h4>{this.props.newUser.name}</h4>
+                    <h4>{this.props.newUser.email}</h4>
                 </div>
                 <div className='image1'>
                     <img src=''></img>
@@ -38,7 +38,7 @@ class ProfilePage extends Component {
 }
 const mapStateToProps = (state) => ({
     // trigger the action - > call the reducer -> reducer will change the state
-    currentUser: state.users.newUser,
+    newUser: state.users1.newUser,
     userFavorites: state.pictures.userFavorites,
     likedPictures: state.pictures.likedList
   })

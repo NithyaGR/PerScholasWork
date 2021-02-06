@@ -7,7 +7,7 @@ import './LoginPage.css';
 
   class LoginPage extends Component {
     //Can we have our state here? As we are going to have our redux store?
-    //check no:1  we can use the state whichever we need to map the 
+    //check no:1  we can use the state whichever we need to map for the current component or page
     state = {
       email: '',
       password:''
@@ -53,7 +53,7 @@ import './LoginPage.css';
         
       }
       else {
-        alert('Invalid Credentials');
+        alert('No such user matching your credentials! Tips: Register first! ');
      }
       // outer: 
       // for(let i=0; i<this.props.users.length; i++){
@@ -104,12 +104,11 @@ import './LoginPage.css';
   // create a copy of the props make them accessible for this component
   const mapStateToProps = (state) => ({
     // trigger the action - > call the reducer -> reducer will change the state
-    newUser: state.users.newUser
-    //currentUser: state.users.currentUser
-    //currentUser: state.users1.currentUser
+    newUser: state.users1.newUser
+   
   })
 
-  // Adds a prop called "changeLoginStatus" which is a function that takes in a payload
+  // Adds a prop called "loginUser" which is a function that takes in a payload
   // then dispatches payload to the action creator: "login"
   const mapDispatchToProps = (dispatch) => ({
     loginUser : data => dispatch(login(data))

@@ -31,7 +31,7 @@ class RegisterPage extends Component {
       
         if (newUser.name && newUser.email && newUser.password) {
             alert('Registration - Successful - Please Login!');
-            this.props.registerUser(newUser); //line 56 - you created  props method called register
+            this.props.registerNewUser(newUser); //line 56 - you created  props method called register
         }   
         console.log('inside form submission of register user - redirecting to login page');
         localStorage.setItem('user', newUser);
@@ -66,7 +66,7 @@ class RegisterPage extends Component {
   // Adds a props called "register" which is a function that takes in a payload of inputted newUser 
   // data then dispatches payload to the action creator: "register"
   const mapDispatchToProps = (dispatch) => ({
-    registerUser : newUser => dispatch(register(newUser))
+    registerNewUser : newUser => dispatch(register(newUser))
   })
   
 
