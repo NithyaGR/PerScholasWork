@@ -37,7 +37,7 @@ class Images extends Component {
             console.log(users.length);
             let totalNumberOfUsers = users.length + 1 // existing users plus the new registered user
             console.log(this.props.likes);
-            let newNumberOfLikes = Number(this.props.likes)+1;
+            // let newNumberOfLikes = Number(this.props.likes)+1;
             if(this.props.selectedImage.likes < totalNumberOfUsers) {
                 this.props.likeThisImage(this.props.selectedImage);
                 

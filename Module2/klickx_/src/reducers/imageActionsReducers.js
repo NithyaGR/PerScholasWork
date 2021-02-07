@@ -51,15 +51,18 @@ const imageActionsReducers = (state= initialState, action) => {
             console.log("like image");
             console.log(action.payload);
             // console.log(state.selectedImage);
+            let likedTime = new Date();
+            console.log(likedTime);
             return {
                 ...state,
                 userLiked : true,
-                likedList: [...state.likedList, action.payload],
+                likedList: [action.payload, ...state.likedList],
                 selectedImage: {
                     ...state.selectedImage,
                     likes: Number(action.payload.likes)+1,
                     liked: true,
-                    commentPosted: false
+                    commentPosted: false,
+                    likedAtTime: likedTime
                 }
             }   
         case WANT_TO_ADD_COMMENT :

@@ -49,4 +49,58 @@ userstory 3 - deleting the comments - settings page for deleting the user(loggin
 userstory 4 - unlike clicks should remove it from the liked List - remove the liked image from the page
               user homepage should be sorted by no of likes in descending order  
               if same no of likes, sort by time - most recent one on top 
-userstory 5 - favorites page - Done CSS CSS CSS              
+userstory 5 - favorites page - Done CSS CSS CSS   
+
+
+dispatch: ƒ dispatch(action)
+history: {length: 50, action: "PUSH", location: {…}, createHref: ƒ, push: ƒ, …}
+likedPictures: Array(2)
+0:
+comments: Array(3)
+0: {comment: "Beautifully captured!", by: "Kumar"}
+1: {comment: "So Green, and soothing!", by: "Shakthi"}
+2: {comment: "Thanks guys!", by: "Krishna"}
+length: 3
+__proto__: Array(0)
+id: 1
+likes: "3"
+name: "Vrindavan"
+postedBy: "Krishna"
+postedDate: "01/01/2021"
+source: "../Pictures/Vrindavan.jpg"
+__proto__: Object
+1: {id: 8, name: "Fire", postedDate: "01/14/2021", postedBy: "Kumar", source: "../Pictures/Fire.jpeg", …}
+length: 2
+__proto__: Array(0)
+location: {pathname: "/profile", search: "", hash: "", state: undefined, key: "2ni78o"}
+match: {path: "/profile", url: "/profile", isExact: true, params: {…}}
+newUser: {name: "", email: "", password: "", isLoggedIn: false, favorites: Array(0), …}
+profilePicture: {id: 9, name: "Fall", postedDate: "01/26/2021", postedBy: "Kumar", source: "../Pictures/Fall.jpg", …}
+staticContext: undefined
+userFavorites: [{…}]
+__proto__: Object
+
+const maxValueOfY = Math.max(...arrayToSearchIn.map(o => o.y), 0);
+[
+  {
+    "x": "8/11/2009",
+    "y": 0.026572007
+  },
+  {
+    "x": "8/12/2009",
+    "y": 0.025057454
+  },
+  {
+    "x": "8/13/2009",
+    "y": 0.024530916
+  },
+  {
+    "x": "8/14/2009",
+    "y": 0.031004457
+  }
+]
+To find the max count
+const maxNoOfCommentsCount = Math.max(...likedPictures.map(object => object.comments.comment.length),0)
+To return the object which has most of no counts
+const max = data.reduce((prev, current) => (prev.y > current.y) ? prev : current)
+const reqImage = likedPictures.reduce((prev, current) => (prev.comments.comment.length > current.comments.comment.length) ? prev : current)
