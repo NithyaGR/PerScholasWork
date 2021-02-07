@@ -9,6 +9,7 @@ export const IMG_CLICKED = 'IMG_CLICKED'
 export const TOGGLE_POPUP = 'TOGGLE_POPUP'
 export const REMOVE_FAVORITE = 'REMOVE_FAVORITE'
 export const WANT_TO_ADD_COMMENT = 'WANT_TO_ADD_COMMENT'
+export const MAKE_PROFILE_PICTURE = 'MAKE_PROFILE_PICTURE'
 
 // ACTION CREATOR 
 export const addComment = (data) => ({
@@ -43,5 +44,9 @@ export const removeFavorite = (data) => ({
 })
 export const wantToAddComment = (data) => ({
     type: WANT_TO_ADD_COMMENT,
+    payload: data
+})
+export const makeProfilePicture = (data) => ({
+    type: MAKE_PROFILE_PICTURE,
     payload: data
 })

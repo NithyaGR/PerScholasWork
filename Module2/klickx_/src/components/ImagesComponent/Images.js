@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { addComment, likeImage, addToFavorites, deleteComment, togglePopUp, wantToAddComment } from '../../actions/ImageActions';
+import { addComment, likeImage, addToFavorites, deleteComment, togglePopUp, wantToAddComment, makeProfilePicture } from '../../actions/ImageActions';
 import './Images.css';
 
 import pictures from '../../reducers/pictureData';
@@ -8,11 +8,10 @@ import users from '../../reducers/users';
 
 
 
-class Images extends Component { //why props? learn this
+class Images extends Component { 
     
     state = {
         pictures: pictures,
-        // pictureName : [Vrindavan, Srirangam, GantakiRiver, Moon, Fall, Fire, matches, sunset, nature1, Journey, cosmos, earth],
         userLiked: false,
         Comments: [],
         userFavorite: [],
@@ -41,6 +40,7 @@ class Images extends Component { //why props? learn this
             let newNumberOfLikes = Number(this.props.likes)+1;
             if(this.props.selectedImage.likes < totalNumberOfUsers) {
                 this.props.likeThisImage(this.props.selectedImage);
+                
             }
             else {
                 alert('Already Liked the image!!');
@@ -53,6 +53,9 @@ class Images extends Component { //why props? learn this
         if(e.target.id === 'btnDelete'){
             console.log(e.target.id);
             //this.props.wantToAddNewComment(false);
+        }
+        if(e.target.id === 'PP'){
+            this.props.makeThisProfilePicture(this.props.selectedImage);
         }
     }
     handleChange = (e) =>{
@@ -92,6 +95,7 @@ class Images extends Component { //why props? learn this
                 </div>
                 <div className='btnContainer' >
                     <button id='fav' onClick={this.handleClick}>Add To Favorites </button>
+                    <button id='PP' onClick={this.handleClick}>Profile Picture</button>
                     <button id='totalLikes'>Total Likes </button>
                     <button id='totalLikesValue'> {this.props.selectedImage.likes} </button>
                     <button id='like' onClick={this.handleClick}>{this.props.selectedImage.liked ? 'Unlike' : 'Like'}</button > 
@@ -116,7 +120,7 @@ class Images extends Component { //why props? learn this
                     <form>
                     
                     <input type='textarea' id='textPostComment' onChange={this.handleChange}/>
-                    <input type='button' value='submit' id='submit' onClick={this.handleSubmit} />
+                    <input type='button' value='Submit' id='submit' onClick={this.handleSubmit} />
                      </form>   
                      : ''}
                     </div>
@@ -145,7 +149,8 @@ const mapDispatchToProps = (dispatch) => ({
     deleteThisComment : data => dispatch(deleteComment(data)),
     addToMyFavorites : data => dispatch(addToFavorites(data)),
     togglePopUpModal : data => dispatch(togglePopUp(data)),
-    wantToAddNewComment : data => dispatch(wantToAddComment(data))
+    wantToAddNewComment : data => dispatch(wantToAddComment(data)),
+    makeThisProfilePicture : data => dispatch(makeProfilePicture(data))
     
 })
 export default connect(mapStateToProps, mapDispatchToProps)(Images);

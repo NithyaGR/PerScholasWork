@@ -8,7 +8,9 @@ class ProfilePage extends Component {
         console.log('profile page');
         console.log(this.props);
         console.log(this.props.newUser);
-        console.log(this.state);
+        console.log(this.props.likedPictures);
+        console.log(this.props.profilePicture.name);
+        console.log(this.props.profilePicture.source);
     return (
        
             <div className='profilePage'>
@@ -20,22 +22,24 @@ class ProfilePage extends Component {
                     <h4>{this.props.newUser.email}</h4>
                     </div>
                     <div className='profileImage'>
-                        <img src='' />
+         
+                        <img src={this.props.profilePicture.source} alt={this.props.profilePicture.name}/>
                     </div>
                 </div>
                 <div className='imageSection'>
                 <div className='image1'>
-                    <img src=''></img>
+                {this.props.likedPictures.map(({id, name, source}) => <div key={id} ><img id={id} src={source} alt={name} /></div>)}
+         
                     <div className='image1Data'>
                         <h4>Display the likes and comments here</h4>
                     </div>
                 </div>
-                <div className='image2'>
+                {/* <div className='image2'>
                     <img src=''></img>
                     <div className='image2Data'>
                         <h4>Display the likes and comments here</h4>
                     </div>
-                </div>
+                </div> */}
                 </div>
                 
             </div>
@@ -47,7 +51,8 @@ const mapStateToProps = (state) => ({
     // trigger the action - > call the reducer -> reducer will change the state
     newUser: state.users1.newUser,
     userFavorites: state.pictures.userFavorites,
-    likedPictures: state.pictures.likedList
+    likedPictures: state.pictures.likedList,
+    profilePicture: state.pictures.profilePicture
   })
 
   // Adds a prop called "changeLoginStatus" which is a function that takes in a payload

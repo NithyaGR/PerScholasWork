@@ -51,11 +51,11 @@
    }
    .btnContainer {
       margin-top: 0%;
-      margin-left: 10px;
+      margin-left: 0%;
       height: 50px;
       width: 600px;
       display: grid;
-      grid-template-columns: 180px 20% 20% 20% 20%;
+      grid-template-columns: 150px 140px 15% 12% 15% 15%;
       text-align: center;
       
    }
@@ -67,11 +67,11 @@
       font-size: 15px;
       
    }
-   
-   
    .commentsContainer{
-      display: flex;
-      flex-wrap: wrap;
+      /* display: flex;
+      flex-wrap: wrap; */
+      display: grid;
+      grid-template-columns: 60% 40%;
 
    }
    #likedIcon {
@@ -79,14 +79,23 @@
       height: 40px;
    }
    .postingComment{
+      display: grid;
+      grid-template-rows: 20% 80%;
 
    }
-   .btnPost{
+   .postingComment form{
+      display: grid;
+      grid-template-rows: 80% 20%;
+      border: unset
+   }
+   #btnPost, #submit{
       width: auto;
       height: 40px;
       background-color: transparent;
-      border: unset
+      border: unset;
+      font-size: 15px;
    }
+
    .btnDelete{
       width: auto;
       height: 40px;

@@ -2,6 +2,7 @@
 
 import users from './users.js';
 import pictures from './pictureData.js';
+import { ADD_COMMENT, ADD_TO_FAV, DELETE_COMMENT, IMG_CLICKED, LIKE_IMG, REMOVE_FAVORITE, TOGGLE_POPUP, WANT_TO_ADD_COMMENT, MAKE_PROFILE_PICTURE } from '../actions/ImageActions.js';
 console.log(users);
 
 export const initialState = {
@@ -20,10 +21,10 @@ export const initialState = {
     profilePicture:''
     
 }
-const imageActionReducers = (state= initialState, action) => {
+const imageActionsReducers = (state= initialState, action) => {
 
     switch(action.type) {
-        case 'ADD_COMMENT' :
+        case ADD_COMMENT :
             var d = new Date();
             console.log("Adding the comment @ time: "+d);
             console.log(action.payload);
@@ -46,10 +47,10 @@ const imageActionReducers = (state= initialState, action) => {
                 }
             } 
 
-        case 'LIKE_IMG' :
+        case LIKE_IMG :
             console.log("like image");
             console.log(action.payload);
-            console.log(state.selectedImage);
+            // console.log(state.selectedImage);
             return {
                 ...state,
                 userLiked : true,
@@ -61,7 +62,7 @@ const imageActionReducers = (state= initialState, action) => {
                     commentPosted: false
                 }
             }   
-        case 'WANT_TO_ADD_COMMENT'  :
+        case WANT_TO_ADD_COMMENT :
             console.log('wantToAddComment');
             console.log(action.payload);
             return {
@@ -72,7 +73,7 @@ const imageActionReducers = (state= initialState, action) => {
                 }
 
             }
-        case 'ADD_TO_FAV':
+        case ADD_TO_FAV :
             console.log("Adding the favorites");
             console.log(action.payload);
             return {
@@ -80,12 +81,12 @@ const imageActionReducers = (state= initialState, action) => {
                 userFavorites: [action.payload, ...state.userFavorites], // check this please
                 commentPosted: false
             }
-        case 'DELETE_COMMENT' :
+        case DELETE_COMMENT :
             console.log("Deleting the comment");
             console.log(action.payload);
             return state
 
-        case 'IMG_CLICKED'  :
+        case IMG_CLICKED  :
             console.log("IMG Clicked Action");
             console.log(action.payload);
             
@@ -95,7 +96,7 @@ const imageActionReducers = (state= initialState, action) => {
                 isOpen : true,
                 selectedImage : state.pictures.filter ( (picture) => action.payload === picture.name)[0]
               };
-        case 'TOGGLE_POPUP' :
+        case TOGGLE_POPUP :
             console.log("Toggle PopUp Action");
             console.log(action.payload);
             return {
@@ -104,7 +105,7 @@ const imageActionReducers = (state= initialState, action) => {
                 isClicked : false
             }  
 
-        case 'REMOVE_FAVORITE' :
+        case REMOVE_FAVORITE :
             console.log('Deleting from favorites list')      
             console.log(action.payload);
             return { // returning a copy of orignal state
@@ -114,10 +115,17 @@ const imageActionReducers = (state= initialState, action) => {
                                                // returns a new filtered fav array
                   
             }
+        case MAKE_PROFILE_PICTURE :
+            console.log('Profile Picture')      
+            console.log(action.payload);    
+            return {
+                ...state,
+                profilePicture: action.payload
+            }
         default: 
             return state        
 
     }
 
 }
-export default imageActionReducers
+export default imageActionsReducers
