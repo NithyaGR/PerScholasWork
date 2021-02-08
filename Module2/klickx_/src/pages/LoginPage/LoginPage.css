@@ -2,29 +2,31 @@
   .loginForm {
     background-color: rgb(112, 110, 108);
     display: flex;
-    flex-grow: 2;
+    /* flex-grow: 2; */
     flex-direction: column;
     text-align: center;
     align-content: center;
     display:inline-block;
     border-radius: 10px;
-    height: 350px;
+    height: 300px;
     width: 300px;
-    padding: 15px 18px;
+    padding: 15px 15px;
     margin: 10% auto;
     margin-left: auto;
     margin-right: auto;
-    display: flex;
-    flex-direction: column;
     align-content: space-around;
-    padding: 1em;
+    justify-content: space-around;
+    padding: 15px;
+    background-color: #20bf55;
+    background-image: linear-gradient(315deg, #20bf55 0%, #004d7a 74%);
+    /* #004d7a , #01baef*/
   
   }
   
   #email, #password {
     width: 220px;
     height: 30px;
-    padding: 1em;
+    padding: 15px;
     align-content: space-around;
     margin: 10px;
     align-items: center;
@@ -33,16 +35,11 @@
   #loginButton {
   
     width: 250px;
-    height: 50px;
-    padding: 1em;
-    background-color: rgb(243, 242, 248);
+    height: 55px;
+    padding: 15px;
     font-size: 18px;
-  
+    /* color: rgb(243, 242, 248); */
+    /* background-color: #20bf55;
+    background-image: linear-gradient(315deg, #20bf55 0%, #004d7a 74%); */
   }
-  /* .linkButton {
-    width: 250px;
-    height: 50px;
-    padding: 1em;
-    background-color: rgb(243, 242, 248);
-    text-decoration: none;
-  } */
+ 

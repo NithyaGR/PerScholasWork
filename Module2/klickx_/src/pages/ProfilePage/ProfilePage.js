@@ -9,10 +9,7 @@ class ProfilePage extends Component {
         console.log(this.props);
         console.log(this.props.newUser);
         console.log(this.props.likedPictures[0]);
-        // console.log(this.props.likedPictures.comments);
-        // const sortedLikedPictures = this.props.likedPictures.sort((picObj1, picObj2) => picObj1. - picObj2.likedAtTime);
-        // console.log(sortedLikedPictures[0]);
-
+        //Choosing the picture which has more comments from the likedList array
         console.log(this.props.profilePicture.name);
         console.log(this.props.profilePicture.source);
         const reqImage = this.props.likedPictures.reduce((prev, current) => 
@@ -36,7 +33,6 @@ class ProfilePage extends Component {
                 <br />
                 <div className='imageSection'>
                 <div className='image1'>
-                {/* {this.props.likedPictures.map(({id, name, source}) => <div key={id} ><img id={id} src={source} alt={name} /></div>)} */}
                   <div><img id={this.props.likedPictures[0].id} src={this.props.likedPictures[0].source} alt={this.props.likedPictures[0].name} /></div>  
                     <div className='image1Data'>
                         <ul className='noBulletList'>
@@ -75,9 +71,4 @@ const mapStateToProps = (state) => ({
     profilePicture: state.pictures.profilePicture
   })
 
-  // Adds a prop called "changeLoginStatus" which is a function that takes in a payload
-  // then dispatches payload to the action creator: "register"
-//   const mapDispatchToProps = (dispatch) => ({
-//     updateProfileInfo : profile => dispatch(Edit(profile))
-//   })
 export default connect(mapStateToProps)(ProfilePage);

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { addComment, likeImage, addToFavorites, deleteComment, togglePopUp, wantToAddComment, makeProfilePicture } from '../../actions/ImageActions';
+import { addComment, likeImage, unlikeImage, addToFavorites, deleteComment, togglePopUp, wantToAddComment, makeProfilePicture } from '../../actions/ImageActions';
 import './Images.css';
 
 import pictures from '../../reducers/pictureData';
@@ -26,7 +26,7 @@ class Images extends Component {
         }
     }
     handleClick = (e) => {
-        console.log('onclick- function');
+        console.log('onclick- handle Click function');
         console.log(e.target.id);
         if(e.target.id === 'fav'){
             //call actions of fav 
@@ -46,6 +46,10 @@ class Images extends Component {
                 alert('Already Liked the image!!');
             }
         }
+        if(e.target.id === 'unlike') {
+            this.props.unlikeThisImage(this.props.selectedImage);
+
+        }
         if(e.target.id === 'btnPost'){
             console.log(e.target.id);
             this.props.wantToAddNewComment(true);
@@ -53,6 +57,7 @@ class Images extends Component {
         if(e.target.id === 'btnDelete'){
             console.log(e.target.id);
             //this.props.wantToAddNewComment(false);
+            this.props.deleteThisComment(this.props.selectedImage.comments);
         }
         if(e.target.id === 'PP'){
             this.props.makeThisProfilePicture(this.props.selectedImage);
@@ -72,7 +77,8 @@ class Images extends Component {
         console.log(newComment);
         let newCommentObject = { 
             comment: newComment,
-            by: localStorage.getItem('name')
+            //by: localStorage.getItem('name')
+            by: this.props.newUser.name
          }
          console.log(newCommentObject);
         this.props.addNewComment(newCommentObject);
@@ -98,14 +104,15 @@ class Images extends Component {
                     <button id='PP' onClick={this.handleClick}>Profile Picture</button>
                     <button id='totalLikes'>Total Likes </button>
                     <button id='totalLikesValue'> {this.props.selectedImage.likes} </button>
-                    <button id='like' onClick={this.handleClick}>{this.props.selectedImage.liked ? 'Unlike' : 'Like'}</button > 
+                    {/* <button id='like' onClick={this.handleClick}>{this.props.selectedImage.liked ? 'Unlike' : 'Like'}</button >  */}
+                    {this.props.selectedImage.liked ? <button id='unlike' onClick={this.handleClick}>Unlike</button> : <button id='like' onClick={this.handleClick}>Like</button> }
                     { this.props.selectedImage.liked  ? <img id='likedIcon' src='/likedIcon.png' alt='likedImage'/> : ''}                   
                 </div>
                 <div className='commentsContainer' >
                     <div className='commentsList'>
                         <label> Comments </label>
                     <ul className='noBulletList'>
-                        {this.props.selectedImage.comments.map((comment, index)=> {
+                        {this.props.comments.map((comment, index)=> {
                             return(
                               <div> <li key={index}> {comment.comment}</li><br /> </div>
                         )} 
@@ -113,13 +120,14 @@ class Images extends Component {
                     </ul>
                     </div>
                     <div className='postingComment'> 
-                    {!this.props.selectedImage.commentPosted ? <button id='btnPost' onClick={this.handleClick}>Post Comment</button> 
-                    : ''}
+                    {!this.props.commentPosted ? <button id='btnPost' onClick={this.handleClick}>Post Comment</button> 
+                    : <button id='btnDelete' onClick={this.handleClick}>Delete Comment</button> }
                     {/* <button id='btnDelete' onClick={this.handleClick}>Delete Comment</button>  */}
-                    {this.props.selectedImage.wantToAddComment && !this.props.selectedImage.commentPosted ? 
+                    {this.props.wantToAddComment && !this.props.commentPosted && !this.props.commentDeleted? 
                     <form>
-                    
+                    <br />
                     <input type='textarea' id='textPostComment' onChange={this.handleChange}/>
+                    {/* <br /> */}
                     <input type='button' value='Submit' id='submit' onClick={this.handleSubmit} />
                      </form>   
                      : ''}
@@ -139,8 +147,10 @@ const mapStateToProps = (state) => ({
     likes : state.pictures.selectedImage.likes,
     commentPosted: state.pictures.selectedImage.commentPosted,
     wantToAddComment: state.pictures.selectedImage.wantToAddComment,
-    comment: state.pictures.selectedImage.comment,
-    Comments: state.pictures.Comments
+    comments: state.pictures.selectedImage.comments,
+    Comments: state.pictures.Comments,
+    newUser: state.users1.newUser,
+    commentDeleted: state.pictures.selectedImage.commentDeleted
 
 })
 const mapDispatchToProps = (dispatch) => ({
@@ -150,7 +160,8 @@ const mapDispatchToProps = (dispatch) => ({
     addToMyFavorites : data => dispatch(addToFavorites(data)),
     togglePopUpModal : data => dispatch(togglePopUp(data)),
     wantToAddNewComment : data => dispatch(wantToAddComment(data)),
-    makeThisProfilePicture : data => dispatch(makeProfilePicture(data))
+    makeThisProfilePicture : data => dispatch(makeProfilePicture(data)),
+    unlikeThisImage: data => dispatch(unlikeImage(data))
     
 })
 export default connect(mapStateToProps, mapDispatchToProps)(Images);

@@ -22,6 +22,9 @@
     background-image: linear-gradient(315deg, #20bf55 0%, #004d7a 74%);
     color: #f1f1f1;    
     text-align: center;
+    display: table-cell;  
+    overflow: hidden;
+    vertical-align: middle; 
   }
   .profile .profileImage img {
     width: 300px;

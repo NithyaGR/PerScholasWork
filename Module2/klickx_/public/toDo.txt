@@ -44,11 +44,11 @@ Todo List
 6. Heroku
 https://perscholas.instructure.com/courses/630/assignments/80647
 userstory 1 - done - create an account - login - logout
-userstory 2 - profile images display - yet to do
+userstory 2 - profile images display - done
 userstory 3 - deleting the comments - settings page for deleting the user(logging out removing the user)
 userstory 4 - unlike clicks should remove it from the liked List - remove the liked image from the page
               user homepage should be sorted by no of likes in descending order  
-              if same no of likes, sort by time - most recent one on top 
+              if same no of likes, sort by time - most recent one on top - done
 userstory 5 - favorites page - Done CSS CSS CSS   
 
 
@@ -79,6 +79,10 @@ profilePicture: {id: 9, name: "Fall", postedDate: "01/26/2021", postedBy: "Kumar
 staticContext: undefined
 userFavorites: [{…}]
 __proto__: Object
+// To sort according to the date.
+// console.log(this.props.likedPictures.comments);
+        // const sortedLikedPictures = this.props.likedPictures.sort((picObj1, picObj2) => picObj1. - picObj2.likedAtTime);
+        // console.log(sortedLikedPictures[0]);
 
 const maxValueOfY = Math.max(...arrayToSearchIn.map(o => o.y), 0);
 [
@@ -104,3 +108,21 @@ const maxNoOfCommentsCount = Math.max(...likedPictures.map(object => object.comm
 To return the object which has most of no counts
 const max = data.reduce((prev, current) => (prev.y > current.y) ? prev : current)
 const reqImage = likedPictures.reduce((prev, current) => (prev.comments.comment.length > current.comments.comment.length) ? prev : current)
+
+
+{id: 3, name: "Red", postedDate: "01/14/2021", postedBy: "Krishna", source: "../Pictures/Red.jpg", …}
+commentPosted: true
+comments: Array(2)
+0: {comment: "So Red!", by: "Shakthi"}
+1: {comment: "Beautiful", by: ""Rama""}
+length: 2
+__proto__: Array(0)
+id: 3
+liked: true
+likedAtTime: Sun Feb 07 2021 18:42:50 GMT-0500 (Eastern Standard Time) {}
+likes: 1
+name: "Red"
+postedBy: "Krishna"
+postedDate: "01/14/2021"
+source: "../Pictures/Red.jpg"
+wantToAddComment: true

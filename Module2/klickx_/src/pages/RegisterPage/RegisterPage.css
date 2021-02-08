@@ -1,12 +1,14 @@
 
 .registerForm{
     height: auto;
-    width: 300px;
+    width: 275px;
     display: flex;
     flex-direction: column;
     align-content: space-around;
+    justify-content: space-around;
     padding: 1em;
-    background-color: rgb(112, 110, 108);
+    background-color: #20bf55;
+    background-image: linear-gradient(315deg, #20bf55 0%, #004d7a 74%);
     flex-grow: 2;
     border-radius: 10px;
     margin: 0;
@@ -19,6 +21,7 @@
   height: 20px;
   padding: 1em;
   align-content: space-around;
+  justify-content: space-around;
   margin: 10px;
   align-items: center;
   }

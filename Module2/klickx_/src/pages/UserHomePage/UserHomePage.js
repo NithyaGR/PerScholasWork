@@ -7,11 +7,6 @@ import { imageClicked, togglePopUp } from '../../actions/ImageActions';
 
 
 class UserHomePage extends Component {
-    state = {
-        pictures: pictures,
-        isClicked: false,
-        isOpen: false
-    }
   
     imgDetails =  (e) => {
         console.log('onclick - imgDetails');
@@ -22,9 +17,7 @@ class UserHomePage extends Component {
         this.props.togglePopUp(true); //closing the modal - pop-up
 
     }
-    handlePopUp = () =>{
-            this.setState({ isOpen : !this.state.isOpen })
-    }
+   
     render () {
     const name = localStorage.getItem('name');
     console.log(name);
@@ -36,7 +29,7 @@ class UserHomePage extends Component {
         </div>
         <div className='userContent' >
                          
-         {pictures.map(({id, name, source}) => <div key={id} onClick={this.imgDetails}><img id={id} src={source} alt={name} /></div>)}
+         {this.props.pictures.map(({id, name, source}) => <div key={id} onClick={this.imgDetails}><img id={id} src={source} alt={name} /></div>)}
                 
         </div>
         {this.props.isOpen ? <Images />: ''}

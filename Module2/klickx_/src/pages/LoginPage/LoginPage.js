@@ -21,14 +21,14 @@ import './LoginPage.css';
       e.preventDefault();
       console.log('inside handle submit');
       
-      try{
-        console.log(this.props.newUser);      
-      }
-      catch(exception){
-        alert('No such user! Please create new account!');
-        console.log(exception);
-        this.props.history.push('/register');
-      }
+      // try{
+      //   console.log(this.props.newUser);      
+      // }
+      // catch(exception){
+      //   alert('No such user! Please create new account!');
+      //   console.log(exception);
+      //   this.props.history.push('/register');
+      // }
       
       console.log(this.props.newUser);  
       const curUser = this.props.newUser;
@@ -93,9 +93,13 @@ import './LoginPage.css';
         <form onSubmit={this.handleSubmit}>
                  <input type='text' placeholder='Login_Id or Email' id='email' onChange={this.handleChange}/>
                   <input type='password' placeholder='Password' id='password' onChange={this.handleChange}/>
+                  <br /><br />
                   <button type='submit' id='loginButton' value='Login'>Login</button>             
         </form>
-        <Link className='btn btn-default' to='/register'> Create New Account </Link>
+        <div className='link'>
+          <br />
+        <Link className='linkText' to='/register'> Create New Account </Link>
+        </div>
         </div>
   
       )
@@ -116,4 +120,5 @@ import './LoginPage.css';
   
   
  // export default connect(mapStateToProps, mapDispatchToProps)(TodoList);
+
 export default connect(mapStateToProps, mapDispatchToProps)(LoginPage);

@@ -85,7 +85,7 @@
    }
    .postingComment form{
       display: grid;
-      grid-template-rows: 80% 20%;
+      grid-template-rows: 60% 40%;
       border: unset
    }
    #btnPost, #submit{
@@ -96,7 +96,7 @@
       font-size: 15px;
    }
 
-   .btnDelete{
+   #btnDelete{
       width: auto;
       height: 40px;
       background-color: transparent;
