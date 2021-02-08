@@ -13,7 +13,7 @@ export const initialState = {
     userFavorites: [],
     likedList: [],
     isClicked: false,
-    selectedImage: '',
+    selectedImage: {},
     isOpen : false,
     isFavorite: true,
     commentPosted: '',
@@ -122,13 +122,14 @@ const imageActionsReducers = (state= initialState, action) => {
                     ...state.selectedImage,
                     commentPosted: false,
                     commentDeleted: true,
-                    comments: [
+                    comments: 
                         state.selectedImage.comments.filter(item => item.by != action.payload.[0].by)
                        
-                        ]
+                        
 
                 }
             }
+            
 
         case IMG_CLICKED  :
             console.log("IMG Clicked Action");
@@ -143,8 +144,16 @@ const imageActionsReducers = (state= initialState, action) => {
         case TOGGLE_POPUP :
             console.log("Toggle PopUp Action");
             console.log(action.payload);
+            let updatedPictures = state.pictures;//to store all the recent changes to the original state
+            if(action.payload == false){
+               
+                let updatedImageIndex = state.pictures.findIndex(element => element.name === state.selectedImage.name)
+                updatedPictures[updatedImageIndex] = state.selectedImage;
+            }
+
             return {
                 ...state,
+                pictures: updatedPictures,
                 isOpen : action.payload,
                 isClicked : false
             }  

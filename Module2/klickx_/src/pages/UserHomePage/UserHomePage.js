@@ -19,13 +19,13 @@ class UserHomePage extends Component {
     }
    
     render () {
-    const name = localStorage.getItem('name');
-    console.log(name);
+    //const name = localStorage.getItem('name');
+    //console.log(name);
     return (
      <div className='userHomePage'>
                 
         <div className='userHeader'>
-            <h3>Welcome to Klickx_ {name} </h3>
+            <h3>Welcome to Klickx_  {this.props.name} </h3>
         </div>
         <div className='userContent' >
                          
@@ -43,7 +43,8 @@ const mapStateToProps = (state) => ({
  
     pictures : state.pictures.pictures,
     isOpen : state.pictures.isOpen,
-    isClicked : state.pictures.isClicked
+    isClicked : state.pictures.isClicked,
+    name : state.users1.newUser.name
     
 })
 const mapDispatchToProps = (dispatch) => ({

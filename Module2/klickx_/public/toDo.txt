@@ -126,3 +126,27 @@ postedBy: "Krishna"
 postedDate: "01/14/2021"
 source: "../Pictures/Red.jpg"
 wantToAddComment: true
+
+delete button - deletes all the messages - though it prints the correct array in the console
+duplicate pictures added to the fav list or liked list
+after refreshed, I need to sign up again
+
+ReadMD file - yet to do
+Heroku - yet to do
+
+
+
+{id: 1, name: "Vrindavan", postedDate: "01/01/2021", postedBy: "Krishna", source: "../
+
+{id: 3, name: "Red", postedDate: "01/14/2021", postedBy: "Krishna", source: "../Pictures/Red.jpg", …}
+comments: Array(1)
+0: {comment: "So Red!", by: "Shakthi"}
+length: 1
+__proto__: Array(0)
+id: 3
+likes: "0"
+name: "Red"
+postedBy: "Krishna"
+postedDate: "01/14/2021"
+source: "../Pictures/Red.jpg"
+__proto__: Object

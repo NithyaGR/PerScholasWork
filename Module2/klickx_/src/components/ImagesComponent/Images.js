@@ -10,21 +10,21 @@ import users from '../../reducers/users';
 
 class Images extends Component { 
     
-    state = {
-        pictures: pictures,
-        userLiked: false,
-        Comments: [],
-        userFavorite: [],
-        isClicked: false,
-        isOpen: '',
-        selectedImage: {
-            liked: false,
-            commentPosted: false,
-            wantToAddComment: false,
-            comment: ''
+    // state = {
+    //     pictures: pictures,
+    //     userLiked: false,
+    //     Comments: [],
+    //     userFavorite: [],
+    //     isClicked: false,
+    //     isOpen: '',
+    //     selectedImage: {
+    //         liked: false,
+    //         commentPosted: false,
+    //         wantToAddComment: false,
+    //         comment: ''
 
-        }
-    }
+    //     }
+    // }
     handleClick = (e) => {
         console.log('onclick- handle Click function');
         console.log(e.target.id);
