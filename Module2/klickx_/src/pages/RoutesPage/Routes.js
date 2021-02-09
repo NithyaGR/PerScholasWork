@@ -8,7 +8,7 @@ import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import ProfilePage from '../ProfilePage/ProfilePage';
 import FavoritesPage from '../FavoritesPage/FavoritesPage';
-//import SettingsPage from './pages/SettingsPage';
+import SettingsPage from '../SettingsPage/Settings';
 import UserHomePage from '../UserHomePage/UserHomePage';
 
 export default class Routes extends Component {
@@ -28,7 +28,7 @@ export default class Routes extends Component {
 
                         <Route path='/favorites' component={FavoritesPage} />
 
-                        {/* <Route path='/settings' component={SettingsPage} /> */}
+                        <Route path='/settings' component={SettingsPage} />
                         
                </Switch>           
           

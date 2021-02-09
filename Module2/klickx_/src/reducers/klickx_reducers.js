@@ -3,12 +3,10 @@
 import { LOGIN_USER, LOGOUT_USER } from '../actions/LoginLogoutAction';
 import { REGISTER_USER } from '../actions/RegisterUserAction';
 import users from './users.js';
-import pictures from './pictureData.js';
 console.log(users);
 
 export const initialState = {
     users : users,
-    //pictures: pictures, checking
     newUser: {
         name: '',
         email: '',

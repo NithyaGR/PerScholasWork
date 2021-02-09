@@ -26,9 +26,9 @@ class SideNavBar extends Component {
         <div>
         <Link to='/home'> Home </Link> 
         <Link to='/login'> Login </Link>
-        <Link to='/profile'> Profile </Link>
-        <Link to='/favorites'> Favorites </Link>
-        <Link to='/settings'> Settings </Link>  
+        <Link to='/home'> Profile </Link>
+        <Link to='/home'> Favorites </Link>
+        <Link to='/home'> Settings </Link>  
         </div> 
           :
         <div>  
@@ -39,8 +39,6 @@ class SideNavBar extends Component {
         <Link id='settings' to='/settings'> Settings </Link>  
         </div>
         }
-
-
         </div>
     )
 }

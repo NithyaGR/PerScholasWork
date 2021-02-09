@@ -8,7 +8,7 @@ const Header = (props) => { //why props? learn this
     return (
            <header className='mainHeader'>   
                <h1> K L I C K X_</h1>
-               <img src='camera icon.png'/>   
+               {/* <img src='camera icon.png'/>    */}
            </header> 
     )
 }

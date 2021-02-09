@@ -123,7 +123,7 @@ const imageActionsReducers = (state= initialState, action) => {
                     commentPosted: false,
                     commentDeleted: true,
                     comments: 
-                        state.selectedImage.comments.filter(item => item.by != action.payload.[0].by)
+                        state.selectedImage.comments.filter(item => item.by !== action.payload.[0].by)
                        
                         
 
@@ -145,7 +145,7 @@ const imageActionsReducers = (state= initialState, action) => {
             console.log("Toggle PopUp Action");
             console.log(action.payload);
             let updatedPictures = state.pictures;//to store all the recent changes to the original state
-            if(action.payload == false){
+            if(action.payload === false){
                
                 let updatedImageIndex = state.pictures.findIndex(element => element.name === state.selectedImage.name)
                 updatedPictures[updatedImageIndex] = state.selectedImage;

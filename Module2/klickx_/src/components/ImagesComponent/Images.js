@@ -2,29 +2,12 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addComment, likeImage, unlikeImage, addToFavorites, deleteComment, togglePopUp, wantToAddComment, makeProfilePicture } from '../../actions/ImageActions';
 import './Images.css';
-
-import pictures from '../../reducers/pictureData';
 import users from '../../reducers/users';
 
 
 
 class Images extends Component { 
     
-    // state = {
-    //     pictures: pictures,
-    //     userLiked: false,
-    //     Comments: [],
-    //     userFavorite: [],
-    //     isClicked: false,
-    //     isOpen: '',
-    //     selectedImage: {
-    //         liked: false,
-    //         commentPosted: false,
-    //         wantToAddComment: false,
-    //         comment: ''
-
-    //     }
-    // }
     handleClick = (e) => {
         console.log('onclick- handle Click function');
         console.log(e.target.id);

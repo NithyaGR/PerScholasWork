@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './UserHomePage.css';
-import pictures from '../../reducers/pictureData';
 import Images from '../../components/ImagesComponent/Images';
 import { imageClicked, togglePopUp } from '../../actions/ImageActions';
 

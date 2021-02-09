@@ -1,0 +1,20 @@
+.settings {
+    margin-top: 190px;
+    margin-left: 230px;
+    /* padding: 10px; */
+}
+#deleteAccount{
+    margin: auto;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    /* background-color: #20bf55;
+    background-image: linear-gradient(315deg, #20bf55 0%, #004d7a 74%); */
+    color: #f1f1f1;    
+    background-image: linear-gradient(to right top, #ff743d, #eb7450, #e23f1b, #de361e, #d92d21); 
+    text-align: center;
+    font-size: 25px;
+    /*display: table-cell;  
+    overflow: hidden;
+    vertical-align: middle;  */
+}

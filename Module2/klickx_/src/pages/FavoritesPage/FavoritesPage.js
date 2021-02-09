@@ -1,18 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { removeFavorite } from '../../actions/ImageActions';
-import pictures from '../../reducers/pictureData';
 import './FavoritesPage.css';
-import users from '../../reducers/users';
 
 class FavoritesPage extends Component {
 
-    // state = {
-    //     pictures: pictures,
-    //     isFavorite: true,
-    //     userFavorites: []
-
-    // }
     handleClick = (e, favImg) => {
         console.log(e.target.id);
         console.log(e.target.className);
