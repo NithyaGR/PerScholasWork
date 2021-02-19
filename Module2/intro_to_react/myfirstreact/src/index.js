@@ -8,7 +8,7 @@ import SetState from './SetState';
 ReactDOM.render(
   <React.StrictMode>
     <App />
-    <SetState />
+    {/* <SetState /> */}
   </React.StrictMode>,
   document.getElementById('root')
 );

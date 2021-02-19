@@ -16,6 +16,8 @@ export default class Routes extends Component {
         return (
             
               <Switch>
+                        <Route path='/' exact component={HomePage} /> {/* this will set the default page*/}
+
                         <Route path='/home' exact component={HomePage} />
                 
                         <Route path='/login' component={LoginPage} />
@@ -35,3 +37,5 @@ export default class Routes extends Component {
         )
     }
 }
+// we can add <Route path='/userHome:/name' component={UserHomePage} /> and the userHomePage
+//can use this.props.match.params.name in the welcome message.

@@ -1,4 +1,14 @@
-# Getting Started with Create React App
+# Getting Started with KLICKX_ Picture application
+
+KLICKX_ is a picture application. It allows a user to create a user account and with name, email and password. Once registered, the user can login with correct credentials. 
+
+After logging in, user gets to access the application's main content - called my home. (userHome).
+In this page, the user sees the pictures posted by other KLICKX_ users. 
+
+As the user is logged in, the app allows to click on each image to see the image details. After clicking a picture, a pop up opens with the picture, like button, favorites button, profile picture button and comments area. 
+
+User can do any one or all or none of the above  activity and can close the pop up. The corresponding 
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
