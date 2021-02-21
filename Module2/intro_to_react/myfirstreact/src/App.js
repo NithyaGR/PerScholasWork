@@ -49,6 +49,27 @@ function App() {
         <button className='btn btn-dark' onClick={increment}>Increment</button>
         <h1>{count}</h1>
         <h1> {apiMessage}</h1>
+        <div>
+          <table className='table'>
+              <thead>
+                <tr>
+                  <th scope='col1'> No</th>
+                  <th scope='col1'> Chapter Name </th>
+                  {/* <th scope='col1'> </th> */}
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  {/* <th scope='row'>1</th> */}
+                  <td>1. </td>
+                  <td>Arjuna Vishadha Yoga</td>
+                </tr>
+              </tbody>
+
+
+          </table>
+       
+          </div>
     </div>
   );
 }
