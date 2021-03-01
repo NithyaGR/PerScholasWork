@@ -1,6 +1,7 @@
 
 import React, { Component } from 'react';
 import './SideNavBar.css';
+
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { logout } from '../../actions/LoginLogoutAction';
