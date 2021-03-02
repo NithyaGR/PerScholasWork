@@ -18,22 +18,26 @@ class myService {
 
     executeUserServiceGetAll(){
         console.log('executed get all user service')
-        return axios.get('http://localhost:9000/api/users')     
+        return axios.get('http://localhost:9000/users')     
+    }
+    executeUserServiceGetUser(email){
+        console.log('executed get one user by email - service')
+        return axios.get(`http://localhost:9000/users/${email}`)     
     }
 
     executeUserServicePost(user){
         console.log('executed post user service')
-        return axios.post('http://localhost:9000/api/users', user)
+        return axios.post('http://localhost:9000/users', user)
         
     }
 
     executeUserServiceUpdate(user){
         console.log('executed update/put user service')
-        return axios.put(`http://localhost:9000/api/users/${user.email}`, user)     
+        return axios.put(`http://localhost:9000/users/${user.email}`, user)     
     }
     executeUserServiceDelete(email){
         console.log('executed delete user by email service')
-        return axios.delete(`http://localhost:9000/api/users/${email}`)
+        return axios.delete(`http://localhost:9000/users/${email}`)
     }
 
 }

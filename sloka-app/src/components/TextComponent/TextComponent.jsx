@@ -14,7 +14,7 @@ class TextComponent extends Component {
             <div className='sanskrit'>
             <h4><pre>{this.props.display.textSanskrit}</pre></h4>
             </div>
-            <div classNme='english'>
+            <div className='english'>
             <pre>{this.props.display.textEnglish}</pre>
             {/* <h4>{this.props.display.textEnglish}</h4> */}
             </div>
@@ -22,7 +22,6 @@ class TextComponent extends Component {
              <h5> Meaning </h5>   
             <h6>{this.props.display.translation}</h6>
             </div>
-            
             </div>
         )
     }
